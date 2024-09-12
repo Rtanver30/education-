@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Basics</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #b0d4de;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+}
+
+main {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+.java-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.java-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 1 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+ caption {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-container input[type="submit"],
+    .form-container input[type="reset"] {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .form-container input[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+    .text-styles {
+      margin: 20px 0;
+      text-align: center;
+    }  /* Style for the side navigation */
+    .sidenav {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: 0.3s;
+    }
+
+    .sidenav a {
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 16px;
+      transition: margin-left 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .sidenav a {
+        text-align: center;
+        float: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
+h2, h3{
+  margin-top: 20px;
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-success text-white text-center py-3">
+    <h1>Learn Java Basics</h1>
+    <p>Java Explained for Beginners</p>
+</header>
+
+ <!-- Side Navigation -->
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#java">Java</a>
+  <a href="#java_introduction">Java_introduction</a>
+  <a href="#java_syntax">Java_syntax</a>
+  <a href="#java_output">Java_output</a>
+  <a href="#java_comments">Java_comments</a>
+  <a href="#java_variables">Java_variables</a>
+  <a href="#java_data_types">Java_data_types</a>
+  <a href="#java_type_casting">Java_type_casting</a>
+  <a href="#java_operators">Java_operators</a>
+  <a href="#java_strings">Java_strings</a>
+  <a href="#java_math">Java_math</a>
+  <a href="#java_booleans">Java_booleans</a>
+  <a href="#java_if_else">Java_if_else</a>
+  <a href="#java_while_loop">Java_while_loop</a>
+  <a href="#java_switch">Java_switch</a>
+  <a href="#java_for_loop">Java_for_loop</a>
+  <a href="#java-break-continue">Java-break-continue</a>
+  <a href="#java-arrays">Java-arrays</a>
+  <a href="#java-oop">Java-oop</a>
+  <a href="#java-classes-objects">Java-classes-objects</a>
+  <a href="#java-class-attributes">Java-class-attributes</a>
+  <a href="#java-constructors">Java-constructors</a>
+  
+</div>>
+  <!-- Main Content -->
+  <div class="content">
+
+    <div id="main" class="main-content">
+     
+        <main class="container mt-4">
+            <section id="java">
+                <h2>What is Java?</h2>
+                <p>Java is a high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible. It is one of the most popular programming languages used for building web applications, mobile applications, and large-scale enterprise systems.</p>
+                
+                <h3>Features of Java</h3>
+                <ul>
+                    <li><strong>Object-Oriented:</strong> Java follows the object-oriented programming paradigm, which promotes code reuse and modularity.</li>
+                    <li><strong>Platform-Independent:</strong> Java applications are designed to be portable across different operating systems. The Java Virtual Machine (JVM) allows Java programs to run on any device or operating system that has the JVM installed.</li>
+                    <li><strong>Robust:</strong> Java provides strong memory management and exception handling features, which help in building reliable and error-free programs.</li>
+                    <li><strong>Multithreaded:</strong> Java supports multithreading, which allows multiple threads to run concurrently, enhancing the performance of applications.</li>
+                    <li><strong>Secure:</strong> Java includes several built-in security features such as the sandboxing of applets and a robust security manager.</li>
+                </ul>
+            
+                <h3>Basic Syntax of Java</h3>
+                <p>Java programs are written in classes. Here’s a simple example of a Java class:</p>
+                <pre><code>public class HelloWorld {
+                    public static void main(String[] args) {
+                        System.out.println("Hello, World!");
+                    }
+                }</code></pre>
+            
+                <h3>Java Example: A Simple Program</h3>
+                <p>This example demonstrates a basic Java program that prints "Hello, World!" to the console:</p>
+                <pre><code>public class HelloWorld {
+                    public static void main(String[] args) {
+                        System.out.println("Hello, World!");
+                    }
+                }</code></pre>
+            
+                <p><strong>Output:</strong> Hello, World!</p>
+            </section>
+            
+            
+            
+        
+        
+            <section id="java_introduction">
+                <h2>Java Introduction</h2>
+                
+                <h3>History of Java</h3>
+                <p>Java was developed by Sun Microsystems, led by James Gosling, in the mid-1990s. The first version, Java 1.0, was released in 1996. Java was designed with the principle of "write once, run anywhere" in mind, allowing developers to create applications that can run on any device with a Java Virtual Machine (JVM). In 2010, Oracle Corporation acquired Sun Microsystems and has since maintained and developed the Java platform.</p>
+                
+                <h3>Introduction to Java</h3>
+                <p>Java is a high-level, object-oriented programming language known for its portability across platforms, performance, and security features. It is used in a wide range of applications, from web development to mobile applications (especially Android) and large-scale enterprise systems. Java's syntax is influenced by C and C++, making it familiar to many developers.</p>
+                
+                <h3>How Java Works</h3>
+                <p>Java programs are compiled into bytecode, which is an intermediate form of code that runs on the Java Virtual Machine (JVM). The JVM interprets or compiles this bytecode into native machine code that is executed by the host system. This process allows Java programs to be platform-independent, as the same bytecode can run on any system with a compatible JVM.</p>
+                
+                <h3>Versions of Java</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Java Version</th>
+                            <th>Released Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>JDK 1.0</td>
+                            <td>1996</td>
+                        </tr>
+                        <tr>
+                            <td>JDK 1.1</td>
+                            <td>1997</td>
+                        </tr>
+                        <tr>
+                            <td>J2SE 1.2</td>
+                            <td>1998</td>
+                        </tr>
+                        <tr>
+                            <td>J2SE 1.3</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>J2SE 1.4</td>
+                            <td>2002</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 5.0</td>
+                            <td>2004</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 6</td>
+                            <td>2006</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 7</td>
+                            <td>2011</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 8</td>
+                            <td>2014</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 9</td>
+                            <td>2017</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 10</td>
+                            <td>2018</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 11</td>
+                            <td>2018</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 12</td>
+                            <td>2019</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 13</td>
+                            <td>2019</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 14</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 15</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 16</td>
+                            <td>2021</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 17</td>
+                            <td>2021</td>
+                        </tr>
+                        <tr>
+                            <td>Java SE 18</td>
+                            <td>2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            
+        
+            <section id="java_syntax">
+                <h2>Java Syntax</h2>
+                
+                <h3>Java Statements</h3>
+                <p>Java statements are the building blocks of Java programs. They define the actions to be performed and typically end with a semicolon (<code>;</code>). Statements include expressions, variable declarations, method calls, and control flow statements.</p>
+                <pre>
+                    <code>int number = 10;
+                    System.out.println("Number: " + number);</code>
+                </pre>
+                <p>In this example, an integer variable <code>number</code> is declared and initialized to 10. The <code>System.out.println</code> statement is used to print the value of the variable to the console.</p>
+                
+                <h3>Java Comments</h3>
+                <p>Comments in Java are used to explain the code and are ignored during execution. There are three types of comments in Java:</p>
+                <ul>
+                    <li><strong>Single-Line Comments:</strong> Start with <code>//</code> and continue to the end of the line.</li>
+                    <li><strong>Multi-Line Comments:</strong> Enclosed between <code>/*</code> and <code>*/</code> and can span multiple lines.</li>
+                    <li><strong>Javadoc Comments:</strong> Used for generating documentation. Start with <code>/&#42;&#42;</code> and end with <code>&#42;/</code>.</li>
+                </ul>
+                <pre>
+                    <code>// This is a single-line comment
+                    /* This is a multi-line comment
+                       that spans multiple lines */
+                    /**
+                     * This is a Javadoc comment
+                     * used for generating documentation
+                     */
+                    System.out.println("Hello, World!");</code>
+                </pre>
+                <p>The <code>//</code> starts a single-line comment, <code>/* ... */</code> is used for multi-line comments, and <code>/&#42;&#42; ... &#42;/</code> is used for Javadoc comments.</p>
+            </section>
+            
+        
+            <section id="java_output">
+                <h2>Java Output and Printing</h2>
+                
+                <h3>Printing to the Console</h3>
+                <p>In Java, you can print text and data to the console using the <code>System.out.println()</code> and <code>System.out.print()</code> methods. The <code>println()</code> method prints a line of text and moves to the next line, while the <code>print()</code> method prints text without moving to the next line.</p>
+                <pre>
+                    <code>System.out.println("Hello, World!"); // Prints "Hello, World!" and moves to a new line
+                    System.out.print("Hello, "); // Prints "Hello, " without moving to a new line
+                    System.out.print("World!"); // Prints "World!" on the same line
+                    System.out.println(); // Moves to the next line</code>
+                </pre>
+                <p>In this example, <code>System.out.println()</code> prints "Hello, World!" and then moves to the next line, while <code>System.out.print()</code> prints "Hello, " and "World!" on the same line.</p>
+                
+                <h3>Formatting Output</h3>
+                <p>You can format output using <code>System.out.printf()</code>, which allows you to format strings with placeholders. Placeholders are replaced with the provided values.</p>
+                <pre>
+                    <code>int age = 25;
+                    String name = "Alice";
+                    System.out.printf("Name: %s, Age: %d%n", name, age);</code>
+                </pre>
+                <p>In this example, <code>System.out.printf()</code> prints "Name: Alice, Age: 25", where <code>%s</code> is a placeholder for a string and <code>%d</code> is a placeholder for an integer. The <code>%n</code> represents a newline character.</p>
+                
+                <h3>Printing Numbers</h3>
+                <p>Java provides various methods to print different types of numbers. You can print integers, floating-point numbers, and formatted numbers using <code>System.out.println()</code> and <code>System.out.printf()</code>.</p>
+                <pre>
+                    <code>int number = 10;
+                    double price = 99.99;
+                    System.out.println("Integer: " + number); // Prints an integer
+                    System.out.printf("Price: %.2f%n", price); // Prints a floating-point number with two decimal places</code>
+                </pre>
+                <p>In this example, <code>System.out.println()</code> prints an integer, and <code>System.out.printf()</code> prints a floating-point number with two decimal places.</p>
+            </section>
+            
+            
+            <section id="java_comments">
+                <h2>Java Comments</h2>
+                
+                <h3>Introduction to Comments</h3>
+                <p>Comments in Java are used to annotate code, making it easier to understand. They are ignored by the Java compiler and have no effect on the execution of the program. Comments are useful for explaining code functionality, adding notes, and making code more maintainable.</p>
+                
+                <h3>Single-Line Comments</h3>
+                <p>Single-line comments begin with <code>//</code>. Everything following <code>//</code> on that line is considered a comment and is ignored by the compiler.</p>
+                <pre>
+                    <code>// This is a single-line comment
+                    int x = 10; // This comment is at the end of a line
+                    </code>
+                </pre>
+                
+                <h3>Multi-Line Comments</h3>
+                <p>Multi-line comments begin with <code>/*</code> and end with <code>*/</code>. They can span multiple lines and are used for longer explanations or commenting out blocks of code.</p>
+                <pre>
+                    <code>/*
+                    This is a multi-line comment
+                    It can span multiple lines
+                    */
+                    int y = 20;
+                    </code>
+                </pre>
+                
+                <h3>Documentation Comments</h3>
+                <p>Documentation comments, also known as Javadoc comments, begin with <code>/&#42;&#42;</code> and end with <code>&#42;/</code>. They are used to generate HTML documentation for Java classes and methods. They typically include descriptions of the class or method, parameters, and return values.</p>
+                <pre>
+                    <code>/**
+                    * This is a documentation comment
+                    * It describes the purpose of the method
+                    * @param name The name to be greeted
+                    * @return A greeting message
+                    */
+                    public String greet(String name) {
+                        return "Hello, " + name;
+                    }
+                    </code>
+                </pre>
+            </section>
+            
+        
+        
+        
+            <section id="java_variables">
+                <h2>Java Variables</h2>
+                
+                <h3>Introduction to Variables</h3>
+                <p>In Java, variables are used to store data that can be used and manipulated throughout a program. Each variable has a specific type, which determines the kind of data it can hold. Variables are essential for performing operations, storing values, and controlling the flow of a program.</p>
+                
+                <h3>Declaration and Initialization</h3>
+                <p>To use a variable in Java, you must first declare it by specifying its type and name. Optionally, you can also initialize it with a value.</p>
+                <pre>
+                    <code>// Declaration of a variable
+                    int age;
+                    
+                    // Initialization of a variable
+                    age = 30;
+                    
+                    // Declaration and initialization in one statement
+                    int salary = 50000;
+                    </code>
+                </pre>
+                
+                <h3>Types of Variables</h3>
+                <p>Java variables can be categorized into different types based on their scope and lifespan:</p>
+                <ul>
+                    <li><strong>Local Variables:</strong> Declared within a method or block and accessible only within that scope.</li>
+                    <li><strong>Instance Variables:</strong> Declared within a class but outside any method. Each instance of the class has its own copy.</li>
+                    <li><strong>Static Variables:</strong> Declared with the <code>static</code> keyword. Shared among all instances of the class.</li>
+                </ul>
+                
+                <h3>Example of Variable Usage</h3>
+                <p>Here is a simple example of different types of variables:</p>
+                <pre>
+                    <code>public class Main {
+                        // Static variable
+                        static int staticVar = 100;
+                        
+                        // Instance variable
+                        int instanceVar;
+                        
+                        public void method() {
+                            // Local variable
+                            int localVar = 10;
+                            
+                            System.out.println("Local Variable: " + localVar);
+                            System.out.println("Instance Variable: " + instanceVar);
+                            System.out.println("Static Variable: " + staticVar);
+                        }
+                    }
+                    </code>
+                </pre>
+            </section>
+            
+            
+        
+
+            <section id="java_data_types">
+                <h2>Java Data Types</h2>
+                
+                <h3>Introduction to Data Types</h3>
+                <p>In Java, data types define the kind of data that can be stored and manipulated within a program. Java is a statically-typed language, meaning that variables must be declared with a specific data type, and this type cannot change during runtime.</p>
+                
+                <h3>Primitive Data Types</h3>
+                <p>Java has eight built-in primitive data types:</p>
+                <ul>
+                    <li><strong>byte:</strong> 8-bit integer, range from -128 to 127.</li>
+                    <li><strong>short:</strong> 16-bit integer, range from -32,768 to 32,767.</li>
+                    <li><strong>int:</strong> 32-bit integer, range from -2^31 to 2^31 - 1.</li>
+                    <li><strong>long:</strong> 64-bit integer, range from -2^63 to 2^63 - 1.</li>
+                    <li><strong>float:</strong> 32-bit floating-point number.</li>
+                    <li><strong>double:</strong> 64-bit floating-point number.</li>
+                    <li><strong>char:</strong> 16-bit Unicode character, range from '\u0000' to '\uffff'.</li>
+                    <li><strong>boolean:</strong> Represents true or false values.</li>
+                </ul>
+                
+                <h3>Reference Data Types</h3>
+                <p>Reference data types are used to refer to objects and arrays. Unlike primitive data types, they do not hold the actual data but instead hold a reference to the data. Common reference data types include:</p>
+                <ul>
+                    <li><strong>String:</strong> Represents a sequence of characters.</li>
+                    <li><strong>Arrays:</strong> Represents a collection of elements of the same type.</li>
+                    <li><strong>Classes:</strong> Custom data types defined by the user.</li>
+                    <li><strong>Interfaces:</strong> Abstract types that can be implemented by classes.</li>
+                </ul>
+                
+                <h3>Example of Data Types</h3>
+                <p>Here’s an example demonstrating the use of various data types in Java:</p>
+                <pre>
+                    <code>public class DataTypesExample {
+                        public static void main(String[] args) {
+                            // Primitive data types
+                            byte b = 100;
+                            short s = 10000;
+                            int i = 100000;
+                            long l = 10000000000L;
+                            float f = 10.5f;
+                            double d = 20.5;
+                            char c = 'A';
+                            boolean bool = true;
+                            
+                            // Reference data type
+                            String str = "Hello, Java!";
+                            
+                            System.out.println("Byte: " + b);
+                            System.out.println("Short: " + s);
+                            System.out.println("Int: " + i);
+                            System.out.println("Long: " + l);
+                            System.out.println("Float: " + f);
+                            System.out.println("Double: " + d);
+                            System.out.println("Char: " + c);
+                            System.out.println("Boolean: " + bool);
+                            System.out.println("String: " + str);
+                        }
+                    }
+                    </code>
+                </pre>
+            </section>
+            
+            
+      
+
+            <section id="java_type_casting">
+                <h2>Java Type Casting</h2>
+                
+                <h3>Introduction to Type Casting</h3>
+                <p>Type casting in Java is the process of converting one data type into another. It is necessary when you need to convert variables from one type to another, especially when dealing with primitive data types or objects of different types. Java supports two types of casting: <strong>implicit casting</strong> (automatic) and <strong>explicit casting</strong> (manual).</p>
+                
+                <h3>Implicit Casting (Automatic Type Conversion)</h3>
+                <p>Implicit casting, also known as automatic type conversion, occurs when you assign a smaller data type to a larger data type. This is done automatically by the Java compiler, as there is no risk of data loss.</p>
+                <pre>
+                    <code>
+                    // Example of implicit casting
+                    int myInt = 9;
+                    double myDouble = myInt;  // int is automatically converted to double
+                    System.out.println("Double value: " + myDouble);  // Output will be 9.0
+                    </code>
+                </pre>
+                
+                <h3>Explicit Casting (Manual Type Conversion)</h3>
+                <p>Explicit casting, also known as manual type conversion, is required when you want to convert a larger data type to a smaller data type. This must be done manually and can result in data loss if the value cannot be accurately represented in the smaller data type.</p>
+                <pre>
+                    <code>
+                    // Example of explicit casting
+                    double myDouble = 9.78;
+                    int myInt = (int) myDouble;  // double is manually converted to int
+                    System.out.println("Integer value: " + myInt);  // Output will be 9
+                    </code>
+                </pre>
+                
+                <h3>Type Casting Objects</h3>
+                <p>In addition to primitive types, you can also cast objects between related classes. For example, if you have a parent class reference pointing to a child class object, you can cast it to the child class type. However, casting between unrelated classes will result in a <code>ClassCastException</code>.</p>
+                <pre>
+                    <code>
+                    class Animal {
+                        public void makeSound() {
+                            System.out.println("Some sound");
+                        }
+                    }
+                    
+                    class Dog extends Animal {
+                        public void makeSound() {
+                            System.out.println("Bark");
+                        }
+                    }
+                    
+                    public class Main {
+                        public static void main(String[] args) {
+                            Animal myAnimal = new Dog(); // Implicit casting
+                            myAnimal.makeSound();  // Output will be "Bark"
+                            
+                            Dog myDog = (Dog) myAnimal; // Explicit casting
+                            myDog.makeSound();  // Output will be "Bark"
+                        }
+                    }
+                    </code>
+                </pre>
+            </section>
+            
+            
+    
+            <section id="java_operators">
+                <h2>Java Operators</h2>
+                
+                <h3>Introduction to Operators</h3>
+                <p>Operators in Java are special symbols used to perform operations on variables and values. They can be categorized into several types, including arithmetic, relational, logical, bitwise, and more. Operators are fundamental in Java programming, allowing you to manipulate data and control the flow of execution.</p>
+                
+                <h3>Arithmetic Operators</h3>
+                <p>Arithmetic operators are used to perform basic mathematical operations. They include:</p>
+                <ul>
+                    <li><code>+</code> (Addition): Adds two operands.</li>
+                    <li><code>-</code> (Subtraction): Subtracts the second operand from the first.</li>
+                    <li><code>*</code> (Multiplication): Multiplies two operands.</li>
+                    <li><code>/</code> (Division): Divides the first operand by the second.</li>
+                    <li><code>%</code> (Modulus): Returns the remainder of a division operation.</li>
+                </ul>
+                <pre>
+                    <code>
+                    int a = 10;
+                    int b = 5;
+                    System.out.println("a + b = " + (a + b));  // Output: 15
+                    System.out.println("a - b = " + (a - b));  // Output: 5
+                    System.out.println("a * b = " + (a * b));  // Output: 50
+                    System.out.println("a / b = " + (a / b));  // Output: 2
+                    System.out.println("a % b = " + (a % b));  // Output: 0
+                    </code>
+                </pre>
+                
+                <h3>Relational Operators</h3>
+                <p>Relational operators are used to compare two values. They return a boolean result:</p>
+                <ul>
+                    <li><code>==</code> (Equal to): Checks if two values are equal.</li>
+                    <li><code>!=</code> (Not equal to): Checks if two values are not equal.</li>
+                    <li><code>&gt;</code> (Greater than): Checks if the first value is greater than the second.</li>
+                    <li><code>&lt;</code> (Less than): Checks if the first value is less than the second.</li>
+                    <li><code>&gt;=</code> (Greater than or equal to): Checks if the first value is greater than or equal to the second.</li>
+                    <li><code>&lt;=</code> (Less than or equal to): Checks if the first value is less than or equal to the second.</li>
+                </ul>
+                <pre>
+                    <code>
+                    int a = 10;
+                    int b = 5;
+                    System.out.println("a == b: " + (a == b));  // Output: false
+                    System.out.println("a != b: " + (a != b));  // Output: true
+                    System.out.println("a &gt; b: " + (a > b));  // Output: true
+                    System.out.println("a &lt; b: " + (a < b));  // Output: false
+                    System.out.println("a &gt;= b: " + (a >= b));  // Output: true
+                    System.out.println("a &lt;= b: " + (a <= b));  // Output: false
+                    </code>
+                </pre>
+                
+                <h3>Logical Operators</h3>
+                <p>Logical operators are used to combine multiple boolean expressions and return a boolean result:</p>
+                <ul>
+                    <li><code>&&</code> (Logical AND): Returns true if both operands are true.</li>
+                    <li><code>||</code> (Logical OR): Returns true if at least one operand is true.</li>
+                    <li><code>!</code> (Logical NOT): Reverses the boolean value.</li>
+                </ul>
+                <pre>
+                    <code>
+                    boolean a = true;
+                    boolean b = false;
+                    System.out.println("a && b: " + (a && b));  // Output: false
+                    System.out.println("a || b: " + (a || b));  // Output: true
+                    System.out.println("!a: " + (!a));  // Output: false
+                    </code>
+                </pre>
+                
+                <h3>Bitwise Operators</h3>
+                <p>Bitwise operators perform operations on the binary representations of integers:</p>
+                <ul>
+                    <li><code>&amp;</code> (Bitwise AND): Performs a bitwise AND operation.</li>
+                    <li><code>|</code> (Bitwise OR): Performs a bitwise OR operation.</li>
+                    <li><code>^</code> (Bitwise XOR): Performs a bitwise XOR operation.</li>
+                    <li><code>~</code> (Bitwise NOT): Performs a bitwise NOT operation.</li>
+                    <li><code>&lt;&lt;</code> (Left shift): Shifts bits to the left.</li>
+                    <li><code>&gt;&gt;</code> (Right shift): Shifts bits to the right.</li>
+                </ul>
+                <pre>
+                    <code>
+                    int a = 5;   // 0101 in binary
+                    int b = 3;   // 0011 in binary
+                    System.out.println("a & b: " + (a & b));  // Output: 1 (0001 in binary)
+                    System.out.println("a | b: " + (a | b));  // Output: 7 (0111 in binary)
+                    System.out.println("a ^ b: " + (a ^ b));  // Output: 6 (0110 in binary)
+                    System.out.println("~a: " + (~a));  // Output: -6 (inverted bits)
+                    System.out.println("a &lt;&lt; 1: " + (a << 1));  // Output: 10 (1010 in binary)
+                    System.out.println("a &gt;&gt; 1: " + (a >> 1));  // Output: 2 (0010 in binary)
+                    </code>
+                </pre>
+                
+                <h3>Assignment Operators</h3>
+                <p>Assignment operators are used to assign values to variables and perform operations simultaneously:</p>
+                <ul>
+                    <li><code>=</code> (Assignment): Assigns a value to a variable.</li>
+                    <li><code>+=</code> (Add and assign): Adds a value to a variable and assigns the result.</li>
+                    <li><code>-=</code> (Subtract and assign): Subtracts a value from a variable and assigns the result.</li>
+                    <li><code>*=</code> (Multiply and assign): Multiplies a variable by a value and assigns the result.</li>
+                    <li><code>/=</code> (Divide and assign): Divides a variable by a value and assigns the result.</li>
+                    <li><code>%=</code> (Modulus and assign): Takes the modulus of a variable by a value and assigns the result.</li>
+                </ul>
+                <pre>
+                    <code>
+                    int a = 10;
+                    a += 5;  // Equivalent to a = a + 5
+                    System.out.println("a += 5: " + a);  // Output: 15
+                    a -= 3;  // Equivalent to a = a - 3
+                    System.out.println("a -= 3: " + a);  // Output: 12
+                    a *= 2;  // Equivalent to a = a * 2
+                    System.out.println("a *= 2: " + a);  // Output: 24
+                    a /= 4;  // Equivalent to a = a / 4
+                    System.out.println("a /= 4: " + a);  // Output: 6
+                    a %= 4;  // Equivalent to a = a % 4
+                    System.out.println("a %= 4: " + a);  // Output: 2
+                    </code>
+                </pre>
+            </section>
+            
+            
+  
+            <section id="java_strings">
+                <h2>Java Strings</h2>
+                
+                <h3>Introduction to Strings</h3>
+                <p>In Java, a <code>String</code> is a sequence of characters used to represent text. The <code>String</code> class in Java is part of the java.lang package and provides various methods to manipulate and work with text. Strings are immutable, meaning once a string is created, it cannot be changed. Any modifications to a string result in the creation of a new string.</p>
+                
+                <h3>Creating Strings</h3>
+                <p>Strings can be created using string literals or the <code>String</code> class constructor:</p>
+                <pre>
+                    <code>
+                    // Using string literals
+                    String str1 = "Hello, World!";
+                    
+                    // Using the String constructor
+                    String str2 = new String("Hello, Java!");
+                    </code>
+                </pre>
+                
+                <h3>String Concatenation</h3>
+                <p>Strings can be concatenated using the <code>+</code> operator or the <code>concat()</code> method:</p>
+                <pre>
+                    <code>
+                    String firstName = "John";
+                    String lastName = "Doe";
+                    
+                    // Using the + operator
+                    String fullName = firstName + " " + lastName;
+                    
+                    // Using the concat() method
+                    String fullNameConcat = firstName.concat(" ").concat(lastName);
+                    
+                    System.out.println("Full Name: " + fullName);
+                    System.out.println("Full Name (concat): " + fullNameConcat);
+                    </code>
+                </pre>
+                
+                <h3>String Methods</h3>
+                <p>Java provides a variety of methods to manipulate strings. Here are a few commonly used methods:</p>
+                <ul>
+                    <li><code>length()</code>: Returns the length of the string.</li>
+                    <li><code>charAt(int index)</code>: Returns the character at the specified index.</li>
+                    <li><code>substring(int beginIndex, int endIndex)</code>: Returns a substring from the specified indices.</li>
+                    <li><code>toLowerCase()</code>: Converts all characters in the string to lowercase.</li>
+                    <li><code>toUpperCase()</code>: Converts all characters in the string to uppercase.</li>
+                    <li><code>trim()</code>: Removes leading and trailing whitespace.</li>
+                    <li><code>replace(char oldChar, char newChar)</code>: Replaces occurrences of a specified character with a new character.</li>
+                    <li><code>split(String regex)</code>: Splits the string into an array based on a delimiter.</li>
+                </ul>
+                <pre>
+                    <code>
+                    String str = "  Java Programming  ";
+                    
+                    // Getting the length of the string
+                    int length = str.length();
+                    
+                    // Character at index 2
+                    char ch = str.charAt(2);
+                    
+                    // Substring from index 2 to 6
+                    String subStr = str.substring(2, 6);
+                    
+                    // Converting to lowercase
+                    String lowerStr = str.toLowerCase();
+                    
+                    // Converting to uppercase
+                    String upperStr = str.toUpperCase();
+                    
+                    // Trimming whitespace
+                    String trimmedStr = str.trim();
+                    
+                    // Replacing characters
+                    String replacedStr = str.replace('a', 'A');
+                    
+                    // Splitting the string
+                    String[] words = str.split(" ");
+                    
+                    System.out.println("Length: " + length);
+                    System.out.println("Character at index 2: " + ch);
+                    System.out.println("Substring: " + subStr);
+                    System.out.println("Lowercase: " + lowerStr);
+                    System.out.println("Uppercase: " + upperStr);
+                    System.out.println("Trimmed: '" + trimmedStr + "'");
+                    System.out.println("Replaced: " + replacedStr);
+                    System.out.println("Words: " + java.util.Arrays.toString(words));
+                    </code>
+                </pre>
+                
+                <h3>String Immutability</h3>
+                <p>In Java, strings are immutable. This means that once a string is created, it cannot be changed. Instead, any modification to a string results in the creation of a new string. For example:</p>
+                <pre>
+                    <code>
+                    String original = "Hello";
+                    String modified = original.concat(" World");
+                    
+                    System.out.println("Original: " + original);  // Output: Hello
+                    System.out.println("Modified: " + modified);  // Output: Hello World
+                    </code>
+                </pre>
+            </section>
+            
+            
+
+  
+            <section id="java_math">
+                <h2>Java Math</h2>
+            
+                <h3>Introduction to Java Math</h3>
+                <p>Java provides a built-in class <code>Math</code> in the <code>java.lang</code> package for performing mathematical operations. The <code>Math</code> class contains various methods for basic arithmetic, trigonometry, logarithms, and more.</p>
+            
+                <h3>Basic Math Operations</h3>
+                <p>Here are some common mathematical operations provided by the <code>Math</code> class:</p>
+                <pre>
+                    <code>
+                    // Addition
+                    double sum = Math.addExact(5, 3); // 8
+                    
+                    // Subtraction
+                    double difference = Math.subtractExact(10, 4); // 6
+                    
+                    // Multiplication
+                    double product = Math.multiplyExact(6, 7); // 42
+                    
+                    // Division
+                    double quotient = (double) 20 / 4; // 5.0
+                    
+                    // Modulus
+                    double remainder = 20 % 3; // 2
+                    </code>
+                </pre>
+            
+                <h3>Mathematical Constants</h3>
+                <p>The <code>Math</code> class provides several mathematical constants:</p>
+                <pre>
+                    <code>
+                    double pi = Math.PI; // 3.141592653589793
+                    double e = Math.E;   // 2.718281828459045
+                    </code>
+                </pre>
+            
+                <h3>Mathematical Functions</h3>
+                <p>Some useful methods in the <code>Math</code> class include:</p>
+                <ul>
+                    <li><code>Math.sqrt(double a)</code>: Returns the square root of a number.</li>
+                    <li><code>Math.pow(double a, double b)</code>: Returns the value of <code>a</code> raised to the power of <code>b</code>.</li>
+                    <li><code>Math.abs(double a)</code>: Returns the absolute value of a number.</li>
+                    <li><code>Math.max(double a, double b)</code>: Returns the maximum of two numbers.</li>
+                    <li><code>Math.min(double a, double b)</code>: Returns the minimum of two numbers.</li>
+                    <li><code>Math.random()</code>: Returns a random double value between 0.0 (inclusive) and 1.0 (exclusive).</li>
+                </ul>
+                <pre>
+                    <code>
+                    // Square root
+                    double sqrtValue = Math.sqrt(16); // 4.0
+                    
+                    // Power
+                    double powerValue = Math.pow(2, 3); // 8.0
+                    
+                    // Absolute value
+                    double absValue = Math.abs(-10); // 10
+                    
+                    // Maximum value
+                    double maxValue = Math.max(8, 12); // 12
+                    
+                    // Minimum value
+                    double minValue = Math.min(8, 12); // 8
+                    
+                    // Random value
+                    double randomValue = Math.random(); // Random value between 0.0 and 1.0
+                    </code>
+                </pre>
+            
+                <h3>Trigonometric Functions</h3>
+                <p>The <code>Math</code> class also includes trigonometric functions:</p>
+                <ul>
+                    <li><code>Math.sin(double a)</code>: Returns the sine of the specified angle (in radians).</li>
+                    <li><code>Math.cos(double a)</code>: Returns the cosine of the specified angle (in radians).</li>
+                    <li><code>Math.tan(double a)</code>: Returns the tangent of the specified angle (in radians).</li>
+                    <li><code>Math.toRadians(double angdeg)</code>: Converts an angle measured in degrees to an angle measured in radians.</li>
+                    <li><code>Math.toDegrees(double angrad)</code>: Converts an angle measured in radians to an angle measured in degrees.</li>
+                </ul>
+                <pre>
+                    <code>
+                    // Sine of 45 degrees
+                    double rad = Math.toRadians(45);
+                    double sinValue = Math.sin(rad); // 0.7071067811865475
+                    
+                    // Cosine of 45 degrees
+                    double cosValue = Math.cos(rad); // 0.7071067811865476
+                    
+                    // Tangent of 45 degrees
+                    double tanValue = Math.tan(rad); // 1.0
+                    </code>
+                </pre>
+            </section>
+            
+            
+  
+            <section id="java_booleans">
+                <h2>Java Booleans</h2>
+            
+                <h3>Introduction to Booleans in Java</h3>
+                <p>In Java, the <code>boolean</code> data type is used to represent true or false values. It is one of the simplest data types and is crucial for controlling the flow of a program through conditional statements and loops.</p>
+            
+                <h3>Boolean Variables</h3>
+                <p>A boolean variable can hold one of two values: <code>true</code> or <code>false</code>. Here's how you declare and initialize boolean variables:</p>
+                <pre>
+                    <code>
+                    boolean isJavaFun = true;
+                    boolean isCold = false;
+                    </code>
+                </pre>
+            
+                <h3>Boolean Expressions</h3>
+                <p>Boolean expressions evaluate to either <code>true</code> or <code>false</code>. They are often used in conditional statements and loops:</p>
+                <pre>
+                    <code>
+                    int age = 20;
+                    boolean isAdult = (age >= 18); // true
+                    
+                    boolean isNotAdult = (age < 18); // false
+                    </code>
+                </pre>
+            
+                <h3>Using Booleans in Conditional Statements</h3>
+                <p>Boolean values are commonly used in if-else statements and other control flow constructs:</p>
+                <pre>
+                    <code>
+                    int number = 10;
+                    
+                    if (number > 0) {
+                        System.out.println("The number is positive.");
+                    } else {
+                        System.out.println("The number is zero or negative.");
+                    }
+                    </code>
+                </pre>
+            
+                <h3>Boolean Operators</h3>
+                <p>Java provides several boolean operators to perform logical operations:</p>
+                <ul>
+                    <li><code>&&</code> (logical AND): Returns <code>true</code> if both operands are true.</li>
+                    <li><code>||</code> (logical OR): Returns <code>true</code> if at least one operand is true.</li>
+                    <li><code>!</code> (logical NOT): Returns the opposite boolean value of the operand.</li>
+                </ul>
+                <pre>
+                    <code>
+                    boolean a = true;
+                    boolean b = false;
+                    
+                    boolean andResult = a && b; // false
+                    boolean orResult = a || b;  // true
+                    boolean notResult = !a;     // false
+                    </code>
+                </pre>
+            
+                <h3>Boolean Methods</h3>
+                <p>Java provides methods to work with boolean values, such as:</p>
+                <ul>
+                    <li><code>Boolean.parseBoolean(String s)</code>: Converts a string to a boolean value.</li>
+                    <li><code>Boolean.valueOf(String s)</code>: Returns a <code>Boolean</code> object holding the value of the specified string.</li>
+                    <li><code>Boolean.toString(boolean b)</code>: Returns a string representation of the specified boolean value.</li>
+                </ul>
+                <pre>
+                    <code>
+                    boolean parsedValue = Boolean.parseBoolean("true"); // true
+                    Boolean booleanObject = Boolean.valueOf("false"); // false
+                    String booleanString = Boolean.toString(true);    // "true"
+                    </code>
+                </pre>
+            </section>
+            
+            
+
+        
+            <section id="java_if_else">
+                <h2>Java If ... Else Statements</h2>
+            
+                <h3>Introduction to If ... Else</h3>
+                <p>The <code>if</code> and <code>else</code> statements in Java are used to execute different blocks of code based on certain conditions. They help in making decisions within a program and control the flow of execution.</p>
+            
+                <h3>Basic If Statement</h3>
+                <p>The <code>if</code> statement evaluates a condition and executes a block of code if the condition is true:</p>
+                <pre>
+                    <code>
+                    int number = 10;
+                    
+                    if (number > 0) {
+                        System.out.println("The number is positive.");
+                    }
+                    </code>
+                </pre>
+                <p>Output: This code prints "The number is positive." if the value of <code>number</code> is greater than 0.</p>
+            
+                <h3>If ... Else Statement</h3>
+                <p>The <code>if ... else</code> statement allows you to execute one block of code if a condition is true and another block of code if the condition is false:</p>
+                <pre>
+                    <code>
+                    int number = -5;
+                    
+                    if (number > 0) {
+                        System.out.println("The number is positive.");
+                    } else {
+                        System.out.println("The number is zero or negative.");
+                    }
+                    </code>
+                </pre>
+                <p>Output: This code prints "The number is zero or negative." because the value of <code>number</code> is not greater than 0.</p>
+            
+                <h3>If ... Else If ... Else Statement</h3>
+                <p>The <code>if ... else if ... else</code> statement allows for multiple conditions to be checked in sequence:</p>
+                <pre>
+                    <code>
+                    int number = 0;
+                    
+                    if (number > 0) {
+                        System.out.println("The number is positive.");
+                    } else if (number < 0) {
+                        System.out.println("The number is negative.");
+                    } else {
+                        System.out.println("The number is zero.");
+                    }
+                    </code>
+                </pre>
+                <p>Output: This code prints "The number is zero." as it matches the <code>else</code> condition.</p>
+            
+                <h3>Nested If Statements</h3>
+                <p>You can place an <code>if</code> statement inside another <code>if</code> statement to create nested conditions:</p>
+                <pre>
+                    <code>
+                    int number = 10;
+                    
+                    if (number >= 0) {
+                        if (number == 0) {
+                            System.out.println("The number is zero.");
+                        } else {
+                            System.out.println("The number is positive.");
+                        }
+                    } else {
+                        System.out.println("The number is negative.");
+                    }
+                    </code>
+                </pre>
+                <p>Output: This code prints "The number is positive." because the outer <code>if</code> condition is true and the inner <code>if</code> condition is false.</p>
+            
+                <h3>Using Logical Operators in If Statements</h3>
+                <p>You can use logical operators like <code>&&</code> (AND), <code>||</code> (OR), and <code>!</code> (NOT) in conditions:</p>
+                <pre>
+                    <code>
+                    int age = 25;
+                    boolean hasLicense = true;
+                    
+                    if (age >= 18 && hasLicense) {
+                        System.out.println("You are eligible to drive.");
+                    } else {
+                        System.out.println("You are not eligible to drive.");
+                    }
+                    </code>
+                </pre>
+                <p>Output: This code prints "You are eligible to drive." if both conditions are true.</p>
+            </section>
+            
+            
+
+
+    
+            <div class="content" id="java_while_loop">
+                <h2 id="java-while-loop">Java While Loop</h2>
+                <p>The <code>while</code> loop in Java is used to execute a block of code repeatedly as long as a specified condition remains true. It is a fundamental control flow statement that helps to repeat actions until a condition changes.</p>
+                
+                <h3>Basic While Loop</h3>
+                <p>The basic syntax of a <code>while</code> loop is as follows:</p>
+                <pre><code>
+                int count = 0;
+                
+                while (count < 5) {
+                    System.out.println("Count is: " + count);
+                    count++;
+                }
+                </code></pre>
+                <p>Output: This code prints the value of <code>count</code> from 0 to 4. The loop continues as long as <code>count</code> is less than 5.</p>
+                
+                <h3>Infinite While Loop</h3>
+                <p>A <code>while</code> loop can run indefinitely if the condition is always true. Be cautious with infinite loops to avoid crashing your program:</p>
+                <pre><code>
+                while (true) {
+                    System.out.println("This will run forever!");
+                    // Ensure there is a break condition or a way to exit the loop
+                }
+                </code></pre>
+                <p>Output: This code will continuously print "This will run forever!" until the loop is forcibly terminated or an exit condition is added.</p>
+                
+                <h3>While Loop with Break Statement</h3>
+                <p>The <code>break</code> statement can be used to exit a <code>while</code> loop before the condition becomes false:</p>
+                <pre><code>
+                int number = 0;
+                
+                while (number < 10) {
+                    if (number == 5) {
+                        break; // Exit the loop when number is 5
+                    }
+                    System.out.println("Number is: " + number);
+                    number++;
+                }
+                </code></pre>
+                <p>Output: This code prints the value of <code>number</code> from 0 to 4. When <code>number</code> reaches 5, the <code>break</code> statement exits the loop.</p>
+                
+                <h3>While Loop with Continue Statement</h3>
+                <p>The <code>continue</code> statement can be used to skip the current iteration and proceed to the next iteration of the loop:</p>
+                <pre><code>
+                int i = 0;
+                
+                while (i < 10) {
+                    i++;
+                    if (i % 2 == 0) {
+                        continue; // Skip even numbers
+                    }
+                    System.out.println("Odd number: " + i);
+                }
+                </code></pre>
+                <p>Output: This code prints only the odd numbers from 1 to 9, as the <code>continue</code> statement skips the even numbers.</p>
+            </div>
+            
+            
+  
+
+            <div class="content" id="java_switch">
+                <h2 id="java-switch-statement">Java Switch Statement</h2>
+                <p>The <code>switch</code> statement in Java is used to execute one block of code among many, based on the value of an expression. It's often used as a more readable alternative to multiple <code>if-else</code> statements when dealing with discrete values.</p>
+                
+                <h3>Basic Switch Statement</h3>
+                <p>The basic syntax of a <code>switch</code> statement involves specifying the expression to be evaluated, followed by one or more <code>case</code> labels and a final <code>default</code> label:</p>
+                <pre><code>
+                int day = 3;
+                
+                switch (day) {
+                    case 1:
+                        System.out.println("Monday");
+                        break;
+                    case 2:
+                        System.out.println("Tuesday");
+                        break;
+                    case 3:
+                        System.out.println("Wednesday");
+                        break;
+                    case 4:
+                        System.out.println("Thursday");
+                        break;
+                    case 5:
+                        System.out.println("Friday");
+                        break;
+                    case 6:
+                        System.out.println("Saturday");
+                        break;
+                    case 7:
+                        System.out.println("Sunday");
+                        break;
+                    default:
+                        System.out.println("Invalid day");
+                        break;
+                }
+                </code></pre>
+                <p>Output: This code prints "Wednesday" because the value of <code>day</code> is 3, which matches the <code>case 3</code> label.</p>
+            
+                <h3>Switch with Multiple Cases</h3>
+                <p>You can group multiple <code>case</code> labels together to execute the same block of code for different values:</p>
+                <pre><code>
+                int month = 6;
+                
+                switch (month) {
+                    case 1:
+                    case 2:
+                    case 12:
+                        System.out.println("Winter");
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        System.out.println("Spring");
+                        break;
+                    case 6:
+                    case 7:
+                    case 8:
+                        System.out.println("Summer");
+                        break;
+                    case 9:
+                    case 10:
+                    case 11:
+                        System.out.println("Fall");
+                        break;
+                    default:
+                        System.out.println("Invalid month");
+                        break;
+                }
+                </code></pre>
+                <p>Output: This code prints "Summer" because the value of <code>month</code> is 6, which matches the <code>case 6</code> label.</p>
+            
+                <h3>Switch with Strings (Java 7 and Later)</h3>
+                <p>Starting from Java 7, the <code>switch</code> statement can also work with <code>String</code> values:</p>
+                <pre><code>
+                String dayOfWeek = "Friday";
+                
+                switch (dayOfWeek) {
+                    case "Monday":
+                        System.out.println("Start of the work week");
+                        break;
+                    case "Friday":
+                        System.out.println("End of the work week");
+                        break;
+                    case "Saturday":
+                    case "Sunday":
+                        System.out.println("Weekend");
+                        break;
+                    default:
+                        System.out.println("Invalid day");
+                        break;
+                }
+                </code></pre>
+                <p>Output: This code prints "End of the work week" because the value of <code>dayOfWeek</code> is "Friday", which matches the <code>case "Friday"</code> label.</p>
+            
+                <h3>Switch with Fall-Through Behavior</h3>
+                <p>If a <code>case</code> does not have a <code>break</code> statement, execution will fall through to the next <code>case</code>:</p>
+                <pre><code>
+                int number = 2;
+                
+                switch (number) {
+                    case 1:
+                        System.out.println("One");
+                    case 2:
+                        System.out.println("Two");
+                    case 3:
+                        System.out.println("Three");
+                        break;
+                    default:
+                        System.out.println("Not 1, 2, or 3");
+                        break;
+                }
+                </code></pre>
+                <p>Output: This code prints "Two" and "Three" because there is no <code>break</code> statement after <code>case 1</code> and <code>case 2</code>, leading to fall-through behavior.</p>
+            </div>
+            
+            
+        
+            <div class="content" id="java_for_loop">
+                <h2 id="java-for-loop">Java For Loop</h2>
+                <p>The <code>for</code> loop in Java is used to iterate over a block of code a specific number of times. It is particularly useful when the number of iterations is known beforehand.</p>
+                
+                <h3>Basic For Loop</h3>
+                <p>The basic syntax of a <code>for</code> loop is as follows:</p>
+                <pre><code>
+                for (initialization; condition; update) {
+                    // Code to be executed
+                }
+                </code></pre>
+                <p>Here, <code>initialization</code> is executed once at the start, <code>condition</code> is evaluated before each iteration, and <code>update</code> is executed after each iteration.</p>
+                
+                <h3>Example of Basic For Loop</h3>
+                <pre><code>
+                for (int i = 0; i < 5; i++) {
+                    System.out.println("Iteration: " + i);
+                }
+                </code></pre>
+                <p>Output: This code prints the value of <code>i</code> from 0 to 4. The loop runs 5 times, incrementing <code>i</code> by 1 each time.</p>
+                
+                <h3>For Loop with Multiple Variables</h3>
+                <p>You can initialize and update multiple variables within a <code>for</code> loop:</p>
+                <pre><code>
+                for (int i = 0, j = 10; i < 5; i++, j--) {
+                    System.out.println("i: " + i + ", j: " + j);
+                }
+                </code></pre>
+                <p>Output: This code prints the values of <code>i</code> from 0 to 4 and <code>j</code> from 10 to 6, with <code>i</code> incrementing and <code>j</code> decrementing each iteration.</p>
+                
+                <h3>Enhanced For Loop</h3>
+                <p>The enhanced <code>for</code> loop (or "for-each" loop) is used to iterate over elements in an array or a collection:</p>
+                <pre><code>
+                int[] numbers = {1, 2, 3, 4, 5};
+                
+                for (int number : numbers) {
+                    System.out.println("Number: " + number);
+                }
+                </code></pre>
+                <p>Output: This code prints each element of the <code>numbers</code> array.</p>
+                
+                <h3>For Loop with Break and Continue</h3>
+                <p>The <code>break</code> statement can exit the loop early, and the <code>continue</code> statement can skip the current iteration and move to the next iteration:</p>
+                <pre><code>
+                for (int i = 0; i < 10; i++) {
+                    if (i == 5) {
+                        break; // Exit the loop when i is 5
+                    }
+                    if (i % 2 == 0) {
+                        continue; // Skip even numbers
+                    }
+                    System.out.println("Odd number: " + i);
+                }
+                </code></pre>
+                <p>Output: This code prints odd numbers less than 5. When <code>i</code> reaches 5, the <code>break</code> statement exits the loop.</p>
+            </div>
+            
+            
+  
+        
+            <div class="content" id="java-break-continue">
+                <h2 id="java-break-continue">Java Break and Continue Statements</h2>
+                <p>The <code>break</code> and <code>continue</code> statements in Java control the flow of loops. They provide ways to manage how and when loops should terminate or skip iterations.</p>
+                
+                <h3>Break Statement</h3>
+                <p>The <code>break</code> statement is used to exit from a loop prematurely. When <code>break</code> is encountered, the loop is terminated immediately, and control is transferred to the statement following the loop.</p>
+                <pre><code>
+                for (int i = 0; i < 10; i++) {
+                    if (i == 5) {
+                        break; // Exit the loop when i is 5
+                    }
+                    System.out.println("i: " + i);
+                }
+                </code></pre>
+                <p>Output: This code prints the values of <code>i</code> from 0 to 4. When <code>i</code> reaches 5, the <code>break</code> statement exits the loop.</p>
+                
+                <h3>Continue Statement</h3>
+                <p>The <code>continue</code> statement skips the current iteration of the loop and proceeds to the next iteration. It does not terminate the loop but rather bypasses the remaining code in the current iteration.</p>
+                <pre><code>
+                for (int i = 0; i < 10; i++) {
+                    if (i % 2 == 0) {
+                        continue; // Skip even numbers
+                    }
+                    System.out.println("Odd number: " + i);
+                }
+                </code></pre>
+                <p>Output: This code prints only the odd numbers from 1 to 9. Even numbers are skipped due to the <code>continue</code> statement.</p>
+                
+                <h3>Break and Continue in Nested Loops</h3>
+                <p>When using <code>break</code> or <code>continue</code> in nested loops, they affect only the innermost loop in which they are called. To break out of multiple nested loops, you might use labeled breaks.</p>
+                <pre><code>
+                outerLoop:
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        if (i * j > 6) {
+                            break outerLoop; // Exit both loops
+                        }
+                        System.out.println("i: " + i + ", j: " + j);
+                    }
+                }
+                </code></pre>
+                <p>Output: This code prints the values of <code>i</code> and <code>j</code> until the condition <code>i * j > 6</code> is met, at which point both loops are exited using the labeled <code>break</code>.</p>
+            </div>
+            
+            <div class="content" id="java-arrays">
+                <h2 id="java-arrays">Java Arrays</h2>
+                <p>Arrays in Java are used to store multiple values of the same type in a single variable. They provide a way to work with a fixed-size collection of elements efficiently.</p>
+                
+                <h3>Declaring and Initializing Arrays</h3>
+                <p>Arrays can be declared and initialized in several ways. Here are the common methods:</p>
+                <pre><code>
+                // Declaring an array
+                int[] numbers;
+                
+                // Initializing an array with values
+                numbers = new int[]{1, 2, 3, 4, 5};
+                
+                // Declaring and initializing an array in one line
+                int[] moreNumbers = {10, 20, 30, 40, 50};
+                </code></pre>
+                
+                <h3>Accessing Array Elements</h3>
+                <p>Array elements are accessed using an index, with indexing starting at 0. Here’s how you can access and modify array elements:</p>
+                <pre><code>
+                // Accessing an element
+                int firstNumber = moreNumbers[0]; // Gets the first element, which is 10
+                
+                // Modifying an element
+                moreNumbers[1] = 25; // Sets the second element to 25
+                </code></pre>
+                
+                <h3>Iterating Through Arrays</h3>
+                <p>Arrays can be iterated using loops. A common approach is using a <code>for</code> loop:</p>
+                <pre><code>
+                // Using a for loop to iterate through the array
+                for (int i = 0; i < moreNumbers.length; i++) {
+                    System.out.println("Element at index " + i + ": " + moreNumbers[i]);
+                }
+                
+                // Using an enhanced for loop (for-each loop)
+                for (int number : moreNumbers) {
+                    System.out.println("Number: " + number);
+                }
+                </code></pre>
+                
+                <h3>Multi-Dimensional Arrays</h3>
+                <p>Java supports multi-dimensional arrays, such as two-dimensional arrays, which are essentially arrays of arrays:</p>
+                <pre><code>
+                // Declaring a 2D array
+                int[][] matrix = new int[3][3];
+                
+                // Initializing a 2D array
+                int[][] predefinedMatrix = {
+                    {1, 2, 3},
+                    {4, 5, 6},
+                    {7, 8, 9}
+                };
+                
+                // Accessing an element in a 2D array
+                int element = predefinedMatrix[1][2]; // Gets the element at row 1, column 2, which is 6
+                </code></pre>
+                
+                <p>Output:</p>
+                <ul>
+                    <li>The first example shows how to declare and initialize arrays in Java.</li>
+                    <li>The second example demonstrates how to access and modify array elements.</li>
+                    <li>The third example illustrates how to iterate through arrays using both traditional and enhanced for loops.</li>
+                    <li>The final example introduces multi-dimensional arrays and how to work with them.</li>
+                </ul>
+            </div>
+            
+  
+
+            <div class="content" id="java-oop">
+                <h2 id="java-oop">Java Object-Oriented Programming (OOP)</h2>
+                <p>Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes to structure code. Java is an object-oriented language that supports the four main principles of OOP: encapsulation, inheritance, polymorphism, and abstraction.</p>
+                
+                <h3>1. Encapsulation</h3>
+                <p>Encapsulation is the concept of wrapping data (variables) and methods (functions) into a single unit called a class. It helps in hiding the internal state of an object and only exposes a controlled interface to interact with it.</p>
+                <pre><code>
+                // Example of encapsulation
+                public class Person {
+                    // Private variables
+                    private String name;
+                    private int age;
+                    
+                    // Public constructor
+                    public Person(String name, int age) {
+                        this.name = name;
+                        this.age = age;
+                    }
+                    
+                    // Public getter for name
+                    public String getName() {
+                        return name;
+                    }
+                    
+                    // Public setter for name
+                    public void setName(String name) {
+                        this.name = name;
+                    }
+                    
+                    // Public getter for age
+                    public int getAge() {
+                        return age;
+                    }
+                    
+                    // Public setter for age
+                    public void setAge(int age) {
+                        this.age = age;
+                    }
+                }
+                </code></pre>
+                
+                <h3>2. Inheritance</h3>
+                <p>Inheritance allows a class to inherit properties and methods from another class. This promotes code reusability and establishes a hierarchy between classes.</p>
+                <pre><code>
+                // Example of inheritance
+                public class Employee extends Person {
+                    // Additional property for Employee
+                    private double salary;
+                    
+                    // Constructor for Employee
+                    public Employee(String name, int age, double salary) {
+                        super(name, age); // Call the constructor of Person class
+                        this.salary = salary;
+                    }
+                    
+                    // Getter and setter for salary
+                    public double getSalary() {
+                        return salary;
+                    }
+                    
+                    public void setSalary(double salary) {
+                        this.salary = salary;
+                    }
+                }
+                </code></pre>
+                
+                <h3>3. Polymorphism</h3>
+                <p>Polymorphism allows methods to have the same name but different implementations based on the object calling the method. It enables one interface to be used for a general class of actions.</p>
+                <pre><code>
+                // Example of polymorphism
+                public class Animal {
+                    public void makeSound() {
+                        System.out.println("Some sound...");
+                    }
+                }
+                
+                public class Dog extends Animal {
+                    @Override
+                    public void makeSound() {
+                        System.out.println("Bark");
+                    }
+                }
+                
+                public class Cat extends Animal {
+                    @Override
+                    public void makeSound() {
+                        System.out.println("Meow");
+                    }
+                }
+                
+                // Testing polymorphism
+                public class Main {
+                    public static void main(String[] args) {
+                        Animal myDog = new Dog();
+                        Animal myCat = new Cat();
+                        
+                        myDog.makeSound(); // Outputs: Bark
+                        myCat.makeSound(); // Outputs: Meow
+                    }
+                }
+                </code></pre>
+                
+                <h3>4. Abstraction</h3>
+                <p>Abstraction involves hiding the complex implementation details and showing only the essential features of an object. In Java, abstraction is achieved using abstract classes and interfaces.</p>
+                <pre><code>
+                // Example of abstraction using abstract class
+                public abstract class Shape {
+                    // Abstract method (does not have a body)
+                    public abstract void draw();
+                    
+                    // Regular method
+                    public void fillColor() {
+                        System.out.println("Filling color...");
+                    }
+                }
+                
+                // Concrete subclass
+                public class Circle extends Shape {
+                    @Override
+                    public void draw() {
+                        System.out.println("Drawing a circle");
+                    }
+                }
+                
+                // Testing abstraction
+                public class Main {
+                    public static void main(String[] args) {
+                        Shape myShape = new Circle();
+                        myShape.draw(); // Outputs: Drawing a circle
+                        myShape.fillColor(); // Outputs: Filling color...
+                    }
+                }
+                </code></pre>
+                
+                <p>Output:</p>
+                <ul>
+                    <li>Encapsulation demonstrates how to protect and manage data within a class using getters and setters.</li>
+                    <li>Inheritance shows how a subclass can extend a superclass, inheriting its properties and methods.</li>
+                    <li>Polymorphism enables method overriding, allowing different classes to implement methods with the same name but different behaviors.</li>
+                    <li>Abstraction hides the complexities of an implementation and exposes only the necessary parts using abstract classes and methods.</li>
+                </ul>
+            </div>
+            
+            
+      
+            <div class="content" id="java-classes-objects">
+                <h2 id="java-classes-objects">Java Classes and Objects</h2>
+                <p>In Java, classes and objects are fundamental concepts in Object-Oriented Programming (OOP). A class is a blueprint for creating objects, and an object is an instance of a class.</p>
+                
+                <h3>1. Classes</h3>
+                <p>A class is a user-defined data type that contains data members (variables) and member functions (methods) that operate on the data. It defines the properties and behaviors of objects.</p>
+                <pre><code>
+                // Example of a class
+                public class Car {
+                    // Data members (variables)
+                    private String brand;
+                    private int year;
+                    
+                    // Constructor
+                    public Car(String brand, int year) {
+                        this.brand = brand;
+                        this.year = year;
+                    }
+                    
+                    // Method to display car details
+                    public void displayDetails() {
+                        System.out.println("Brand: " + brand);
+                        System.out.println("Year: " + year);
+                    }
+                    
+                    // Getter for brand
+                    public String getBrand() {
+                        return brand;
+                    }
+                    
+                    // Setter for brand
+                    public void setBrand(String brand) {
+                        this.brand = brand;
+                    }
+                    
+                    // Getter for year
+                    public int getYear() {
+                        return year;
+                    }
+                    
+                    // Setter for year
+                    public void setYear(int year) {
+                        this.year = year;
+                    }
+                }
+                </code></pre>
+                
+                <h3>2. Objects</h3>
+                <p>An object is an instance of a class. It represents a specific example of the class with its own state and behavior. You can create multiple objects from a single class.</p>
+                <pre><code>
+                // Example of creating and using objects
+                public class Main {
+                    public static void main(String[] args) {
+                        // Creating an object of the Car class
+                        Car myCar = new Car("Toyota", 2020);
+                        
+                        // Using methods of the Car class
+                        myCar.displayDetails();
+                        
+                        // Modifying the object's data
+                        myCar.setYear(2022);
+                        System.out.println("Updated Year: " + myCar.getYear());
+                    }
+                }
+                </code></pre>
+                
+                <p>Output:
+                - The first part of the code defines a class <code>Car</code> with data members, a constructor, and methods.
+                - The second part demonstrates creating an instance of the <code>Car</code> class, calling its methods, and modifying its data.</p>
+            </div>
+            
+            
+      
+    
+            <div class="content" id="java-class-attributes">
+                <h2 id="java-class-attributes">Java Class Attributes</h2>
+                <p>In Java, class attributes (also known as data members or fields) are variables that belong to a class. They represent the state or properties of objects created from that class.</p>
+                
+                <h3>1. Declaring Attributes</h3>
+                <p>Attributes are declared within a class and can have different access modifiers to control their visibility. They can be of any data type, including primitive types and objects.</p>
+                <pre><code>
+                // Example of declaring class attributes
+                public class Person {
+                    // Private attributes
+                    private String name;
+                    private int age;
+                    
+                    // Public attributes
+                    public String address;
+                    public double height;
+                }
+                </code></pre>
+                
+                <h3>2. Access Modifiers</h3>
+                <ul>
+                    <li><strong>Private:</strong> The attribute is accessible only within the class it is declared in. It is used to encapsulate data and enforce data hiding.</li>
+                    <li><strong>Public:</strong> The attribute is accessible from any other class. It is used for attributes that need to be exposed to other classes.</li>
+                    <li><strong>Protected:</strong> The attribute is accessible within the same package and by subclasses. (Not shown in the example above)</li>
+                    <li><strong>Default (package-private):</strong> The attribute is accessible only within its own package. (Not shown in the example above)</li>
+                </ul>
+                
+                <h3>3. Example of Using Attributes</h3>
+                <p>Here’s how attributes are used in practice:</p>
+                <pre><code>
+                // Example of using class attributes
+                public class Main {
+                    public static void main(String[] args) {
+                        // Creating an object of the Person class
+                        Person person = new Person();
+                        
+                        // Setting attributes using public access
+                        person.name = "John Doe";
+                        person.age = 30;
+                        person.address = "123 Main St";
+                        person.height = 5.9;
+                        
+                        // Displaying attributes
+                        System.out.println("Name: " + person.name);
+                        System.out.println("Age: " + person.age);
+                        System.out.println("Address: " + person.address);
+                        System.out.println("Height: " + person.height);
+                    }
+                }
+                </code></pre>
+                
+                <p>Output:
+                - The code sets and retrieves values for the attributes of a <code>Person</code> object.
+                - Attributes can be set directly if they are public, and their values can be accessed accordingly.</p>
+            </div>
+            
+
+            <div class="content" id="java-constructors">
+                <h2 id="java-constructors">Java Constructors</h2>
+                <p>In Java, a constructor is a special method that is used to initialize objects. It is called when an object of a class is created and has the same name as the class. Constructors do not have a return type, not even <code>void</code>.</p>
+                
+                <h3>Types of Constructors</h3>
+                <ul>
+                    <li><strong>Default Constructor:</strong> A constructor with no parameters. If no constructor is explicitly defined in the class, the Java compiler provides a default constructor that initializes all member variables to their default values.</li>
+                    <li><strong>Parameterized Constructor:</strong> A constructor that takes parameters. It allows initializing objects with specific values at the time of creation.</li>
+                </ul>
+                
+                <h3>Syntax</h3>
+                <pre><code>
+                // Default Constructor
+                public class Person {
+                    String name;
+                    int age;
+                    
+                    // Default constructor
+                    public Person() {
+                        name = "Unknown";
+                        age = 0;
+                    }
+                }
+                
+                // Parameterized Constructor
+                public class Person {
+                    String name;
+                    int age;
+                    
+                    // Parameterized constructor
+                    public Person(String name, int age) {
+                        this.name = name;
+                        this.age = age;
+                    }
+                }
+                </code></pre>
+                
+                <h3>Examples</h3>
+                <h4>Example: Default Constructor</h4>
+                <pre><code>
+                // Using the default constructor
+                public class Main {
+                    public static void main(String[] args) {
+                        // Creating an object using the default constructor
+                        Person person = new Person();
+                        System.out.println("Name: " + person.name);
+                        System.out.println("Age: " + person.age);
+                    }
+                }
+                </code></pre>
+                
+                <h4>Example: Parameterized Constructor</h4>
+                <pre><code>
+                // Using the parameterized constructor
+                public class Main {
+                    public static void main(String[] args) {
+                        // Creating an object using the parameterized constructor
+                        Person person = new Person("John Doe", 30);
+                        System.out.println("Name: " + person.name);
+                        System.out.println("Age: " + person.age);
+                    }
+                }
+                </code></pre>
+                
+                <p>Output:
+                - The default constructor initializes the <code>name</code> to "Unknown" and <code>age</code> to 0.
+                - The parameterized constructor initializes the <code>name</code> and <code>age</code> with the provided values.</p>
+            </div>
+            
+            
+      
+          
+ 
+  
+      
+    
+      </section>
+    </main>
+    
+      <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+      </footer>
+    
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function displaySum() {
+  const firstNum = Number(document.getElementById('firstNum').innerText);
+  const secondNum = Number(document.getElementById('secondNum').innerText);
+  const total = firstNum + secondNum;
+  document.getElementById('answer').innerText = total;
+}
+
+function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.querySelector('.main-content').style.marginLeft = "0";
+    }
+
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.querySelector('.main-content').style.marginLeft = "250px";
+    }
+  </script>
+</body>
+</html>

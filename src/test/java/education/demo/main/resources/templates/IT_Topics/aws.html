@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Basics</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #b0d4de;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+}
+
+main {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+.sql-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.sql-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 1 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+ caption {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-container input[type="submit"],
+    .form-container input[type="reset"] {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .form-container input[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+    .text-styles {
+      margin: 20px 0;
+      text-align: center;
+    }  /* Style for the side navigation */
+    .sidenav {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: 0.3s;
+    }
+
+    .sidenav a {
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 16px;
+      transition: margin-left 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .sidenav a {
+        text-align: center;
+        float: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
+h2, h3{
+  margin-top: 20px;
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-success text-white text-center py-3">
+    <h1>Learn aws Basics</h1>
+    <p>aws Explained for Beginners</p>
+</header>
+
+ <!-- Side Navigation -->
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#aws">aws</a>
+  <a href="#aws_introduction">aws introduction</a>
+  <a href="#aws_cloud_computing">aws cloud computing</a>
+  <a href="#aws_cloud_benefits">aws cloud benefits</a>
+  <a href="#aws_ec2">aws ec2</a>
+  <a href="#aws_ec2_instance_types">aws ec2 instance types</a>
+  <a href="#aws_ec2_pricing">aws ec2 pricing</a>
+  <a href="#aws_ec2_scaling">aws ec2 scaling</a>
+  <a href="#aws_cloud_auto_scaling">aws cloud auto scaling</a>
+  <a href="#aws_cloud_elastic_load_balancing">aws cloud elastic load balancing</a>
+  <a href="#aws_cloud_messaging_queuing">aws cloud messaging queuing</a>
+  <a href="#aws_sns">aws sns</a>
+  <a href="#aws_sqs">aws sqs</a>
+  <a href="#aws_lambda">aws lambda</a>
+  <a href="#aws_s3">aws s3</a>
+  
+  
+</div>>
+  <!-- Main Content -->
+  <div class="content">
+
+    <div id="main" class="main-content">
+     
+        <main class="container mt-4">
+            <section id="aws">
+                <h2>What is AWS?</h2>
+                <p>Amazon Web Services (AWS) is a comprehensive and widely adopted cloud platform that offers over 200 fully featured services from data centers globally. It provides a range of services including computing power, storage options, and networking capabilities to help businesses scale and grow.</p>
+                
+                <h3>Key AWS Services</h3>
+                <ul>
+                    <li><strong>EC2 (Elastic Compute Cloud):</strong> Virtual servers that allow you to run applications in the cloud.</li>
+                    <li><strong>S3 (Simple Storage Service):</strong> Scalable object storage service for storing and retrieving any amount of data.</li>
+                    <li><strong>RDS (Relational Database Service):</strong> Managed relational database service that supports multiple database engines.</li>
+                    <li><strong>Lambda:</strong> Serverless compute service that automatically manages the infrastructure for running code in response to events.</li>
+                    <li><strong>DynamoDB:</strong> Managed NoSQL database service that offers fast and predictable performance with seamless scalability.</li>
+                    <li><strong>CloudFront:</strong> Content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to users globally.</li>
+                </ul>
+                
+                <h3>Benefits of AWS</h3>
+                <ul>
+                    <li><strong>Scalability:</strong> Automatically scale up or down based on demand without the need to provision hardware.</li>
+                    <li><strong>Flexibility:</strong> Wide range of services and tools that allow you to build, deploy, and manage applications in the cloud.</li>
+                    <li><strong>Security:</strong> Strong security standards with data encryption, network firewalls, and compliance certifications.</li>
+                    <li><strong>Cost-Effective:</strong> Pay-as-you-go pricing model that allows businesses to optimize their IT costs.</li>
+                    <li><strong>Global Reach:</strong> Data centers located in multiple regions around the world, allowing for low-latency access to services.</li>
+                </ul>
+                
+                <p>* AWS enables organizations to deploy applications quickly and efficiently, supporting a wide variety of use cases from simple websites to complex machine learning applications.</p>
+            </section>
+            
+            
+            
+        
+        
+            <section id="aws_introduction">
+                <h2>AWS Introduction</h2>
+                
+                <h3>History of AWS</h3>
+                <p>Amazon Web Services (AWS) was launched by Amazon in 2006 to provide on-demand cloud computing platforms and APIs to individuals, companies, and governments. It started with services like Amazon S3 (Simple Storage Service) and EC2 (Elastic Compute Cloud) and has grown into a comprehensive cloud platform with over 200 services.</p>
+                
+                <h3>Introduction to AWS</h3>
+                <p>AWS is a leading cloud service provider that offers a wide array of cloud computing services, including computing power, storage, databases, machine learning, and artificial intelligence. AWS is used by millions of customers worldwide, ranging from startups to large enterprises, to power their applications, websites, and infrastructure.</p>
+                
+                <h3>How AWS Works</h3>
+                <p>AWS provides cloud services on a pay-as-you-go model, allowing businesses to access the computing resources they need without having to invest in physical infrastructure. Services are accessed via a web interface, API, or SDK, enabling developers to build and deploy applications in the cloud. AWS operates on a global network of data centers, providing high availability and low latency to customers.</p>
+                
+                <h3>Key AWS Services</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>EC2 (Elastic Compute Cloud)</td>
+                            <td>Provides scalable virtual servers for running applications.</td>
+                        </tr>
+                        <tr>
+                            <td>S3 (Simple Storage Service)</td>
+                            <td>Offers scalable object storage for data backup and archiving.</td>
+                        </tr>
+                        <tr>
+                            <td>RDS (Relational Database Service)</td>
+                            <td>Managed relational database service supporting multiple database engines.</td>
+                        </tr>
+                        <tr>
+                            <td>Lambda</td>
+                            <td>Serverless compute service that runs code in response to events.</td>
+                        </tr>
+                        <tr>
+                            <td>CloudFront</td>
+                            <td>Content delivery network (CDN) that delivers content with low latency.</td>
+                        </tr>
+                        <tr>
+                            <td>DynamoDB</td>
+                            <td>Managed NoSQL database service with high availability and scalability.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            
+        
+            <section id="aws_cloud_computing">
+                <h2>AWS Cloud Computing</h2>
+            
+                <h3>Introduction to Cloud Computing</h3>
+                <p>Cloud computing is the delivery of computing services over the internet, including storage, processing power, databases, networking, and software. Instead of owning physical data centers and servers, businesses can access these resources on-demand from cloud providers like AWS, paying only for what they use.</p>
+            
+                <h3>AWS Services Overview</h3>
+                <p>AWS offers a broad range of cloud services that enable businesses to run virtually everything in the cloud, from simple web applications to complex enterprise-grade solutions. Key services include:</p>
+                <ul>
+                    <li><strong>EC2:</strong> Scalable virtual servers for computing power.</li>
+                    <li><strong>S3:</strong> Highly scalable object storage for data archiving, backups, and content distribution.</li>
+                    <li><strong>RDS:</strong> Managed relational databases with support for various database engines.</li>
+                    <li><strong>Lambda:</strong> Serverless compute service that allows you to run code without provisioning servers.</li>
+                    <li><strong>CloudFront:</strong> Content delivery network (CDN) for delivering content globally with low latency.</li>
+                </ul>
+            
+                <h3>AWS Syntax</h3>
+                <p>In AWS, cloud resources are managed through a variety of interfaces, including the AWS Management Console, command-line interface (CLI), and APIs. Here are some examples:</p>
+                <pre>
+                    <code># Example of launching an EC2 instance using AWS CLI
+            aws ec2 run-instances --image-id ami-12345678 --count 1 --instance-type t2.micro --key-name MyKeyPair
+            
+            # Example of creating an S3 bucket using AWS CLI
+            aws s3 mb s3://my-new-bucket</code>
+                </pre>
+                <p>In these examples, AWS CLI commands are used to launch an EC2 instance and create an S3 bucket, showcasing how cloud resources can be managed programmatically.</p>
+            
+                <h3>AWS Comments</h3>
+                <p>Comments in AWS CLI scripts or AWS SDK code are used to explain the code and are ignored during execution. In shell scripts, comments start with <code>#</code>, while in Python-based AWS SDK (Boto3) code, comments start with <code>#</code> as well.</p>
+                <pre>
+                    <code># This is a comment in a shell script
+            # Launch an EC2 instance
+            aws ec2 run-instances --image-id ami-12345678 --count 1 --instance-type t2.micro --key-name MyKeyPair</code>
+                </pre>
+                <p>These comments help explain what the AWS commands are doing, making the scripts easier to understand and maintain.</p>
+            </section>
+            
+            
+        
+            <section id="aws_cloud_benefits">
+                <h2>AWS Cloud Benefits</h2>
+            
+                <h3>Scalability</h3>
+                <p>AWS provides scalable infrastructure that can grow with your business. Whether you need to scale up to handle a surge in traffic or scale down during off-peak times, AWS can automatically adjust your resources to meet demand.</p>
+                <pre>
+                    <code>AWS Auto Scaling: 
+                    Automatically adjusts the number of EC2 instances in a group based on demand.</code>
+                </pre>
+                <p>In this example, AWS Auto Scaling adjusts the number of EC2 instances automatically based on the current load, ensuring that your application runs efficiently.</p>
+            
+                <h3>Cost-Effectiveness</h3>
+                <p>With AWS, you only pay for the services you use, which helps optimize costs. The pay-as-you-go pricing model allows businesses to reduce capital expenditure and control operating costs.</p>
+                <pre>
+                    <code>AWS Pricing Calculator:
+                    Estimate the cost of using AWS services before you start building.</code>
+                </pre>
+                <p>This tool allows you to estimate the cost of your AWS infrastructure before deployment, helping you manage your budget effectively.</p>
+            
+                <h3>Security</h3>
+                <p>AWS offers robust security features, including data encryption, network firewalls, and compliance certifications, to protect your data and applications.</p>
+                <pre>
+                    <code>AWS IAM: 
+                    Manage access to AWS services and resources securely.</code>
+                </pre>
+                <p>AWS Identity and Access Management (IAM) enables you to control who can access your AWS resources, ensuring that only authorized users can perform actions on your cloud environment.</p>
+            
+                <h3>Global Reach</h3>
+                <p>AWS has a global network of data centers, providing low-latency access to cloud services from anywhere in the world. This allows businesses to serve customers efficiently, regardless of their location.</p>
+                <pre>
+                    <code>AWS Global Infrastructure: 
+                    Access cloud services from over 25 regions and 80 availability zones worldwide.</code>
+                </pre>
+                <p>AWS's global infrastructure ensures that your applications are available and responsive, no matter where your users are located.</p>
+            </section>
+            
+            
+            <section id="aws_ec2">
+                <h3>AWS EC2 (Elastic Compute Cloud)</h3>
+                <p>AWS EC2 (Elastic Compute Cloud) is a web service that provides secure, resizable compute capacity in the cloud. It allows users to run virtual servers, known as instances, and offers a wide range of instance types optimized to fit different use cases.</p>
+            
+                <pre>
+                    <code>
+            # Launching an EC2 instance using AWS CLI
+            aws ec2 run-instances --image-id ami-12345678 --instance-type t2.micro --key-name MyKeyPair
+                    </code>
+                </pre>
+            
+                <p>For example, the above command launches an EC2 instance using a specified Amazon Machine Image (AMI) and instance type. The <code>t2.micro</code> instance type is commonly used for low-cost, general-purpose workloads.</p>
+            
+                <h3>EC2 Instance Types</h3>
+                <p>AWS EC2 offers various instance types, each designed for specific workloads. Here are some common instance types:</p>
+                <ul>
+                    <li><strong>General Purpose:</strong> Balanced compute, memory, and networking resources (e.g., <code>t2.micro</code>, <code>m5.large</code>).</li>
+                    <li><strong>Compute Optimized:</strong> Ideal for compute-bound applications (e.g., <code>c5.large</code>, <code>c5n.large</code>).</li>
+                    <li><strong>Memory Optimized:</strong> Optimized for memory-intensive applications (e.g., <code>r5.large</code>, <code>x1e.xlarge</code>).</li>
+                    <li><strong>Storage Optimized:</strong> Designed for workloads requiring high, sequential read and write access to large data sets (e.g., <code>i3.large</code>, <code>i3en.large</code>).</li>
+                    <li><strong>GPU Instances:</strong> For applications requiring graphics processing units, such as machine learning (e.g., <code>p3.large</code>, <code>g4dn.xlarge</code>).</li>
+                </ul>
+            
+                <p>These instance types allow you to select the optimal configuration for your specific workload, ensuring that you have the right balance of computing power, memory, and storage.</p>
+            </section>
+            
+            
+        
+        
+        
+            <section id="aws_ec2_instance_types">
+                <h3>AWS EC2 Instance Types</h3>
+                <p>Amazon EC2 offers a variety of instance types that are optimized for different use cases. These instance types are categorized into families based on their target applications, such as compute-optimized, memory-optimized, or storage-optimized instances.</p>
+                
+                <ul>
+                    <li><strong>General Purpose:</strong> Balances compute, memory, and networking resources. Examples include <code>t3</code> and <code>m5</code> instances.</li>
+                    <li><strong>Compute Optimized:</strong> Designed for compute-bound applications. Examples include <code>c5</code> and <code>c6g</code> instances.</li>
+                    <li><strong>Memory Optimized:</strong> Provides high memory capacity for memory-intensive applications. Examples include <code>r5</code> and <code>x1e</code> instances.</li>
+                    <li><strong>Storage Optimized:</strong> Offers high storage throughput and capacity. Examples include <code>i3</code> and <code>d2</code> instances.</li>
+                </ul>
+                
+                <p>Each instance type is designed to provide a specific combination of resources, so you can select the type that best meets your application's requirements.</p>
+            </section>
+            
+            
+        
+
+            <section id="aws_ec2_pricing">
+                <h3>AWS EC2 Pricing</h3>
+                <p>AWS EC2 pricing varies based on several factors including instance type, region, and usage duration. Here’s a basic overview:</p>
+                
+                <ul>
+                    <li><strong>On-Demand Instances:</strong> Pay for compute capacity by the hour or second with no long-term commitments. This pricing is ideal for applications with unpredictable workloads.</li>
+                    <li><strong>Reserved Instances:</strong> Commit to using EC2 instances for a one or three-year term in exchange for a significant discount compared to on-demand pricing. Suitable for applications with predictable workloads.</li>
+                    <li><strong>Spot Instances:</strong> Purchase unused EC2 capacity at a reduced rate. Spot Instances are ideal for flexible, fault-tolerant applications and can offer substantial savings.</li>
+                    <li><strong>Dedicated Hosts:</strong> Allocate an entire physical server to your use. This option is useful for compliance and licensing requirements.</li>
+                    <li><strong>Dedicated Instances:</strong> Run instances on hardware that’s dedicated to your use, but without the full isolation provided by Dedicated Hosts.</li>
+                </ul>
+                
+                <p>Pricing also varies by region, as different regions have different costs associated with data centers. To get an accurate estimate, you can use the <a href="https://aws.amazon.com/ec2/pricing/">AWS Pricing Calculator</a>.</p>
+            </section>
+            
+            
+      
+
+            <section id="aws_ec2_scaling">
+                <h2>AWS EC2 Scaling</h2>
+                <h3>Scaling EC2 Instances</h3>
+                <p>Scaling EC2 instances allows you to adjust your compute capacity based on demand. AWS provides two main types of scaling:</p>
+                
+                <ul>
+                    <li><strong>Vertical Scaling (Scaling Up/Down):</strong> Involves changing the instance type to a more powerful or less powerful instance. This can be useful when you need to handle increased workloads or reduce costs. For example, upgrading from a <code>t3.medium</code> instance to a <code>t3.large</code> for more compute power.</li>
+                    <li><strong>Horizontal Scaling (Scaling Out/In):</strong> Involves adding or removing instances in a fleet. This method increases or decreases the number of instances based on traffic or workload. It is commonly used with Auto Scaling Groups to automatically adjust the number of running instances.</li>
+                </ul>
+                
+                <h3>Auto Scaling Groups</h3>
+                <p>Auto Scaling Groups (ASGs) automatically adjust the number of EC2 instances in response to changing demand. You can configure policies to scale out (add more instances) or scale in (remove instances) based on metrics such as CPU utilization or request count.</p>
+                
+                <pre>
+                    <code>
+            -- Example: Auto Scaling Policy to scale out when CPU utilization exceeds 80%
+            -- This is typically set up in the AWS Management Console or using AWS CLI/SDKs
+            
+            aws autoscaling put-scaling-policy --auto-scaling-group-name my-auto-scaling-group \
+            --policy-name scale-out --scaling-adjustment 1 --adjustment-type ChangeInCapacity \
+            --cooldown 300
+                    </code>
+                </pre>
+                
+                <p>This example demonstrates how to create a scaling policy that increases the number of instances by one when CPU utilization exceeds 80%. You can configure similar policies for scaling in, as well as based on other metrics and thresholds.</p>
+            </section>
+            
+            
+    
+            <section id="aws_cloud_auto_scaling">
+                <h2>AWS Cloud Auto Scaling</h2>
+                <p>AWS Auto Scaling helps you maintain application performance and availability by automatically adjusting the number of EC2 instances in response to varying demand. It ensures that you have the right number of instances available at all times to handle your application’s workload.</p>
+                
+                <h3>Key Features of AWS Auto Scaling</h3>
+                <ul>
+                    <li><strong>Automatic Scaling:</strong> Automatically scales the number of EC2 instances based on defined policies and conditions, such as CPU utilization, memory usage, or custom metrics.</li>
+                    <li><strong>Scaling Policies:</strong> Define when and how to scale your resources. Policies can be based on thresholds for metrics such as CPU utilization, network traffic, or application load.</li>
+                    <li><strong>Scheduled Scaling:</strong> Automatically adjusts the number of instances at predefined times, such as increasing capacity during peak hours and decreasing it during off-peak hours.</li>
+                    <li><strong>Health Checks:</strong> Monitors the health of your instances and replaces any that are unhealthy to maintain high availability.</li>
+                </ul>
+                
+                <h3>Setting Up Auto Scaling</h3>
+                <p>To set up Auto Scaling, you need to create an Auto Scaling Group (ASG) and define scaling policies. You can do this through the AWS Management Console, CLI, or SDKs.</p>
+                
+                <pre>
+                    <code>
+            -- Example: Create an Auto Scaling Group with a minimum of 2 instances and a maximum of 5 instances
+            
+            aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-asg \
+            --launch-configuration-name my-launch-configuration --min-size 2 --max-size 5 \
+            --desired-capacity 2 --availability-zones us-east-1a us-east-1b
+                    </code>
+                </pre>
+                
+                <p>This example creates an Auto Scaling Group named <code>my-asg</code> with a minimum of 2 instances, a maximum of 5 instances, and an initial desired capacity of 2. It spans two availability zones to enhance fault tolerance.</p>
+                
+                <h3>Scaling Policies</h3>
+                <pre>
+                    <code>
+            -- Example: Create a scaling policy to increase capacity by 1 instance when CPU utilization exceeds 70%
+            
+            aws autoscaling put-scaling-policy --auto-scaling-group-name my-asg \
+            --policy-name scale-out --scaling-adjustment 1 --adjustment-type ChangeInCapacity \
+            --cooldown 300
+                    </code>
+                </pre>
+                
+                <p>This example sets up a policy that increases the number of instances by 1 when CPU utilization exceeds 70%. The <code>cooldown</code> period ensures that scaling actions are not executed too frequently.</p>
+            </section>
+            
+            
+  
+            <section id="aws_cloud_elastic_load_balancing">
+                <h2>AWS Cloud Elastic Load Balancing</h2>
+                <p>AWS Elastic Load Balancing (ELB) automatically distributes incoming application or network traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. This helps to ensure high availability and fault tolerance for your applications.</p>
+                
+                <h3>Types of Load Balancers</h3>
+                <ul>
+                    <li><strong>Application Load Balancer (ALB):</strong> Operates at the application layer (Layer 7) and is ideal for load balancing HTTP and HTTPS traffic. It supports advanced routing features, such as host-based and path-based routing.</li>
+                    <li><strong>Network Load Balancer (NLB):</strong> Operates at the transport layer (Layer 4) and is designed to handle millions of requests per second while maintaining ultra-low latency. It is suitable for TCP, UDP, and TLS traffic.</li>
+                    <li><strong>Gateway Load Balancer (GWLB):</strong> Provides a transparent network gateway for distributing traffic across virtual appliances such as firewalls and intrusion detection systems. It combines the features of a Layer 3 and Layer 4 load balancer with network and security appliance integration.</li>
+                    <li><strong>Classic Load Balancer (CLB):</strong> Operates at both Layer 4 and Layer 7 and is used for legacy applications that do not require the advanced features provided by ALB and NLB. CLB is being phased out in favor of ALB and NLB.</li>
+                </ul>
+                
+                <h3>Setting Up a Load Balancer</h3>
+                <p>To set up an Elastic Load Balancer, you need to create and configure the load balancer, set up listeners, and define target groups. This can be done through the AWS Management Console, CLI, or SDKs.</p>
+                
+                <pre>
+                    <code>
+            -- Example: Create an Application Load Balancer
+            
+            aws elbv2 create-load-balancer --name my-alb \
+            --subnets subnet-12345678 subnet-23456789 \
+            --security-groups sg-12345678 \
+            --scheme internet-facing \
+            --type application \
+            --ip-address-type ipv4
+                    </code>
+                </pre>
+                
+                <p>This example creates an Application Load Balancer named <code>my-alb</code> in specified subnets with defined security groups. It is configured to be internet-facing and supports IPv4 addresses.</p>
+                
+                <h3>Configuring Listeners and Target Groups</h3>
+                <pre>
+                    <code>
+            -- Example: Add a listener to the Application Load Balancer to forward HTTP traffic to a target group
+            
+            aws elbv2 create-listener --load-balancer-arn arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/my-alb/50dc6c495d5c3e3f \
+            --protocol HTTP --port 80 \
+            --default-actions Type=forward,TargetGroupArn=arn:aws:elasticloadbalancing:region:account-id:targetgroup/my-target-group/73e2d7c2f0d1e1e6
+                    </code>
+                </pre>
+                
+                <p>This example creates a listener for HTTP traffic on port 80 for the specified Application Load Balancer, forwarding traffic to a defined target group.</p>
+            </section>
+            
+            
+
+  
+            <section id="aws_cloud_messaging_queuing">
+                <h2>AWS Cloud Messaging and Queuing</h2>
+                <p>AWS provides several services for messaging and queuing, allowing applications to communicate and process data asynchronously. These services are essential for building scalable and decoupled systems.</p>
+                
+                <h3>Amazon Simple Notification Service (SNS)</h3>
+                <p>Amazon SNS is a fully managed messaging service that allows you to send messages or notifications to a large number of subscribers. It supports various communication protocols, including SMS, email, and application notifications.</p>
+                
+                <pre>
+                    <code>
+            -- Example: Publish a message to an SNS topic
+            
+            aws sns publish --topic-arn arn:aws:sns:region:account-id:my-topic \
+            --message "Hello, this is a test message"
+                    </code>
+                </pre>
+                
+                <p>This example publishes a message to the specified SNS topic. Subscribers to this topic will receive the message based on their subscription protocols.</p>
+                
+                <h3>Amazon Simple Queue Service (SQS)</h3>
+                <p>Amazon SQS is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It allows you to store and process messages in a queue.</p>
+                
+                <pre>
+                    <code>
+            -- Example: Send a message to an SQS queue
+            
+            aws sqs send-message --queue-url https://sqs.region.amazonaws.com/account-id/my-queue \
+            --message-body "This is a test message"
+                    </code>
+                </pre>
+                
+                <p>This example sends a message to the specified SQS queue. The message will be held in the queue until it is processed by a consumer.</p>
+                
+                <h3>Amazon Simple Notification Service (SNS) and Simple Queue Service (SQS) Integration</h3>
+                <p>SNS can be integrated with SQS to create a messaging pipeline. SNS can publish messages to an SQS queue, which then stores the messages until they are processed by consumers.</p>
+                
+                <pre>
+                    <code>
+            -- Example: Subscribe an SQS queue to an SNS topic
+            
+            aws sns subscribe --topic-arn arn:aws:sns:region:account-id:my-topic \
+            --protocol sqs --notification-endpoint arn:aws:sqs:region:account-id:my-queue
+                    </code>
+                </pre>
+                
+                <p>This example subscribes an SQS queue to an SNS topic. Messages published to the SNS topic will be delivered to the SQS queue.</p>
+                
+                <h3>Amazon MQ</h3>
+                <p>Amazon MQ is a managed message broker service that supports Apache ActiveMQ and RabbitMQ. It simplifies the setup, operation, and scaling of message brokers, providing a fully managed environment for messaging.</p>
+                
+                <pre>
+                    <code>
+            -- Example: Create a new ActiveMQ broker instance
+            
+            aws mq create-broker --broker-name my-broker --broker-engine-type ACTIVE_MQ \
+            --broker-engine-version 5.15.10 --host-instance-type mq.t3.micro \
+            --security-groups sg-12345678
+                    </code>
+                </pre>
+                
+                <p>This example creates a new ActiveMQ broker instance. The broker will handle messaging for applications using ActiveMQ.</p>
+            </section>
+            
+            
+  
+            <section id="aws_sns">
+                <h2>AWS Simple Notification Service (SNS)</h2>
+                <p>Amazon Simple Notification Service (SNS) is a fully managed service that enables you to send messages or notifications to a large number of recipients. SNS supports multiple communication protocols, including email, SMS, and application notifications, making it versatile for various use cases.</p>
+                
+                <h3>Key Features of SNS</h3>
+                <ul>
+                    <li><strong>Pub/Sub Messaging:</strong> SNS uses a publish/subscribe model to distribute messages to multiple subscribers. Publishers send messages to topics, and subscribers receive notifications based on their subscription protocols.</li>
+                    <li><strong>Support for Multiple Protocols:</strong> SNS supports various communication methods, including SMS, email, HTTP/HTTPS, and application endpoints for mobile push notifications.</li>
+                    <li><strong>Scalability:</strong> SNS is designed to handle large-scale message delivery, ensuring that messages are distributed efficiently even during peak loads.</li>
+                    <li><strong>Message Filtering:</strong> SNS allows you to filter messages based on attributes, enabling targeted notifications to subscribers.</li>
+                    <li><strong>Delivery Status Logging:</strong> SNS can provide message delivery status information for monitoring and debugging purposes.</li>
+                </ul>
+                
+                <h3>Creating an SNS Topic</h3>
+                <pre>
+                    <code>
+            -- Example: Create an SNS topic
+            
+            aws sns create-topic --name my-topic
+                    </code>
+                </pre>
+                
+                <p>This example creates a new SNS topic named <code>my-topic</code>. Topics are used to categorize messages and allow multiple subscribers to receive the same message.</p>
+                
+                <h3>Subscribing to a Topic</h3>
+                <pre>
+                    <code>
+            -- Example: Subscribe an email address to an SNS topic
+            
+            aws sns subscribe --topic-arn arn:aws:sns:region:account-id:my-topic \
+            --protocol email --notification-endpoint example@example.com
+                    </code>
+                </pre>
+                
+                <p>This example subscribes an email address to the specified SNS topic. Subscribers will receive notifications sent to this topic via email.</p>
+                
+                <h3>Publishing a Message to a Topic</h3>
+                <pre>
+                    <code>
+            -- Example: Publish a message to an SNS topic
+            
+            aws sns publish --topic-arn arn:aws:sns:region:account-id:my-topic \
+            --message "Hello, this is a test message"
+                    </code>
+                </pre>
+                
+                <p>This example publishes a message to the SNS topic <code>my-topic</code>. All subscribers of this topic will receive the message based on their subscription protocol.</p>
+                
+                <h3>Deleting an SNS Topic</h3>
+                <pre>
+                    <code>
+            -- Example: Delete an SNS topic
+            
+            aws sns delete-topic --topic-arn arn:aws:sns:region:account-id:my-topic
+                    </code>
+                </pre>
+                
+                <p>This example deletes the specified SNS topic. All subscriptions associated with the topic will also be removed.</p>
+            </section>
+            
+            
+
+        
+            <section id="aws_sqs">
+                <h2>AWS Simple Queue Service (SQS)</h2>
+                <p>Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS helps you to store and process messages in a queue until they are processed by the consuming application.</p>
+                
+                <h3>Key Features of SQS</h3>
+                <ul>
+                    <li><strong>Decoupling:</strong> SQS allows you to decouple application components so that they run independently, improving system reliability and scalability.</li>
+                    <li><strong>Message Durability:</strong> SQS stores messages across multiple servers and data centers, ensuring durability and reliability.</li>
+                    <li><strong>Scalability:</strong> SQS can handle high throughput and is designed to scale with the size and volume of your application’s traffic.</li>
+                    <li><strong>Flexible Message Retention:</strong> SQS allows you to retain messages for up to 14 days, providing flexibility in processing time.</li>
+                    <li><strong>Visibility Timeout:</strong> SQS provides a visibility timeout feature to prevent multiple consumers from processing the same message simultaneously.</li>
+                </ul>
+                
+                <h3>Creating an SQS Queue</h3>
+                <pre>
+                    <code>
+            -- Example: Create an SQS queue
+            
+            aws sqs create-queue --queue-name my-queue
+                    </code>
+                </pre>
+                
+                <p>This example creates a new SQS queue named <code>my-queue</code>. The queue will be used to store and manage messages.</p>
+                
+                <h3>Sending a Message to a Queue</h3>
+                <pre>
+                    <code>
+            -- Example: Send a message to an SQS queue
+            
+            aws sqs send-message --queue-url https://sqs.region.amazonaws.com/account-id/my-queue \
+            --message-body "This is a test message"
+                    </code>
+                </pre>
+                
+                <p>This example sends a message with the body "This is a test message" to the specified SQS queue.</p>
+                
+                <h3>Receiving Messages from a Queue</h3>
+                <pre>
+                    <code>
+            -- Example: Receive messages from an SQS queue
+            
+            aws sqs receive-message --queue-url https://sqs.region.amazonaws.com/account-id/my-queue
+                    </code>
+                </pre>
+                
+                <p>This example retrieves messages from the specified SQS queue. The received messages can then be processed by the application.</p>
+                
+                <h3>Deleting a Message from a Queue</h3>
+                <pre>
+                    <code>
+            -- Example: Delete a message from an SQS queue
+            
+            aws sqs delete-message --queue-url https://sqs.region.amazonaws.com/account-id/my-queue \
+            --receipt-handle receipt-handle
+                    </code>
+                </pre>
+                
+                <p>This example deletes a message from the SQS queue using the <code>receipt-handle</code> obtained when the message was received.</p>
+                
+                <h3>Deleting an SQS Queue</h3>
+                <pre>
+                    <code>
+            -- Example: Delete an SQS queue
+            
+            aws sqs delete-queue --queue-url https://sqs.region.amazonaws.com/account-id/my-queue
+                    </code>
+                </pre>
+                
+                <p>This example deletes the specified SQS queue. All messages in the queue will also be removed.</p>
+            </section>
+            
+            
+
+
+    
+            <section id="aws_lambda">
+                <h2>AWS Lambda</h2>
+                <p>AWS Lambda is a serverless compute service that allows you to run code without provisioning or managing servers. You can trigger Lambda functions in response to various events, such as changes in data, HTTP requests, or scheduled tasks.</p>
+                
+                <h3>Key Features of AWS Lambda</h3>
+                <ul>
+                    <li><strong>Serverless Architecture:</strong> AWS Lambda abstracts the underlying infrastructure, allowing you to focus solely on your code without managing servers.</li>
+                    <li><strong>Event-Driven:</strong> Lambda functions can be triggered by various AWS services, such as S3, DynamoDB, SNS, and more, enabling event-driven architectures.</li>
+                    <li><strong>Automatic Scaling:</strong> Lambda automatically scales your application by running code in response to each event, handling multiple concurrent executions without manual intervention.</li>
+                    <li><strong>Pay-as-You-Go Pricing:</strong> You pay only for the compute time you consume, with no charges for idle time. Billing is based on the number of requests and the duration of code execution.</li>
+                    <li><strong>Integrated with AWS Services:</strong> Lambda integrates seamlessly with other AWS services, allowing you to build complex workflows and applications efficiently.</li>
+                </ul>
+                
+                <h3>Creating a Lambda Function</h3>
+                <pre>
+                    <code>
+            -- Example: Create a Lambda function using the AWS CLI
+            
+            aws lambda create-function --function-name my-function \
+            --runtime python3.8 --role arn:aws:iam::account-id:role/execution-role \
+            --handler lambda_function.lambda_handler --zip-file fileb://function.zip
+                    </code>
+                </pre>
+                
+                <p>This example creates a Lambda function named <code>my-function</code> with the Python 3.8 runtime. It specifies an IAM role for execution and the handler function.</p>
+                
+                <h3>Invoking a Lambda Function</h3>
+                <pre>
+                    <code>
+            -- Example: Invoke a Lambda function using the AWS CLI
+            
+            aws lambda invoke --function-name my-function \
+            --payload '{"key1": "value1"}' response.json
+                    </code>
+                </pre>
+                
+                <p>This example invokes the Lambda function <code>my-function</code> with a payload and saves the response to <code>response.json</code>.</p>
+                
+                <h3>Updating a Lambda Function</h3>
+                <pre>
+                    <code>
+            -- Example: Update a Lambda function's code
+            
+            aws lambda update-function-code --function-name my-function \
+            --zip-file fileb://updated-function.zip
+                    </code>
+                </pre>
+                
+                <p>This example updates the code of the Lambda function <code>my-function</code> with a new deployment package.</p>
+                
+                <h3>Deleting a Lambda Function</h3>
+                <pre>
+                    <code>
+            -- Example: Delete a Lambda function
+            
+            aws lambda delete-function --function-name my-function
+                    </code>
+                </pre>
+                
+                <p>This example deletes the Lambda function named <code>my-function</code>.</p>
+            </section>
+            
+            
+  
+
+            <section id="aws_s3">
+                <h2>AWS S3 - Simple Storage Service</h2>
+                <p>AWS S3 (Simple Storage Service) is a scalable object storage service that provides high availability and durability. It is commonly used for storing and retrieving any amount of data at any time, from anywhere on the web.</p>
+                
+                <h3>Key Features of AWS S3</h3>
+                <ul>
+                    <li><strong>Scalability:</strong> Automatically scales to handle the size and number of objects, making it ideal for applications with variable storage needs.</li>
+                    <li><strong>Durability:</strong> Designed for 99.999999999% (11 9's) durability by replicating data across multiple facilities and devices.</li>
+                    <li><strong>Accessibility:</strong> Provides web-based access to data with features such as versioning, lifecycle management, and cross-region replication.</li>
+                    <li><strong>Security:</strong> Supports various security features, including data encryption at rest and in transit, access control policies, and bucket policies.</li>
+                    <li><strong>Cost-Effective:</strong> Offers a pay-as-you-go pricing model based on the amount of data stored and the number of requests made to access the data.</li>
+                </ul>
+                
+                <h3>Creating an S3 Bucket</h3>
+                <pre><code>
+            -- Example: Create an S3 bucket using the AWS CLI
+            
+            aws s3api create-bucket --bucket my-bucket --region us-east-1
+                </code></pre>
+                <p>This example creates an S3 bucket named <code>my-bucket</code> in the <code>us-east-1</code> region.</p>
+                
+                <h3>Uploading Files to S3</h3>
+                <pre><code>
+            -- Example: Upload a file to an S3 bucket using the AWS CLI
+            
+            aws s3 cp localfile.txt s3://my-bucket/
+                </code></pre>
+                <p>This example uploads a file named <code>localfile.txt</code> to the <code>my-bucket</code> bucket.</p>
+                
+                <h3>Downloading Files from S3</h3>
+                <pre><code>
+            -- Example: Download a file from an S3 bucket using the AWS CLI
+            
+            aws s3 cp s3://my-bucket/remote-file.txt localfile.txt
+                </code></pre>
+                <p>This example downloads a file named <code>remote-file.txt</code> from the <code>my-bucket</code> bucket to <code>localfile.txt</code> on your local machine.</p>
+                
+                <h3>Deleting Files from S3</h3>
+                <pre><code>
+            -- Example: Delete a file from an S3 bucket using the AWS CLI
+            
+            aws s3 rm s3://my-bucket/remote-file.txt
+                </code></pre>
+                <p>This example deletes a file named <code>remote-file.txt</code> from the <code>my-bucket</code> bucket.</p>
+                
+                <h3>Listing S3 Buckets</h3>
+                <pre><code>
+            -- Example: List all S3 buckets using the AWS CLI
+            
+            aws s3api list-buckets
+                </code></pre>
+                <p>This example lists all the S3 buckets in your AWS account.</p>
+                
+                <h3>Setting Bucket Policies</h3>
+                <pre><code>
+            -- Example: Set a bucket policy using the AWS CLI
+            
+            aws s3api put-bucket-policy --bucket my-bucket --policy file://policy.json
+                </code></pre>
+                <p>This example sets a policy for the <code>my-bucket</code> bucket using a policy defined in a file named <code>policy.json</code>.</p>
+            </section>
+            
+            
+            
+    </main>
+    
+      <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+      </footer>
+    
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function displaySum() {
+  const firstNum = Number(document.getElementById('firstNum').innerText);
+  const secondNum = Number(document.getElementById('secondNum').innerText);
+  const total = firstNum + secondNum;
+  document.getElementById('answer').innerText = total;
+}
+
+function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.querySelector('.main-content').style.marginLeft = "0";
+    }
+
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.querySelector('.main-content').style.marginLeft = "250px";
+    }
+  </script>
+</body>
+</html>

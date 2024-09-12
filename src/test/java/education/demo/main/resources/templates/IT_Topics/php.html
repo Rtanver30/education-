@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Basics</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #b0d4de;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+}
+
+main {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+.php-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.php-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 1 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+ caption {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-container input[type="submit"],
+    .form-container input[type="reset"] {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .form-container input[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+    .text-styles {
+      margin: 20px 0;
+      text-align: center;
+    }  /* Style for the side navigation */
+    .sidenav {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: 0.3s;
+    }
+
+    .sidenav a {
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 16px;
+      transition: margin-left 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .sidenav a {
+        text-align: center;
+        float: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
+h2, h3{
+  margin-top: 20px;
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-success text-white text-center py-3">
+    <h1>Learn PHP Basics</h1>
+    <p>PHP Explained for Beginners</p>
+</header>
+
+ <!-- Side Navigation -->
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#php">PHP</a>
+  <a href="#php_introduction">PHP introduction</a>
+  <a href="#php_syntax">PHP syntax</a>
+  <a href="#php_comments">PHP comments</a>
+  <a href="#php_variables">PHP variables</a>
+  <a href="#php_echo_print">PHP_echo_print</a>
+  <a href="#php_data_types">PHP_data_types</a>
+  
+  
+</div>>
+  <!-- Main Content -->
+  <div class="content">
+
+    <div id="main" class="main-content">
+     
+        <main class="container mt-4">
+            <section id="php">
+                <h2>What is PHP?</h2>
+                <p>PHP (Hypertext Preprocessor) is a popular server-side scripting language that is widely used for web development. PHP scripts are executed on the server, and the result is sent to the client's browser as plain HTML.</p>
+                
+                <pre>
+                    <code>
+                        &lt;?php
+                            // This is a comment
+                            echo "Hello, World!";
+                            $name = "Alice";
+                            $age = 30;
+                            echo "Name: $name, Age: $age";
+                        ?&gt;
+                    </code>
+                </pre>
+            
+                <div class="php-diagram">
+                    <p class="php-element">Variables
+                        <div class="php-element">Echo</div>
+                        <div class="php-element">Conditionals</div>
+                        <div class="php-element">Loops</div>
+                        <div class="php-element">Functions</div>
+                        <div class="php-element">Arrays</div>
+                        <div class="php-element">Objects</div>
+                        <div class="php-element">Sessions</div>
+                        <div class="php-element">Cookies</div>
+                        <div class="php-element">File Handling</div>
+                        <div class="php-element">Database Integration</div>
+                        <div class="php-element">Form Handling</div>
+                    </p>
+                </div>
+                
+                <p>* PHP concepts and elements</p>
+                
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>PHP Concept</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Variable</td>
+                            <td>A storage container for data values.</td>
+                            <td>$name = "Alice";</td>
+                        </tr>
+                        <tr>
+                            <td>Echo</td>
+                            <td>Output one or more strings.</td>
+                            <td>echo "Hello, World!";</td>
+                        </tr>
+                        <tr>
+                            <td>Conditional</td>
+                            <td>Execute different actions based on conditions.</td>
+                            <td>if ($age > 18) { echo "Adult"; }</td>
+                        </tr>
+                        <tr>
+                            <td>Loop</td>
+                            <td>Execute a block of code repeatedly.</td>
+                            <td>for ($i = 0; $i < 5; $i++) { echo $i; }</td>
+                        </tr>
+                        <tr>
+                            <td>Function</td>
+                            <td>A block of code designed to perform a particular task.</td>
+                            <td>function greet($name) { echo "Hello, $name!"; }</td>
+                        </tr>
+                        <tr>
+                            <td>Array</td>
+                            <td>A collection of values stored in a single variable.</td>
+                            <td>$colors = array("Red", "Green", "Blue");</td>
+                        </tr>
+                        <tr>
+                            <td>Database Integration</td>
+                            <td>Connect to and manipulate databases using SQL.</td>
+                            <td>$conn = mysqli_connect("localhost", "user", "password", "database");</td>
+                        </tr>
+                        <tr>
+                            <td>Session</td>
+                            <td>Store user information across different pages.</td>
+                            <td>$_SESSION['username'] = "Alice";</td>
+                        </tr>
+                        <tr>
+                            <td>Cookie</td>
+                            <td>Store data in the user's browser to track user activity.</td>
+                            <td>setcookie("username", "Alice", time() + 3600);</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            
+            
+        
+        
+            <section id="php_introduction">
+                <h2>PHP Introduction</h2>
+                
+                <h3>History of PHP</h3>
+                <p>PHP, which stands for "PHP: Hypertext Preprocessor," was created by Rasmus Lerdorf in 1994. Originally designed as a set of Common Gateway Interface (CGI) binaries written in the C programming language, PHP has evolved into a powerful and flexible scripting language for web development. It was released as "Personal Home Page Tools" before being rebranded as "PHP: Hypertext Preprocessor" as its capabilities expanded. Over the years, PHP has become one of the most widely used server-side scripting languages on the web.</p>
+                
+                <h3>Introduction to PHP</h3>
+                <p>PHP is a server-side scripting language designed for web development, but it is also used as a general-purpose programming language. PHP code is executed on the server, generating HTML that is sent to the client. It is commonly used to create dynamic web pages, manage session data, handle form submissions, and interact with databases. PHP's ease of use and flexibility have made it a popular choice for web developers.</p>
+                
+                <h3>How PHP Works</h3>
+                <p>PHP scripts are executed on the server side, and the result is returned to the client's web browser in the form of HTML. When a PHP file is requested by a user's browser, the server processes the PHP code, interacts with databases or files as needed, and outputs the final HTML content. This allows for the creation of dynamic and interactive web pages that can respond to user input and display real-time data.</p>
+                
+                <h3>Versions of PHP</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>PHP Version</th>
+                            <th>Released Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PHP 3</td>
+                            <td>1998</td>
+                        </tr>
+                        <tr>
+                            <td>PHP 4</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>PHP 5</td>
+                            <td>2004</td>
+                        </tr>
+                        <tr>
+                            <td>PHP 7</td>
+                            <td>2015</td>
+                        </tr>
+                        <tr>
+                            <td>PHP 7.4</td>
+                            <td>2019</td>
+                        </tr>
+                        <tr>
+                            <td>PHP 8</td>
+                            <td>2020</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            
+        
+            <section id="php_syntax">
+                <h2>PHP Syntax</h2>
+            
+                <h3>PHP Statements</h3>
+                <p>PHP statements are the instructions written to perform actions in a PHP script. Each statement typically ends with a semicolon (<code>;</code>) and is executed sequentially. Common PHP statements include variable assignments, function calls, and control structures.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        $name = "Alice";
+                        echo "Hello, " . $name . "!";
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, a variable <code>$name</code> is assigned the value "Alice", and the <code>echo</code> statement outputs a greeting that includes the variable's value.</p>
+            
+                <h3>PHP Comments</h3>
+                <p>Comments in PHP are used to explain the code and are ignored by the PHP engine. Single-line comments can be created using <code>//</code> or <code>#</code>, while multi-line comments are enclosed between <code>/*</code> and <code>*/</code>.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        // This is a single-line comment
+                        # This is another single-line comment
+                        /*
+                          This is a multi-line comment
+                          that spans multiple lines
+                        */
+                        echo "Hello, World!";
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>The <code>//</code> and <code>#</code> create single-line comments, while <code>/* ... */</code> is used for multi-line comments.</p>
+            </section>
+            
+            
+        
+            <section id="php_comments">
+                <h2>PHP Comments</h2>
+            
+                <h3>Single-Line Comments</h3>
+                <p>In PHP, single-line comments can be created using either <code>//</code> or <code>#</code>. These comments are useful for brief explanations or to temporarily disable a line of code during debugging.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        // This is a single-line comment using //
+                        echo "This will be displayed";
+            
+                        # This is another single-line comment using #
+                        echo "This will also be displayed";
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, both <code>//</code> and <code>#</code> are used to create single-line comments. The comments do not affect the execution of the code, and the two <code>echo</code> statements will output text as expected.</p>
+            
+                <h3>Multi-Line Comments</h3>
+                <p>Multi-line comments in PHP are enclosed between <code>/*</code> and <code>*/</code>. They are ideal for explaining complex logic or for temporarily commenting out large sections of code.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        /*
+                          This is a multi-line comment.
+                          It can span multiple lines.
+                          It is useful for explaining larger blocks of code.
+                        */
+                        echo "This will be displayed after the comment.";
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, the multi-line comment spans several lines, and the <code>echo</code> statement following it will display text as usual.</p>
+            </section>
+            
+            
+            <section id="php_variables">
+                <h3>PHP Variables</h3>
+                <p>Variables in PHP are used to store data that can be manipulated and retrieved throughout a script. A variable starts with the <code>$</code> symbol, followed by the name of the variable. Variable names are case-sensitive and must start with a letter or an underscore.</p>
+                
+                <pre>
+                    <code>
+                    &lt;?php
+                        $name = "Alice";
+                        $age = 30;
+                        $isEmployed = true;
+                    ?&gt;
+                    </code>
+                </pre>
+                
+                <p>In this example, three variables are created: <code>$name</code> storing a string, <code>$age</code> storing an integer, and <code>$isEmployed</code> storing a boolean value. Variables can hold different types of data such as strings, integers, booleans, arrays, and objects.</p>
+                
+                <h3>Variable Output</h3>
+                <p>To display the value of a variable, you can use the <code>echo</code> or <code>print</code> statement. Variables can be directly embedded within strings using double quotes.</p>
+                
+                <pre>
+                    <code>
+                    &lt;?php
+                        echo "Name: $name, Age: $age";
+                    ?&gt;
+                    </code>
+                </pre>
+                
+                <p>In this example, the <code>echo</code> statement outputs the values of <code>$name</code> and <code>$age</code> within a string.</p>
+                
+                <h3>Variable Types</h3>
+                <p>PHP is a loosely typed language, meaning you don't need to declare the data type of a variable explicitly. PHP automatically converts the variable to the correct data type based on its value.</p>
+                
+                <pre>
+                    <code>
+                    &lt;?php
+                        $number = 10; // Integer
+                        $price = 19.99; // Float
+                        $greeting = "Hello"; // String
+                        $is_logged_in = false; // Boolean
+                    ?&gt;
+                    </code>
+                </pre>
+                
+                <p>In this example, variables of different data types are created: integer, float, string, and boolean.</p>
+            </section>
+            
+            
+        
+        
+        
+            <section id="php_echo_print">
+                <h3>PHP echo and print Statements</h3>
+                <p>The <code>echo</code> and <code>print</code> statements in PHP are used to output data to the screen. Both can be used to display strings, variables, and other data types, but there are some subtle differences between them.</p>
+                
+                <h4>Using echo</h4>
+                <p>The <code>echo</code> statement can output one or more strings, separated by commas. It is slightly faster than <code>print</code> and does not return a value.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        echo "Hello, World!";
+                        echo "Name: ", $name, ", Age: ", $age;
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, <code>echo</code> outputs a simple string and a combination of strings and variables.</p>
+                
+                <h4>Using print</h4>
+                <p>The <code>print</code> statement works similarly to <code>echo</code>, but it only accepts one argument and always returns a value of 1. This makes <code>print</code> slightly slower than <code>echo</code>, but it can be used in expressions.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        print "Hello, World!";
+                        $result = print "Name: $name, Age: $age";
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, <code>print</code> outputs a string and returns a value that can be assigned to a variable.</p>
+                
+                <h4>Differences Between echo and print</h4>
+                <ul>
+                    <li><code>echo</code> can output multiple strings separated by commas, while <code>print</code> can only handle a single argument.</li>
+                    <li><code>print</code> returns a value of 1, while <code>echo</code> does not return a value.</li>
+                    <li><code>echo</code> is slightly faster than <code>print</code>.</li>
+                </ul>
+            </section>
+            
+            
+        
+
+            <section id="php_data_types">
+                <h3>PHP Data Types</h3>
+                <p>PHP supports various data types that can be used to store different kinds of information. Understanding these data types is crucial for effective programming in PHP.</p>
+                
+                <h4>1. String</h4>
+                <p>A string is a sequence of characters enclosed in quotes. Strings can be enclosed in single quotes (<code>' '</code>) or double quotes (<code>" "</code>).</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        $greeting = "Hello, World!";
+                        $name = 'Alice';
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, <code>$greeting</code> and <code>$name</code> are both string variables.</p>
+                
+                <h4>2. Integer</h4>
+                <p>An integer is a non-decimal number that can be positive, negative, or zero.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        $age = 30;
+                        $year = 2024;
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>Here, <code>$age</code> and <code>$year</code> are integer variables.</p>
+                
+                <h4>3. Float (Double)</h4>
+                <p>A float is a number with a decimal point or a number in exponential form.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        $price = 19.99;
+                        $interestRate = 0.05;
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, <code>$price</code> and <code>$interestRate</code> are float variables.</p>
+                
+                <h4>4. Boolean</h4>
+                <p>A boolean represents two possible states: <code>true</code> or <code>false</code>.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        $is_logged_in = true;
+                        $is_admin = false;
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>Here, <code>$is_logged_in</code> and <code>$is_admin</code> are boolean variables.</p>
+                
+                <h4>5. Array</h4>
+                <p>An array stores multiple values in a single variable. Arrays can be indexed or associative.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        $colors = array("Red", "Green", "Blue"); // Indexed array
+                        $person = array("name" => "Alice", "age" => 30); // Associative array
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, <code>$colors</code> is an indexed array, and <code>$person</code> is an associative array.</p>
+                
+                <h4>6. Object</h4>
+                <p>An object is an instance of a class. It can hold both data and functions that can operate on that data.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        class Car {
+                            public $color;
+                            public function __construct($color) {
+                                $this->color = $color;
+                            }
+                            public function get_color() {
+                                return $this->color;
+                            }
+                        }
+                        $myCar = new Car("Red");
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>In this example, <code>$myCar</code> is an object of the class <code>Car</code>.</p>
+                
+                <h4>7. NULL</h4>
+                <p>The <code>NULL</code> data type represents a variable with no value assigned to it.</p>
+                <pre>
+                    <code>
+                    &lt;?php
+                        $empty_var = NULL;
+                    ?&gt;
+                    </code>
+                </pre>
+                <p>Here, <code>$empty_var</code> is a variable with a value of <code>NULL</code>.</p>
+            </section>
+            
+                    
+                    
+                        
+                  
+                  </main>
+                  
+                    <footer class="bg-primary text-white text-center py-3">
+                      <p>&copy; 2024 Your Name. All rights reserved.</p>
+                    </footer>
+                  
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script>
+                  function displaySum() {
+                const firstNum = Number(document.getElementById('firstNum').innerText);
+                const secondNum = Number(document.getElementById('secondNum').innerText);
+                const total = firstNum + secondNum;
+                document.getElementById('answer').innerText = total;
+              }
+              
+              function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.querySelector('.main-content').style.marginLeft = "0";
+                  }
+              
+                  function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                    document.querySelector('.main-content').style.marginLeft = "250px";
+                  }
+                </script>
+              </body>
+              </html>
+              

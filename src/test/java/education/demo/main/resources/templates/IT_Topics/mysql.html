@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Basics</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #b0d4de;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+}
+
+main {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+.sql-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.sql-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 1 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+ caption {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-container input[type="submit"],
+    .form-container input[type="reset"] {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .form-container input[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+    .text-styles {
+      margin: 20px 0;
+      text-align: center;
+    }  /* Style for the side navigation */
+    .sidenav {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: 0.3s;
+    }
+
+    .sidenav a {
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 16px;
+      transition: margin-left 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .sidenav a {
+        text-align: center;
+        float: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
+h2, h3{
+  margin-top: 20px;
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-success text-white text-center py-3">
+    <h1>Learn SQL Basics</h1>
+    <p>SQL Explained for Beginners</p>
+</header>
+
+ <!-- Side Navigation -->
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#sql">SQL</a>
+  <a href="#sql_introduction">Sql introduction</a>
+  <a href="#sql_syntax">Sql Syntax</a>
+  <a href="#sql_select">Sql Select</a>
+  <a href="#sql_select_distinct">Sql select distinct</a>
+  <a href="#sql_where">Sql where</a>
+  <a href="#sql_order_by">Sql_order_by</a>
+  <a href="#sql_and_operator">Sql_and_operator</a>
+  <a href="#sql_or_operator">Sql_or_operator</a>
+  <a href="#sql_not_operator">Sql_not_operator</a>
+  <a href="#sql_insert_into">Sql_insert_into</a>
+  <a href="#sql_null_values">Sql_null_values</a>
+  <a href="#sql_update">Sql_update</a>
+  <a href="#sql_delete">Sql_delete</a>
+  <a href="#sql_top">Sql_top</a>
+  <a href="#sql-aggregate-functions">Sql-aggregate-functions</a>
+  <a href="#sql-min-max-functions">Sql-min-max-functions</a>
+  <a href="#sql-count-function">Sql-count-function</a>
+  <a href="#sql-sum-function">Sql-sum-function</a>
+  <a href="#sql-avg-function">Sql-avg-function</a>
+  <a href="#sql-between-operator">Sql-between-operator</a>
+  <a href="#sql-joins">Sql-joins</a>
+  
+</div>>
+  <!-- Main Content -->
+  <div class="content">
+
+    <div id="main" class="main-content">
+     
+        <main class="container mt-4">
+            <section id="sql">
+                <h2>What is SQL?</h2>
+                <p>SQL (Structured Query Language) is a standard language for managing and manipulating databases. It is widely used to perform operations such as querying, updating, and managing data in relational database management systems (RDBMS).</p>
+                <pre>
+                    <code>SELECT * FROM users WHERE age > 25;
+            -- This is a comment
+            INSERT INTO users (name, age) VALUES ('Alice', 30);</code>
+                </pre>
+                <div class="sql-diagram">
+                    <p class="sql-element">SELECT
+                        <div class="sql-element">FROM</div>
+                        <div class="sql-element">WHERE</div>
+                        <div class="sql-element">INSERT INTO</div>
+                        <div class="sql-element">VALUES</div>
+                        <div class="sql-element">UPDATE</div>
+                        <div class="sql-element">DELETE</div>
+                        <div class="sql-element">JOIN</div>
+                        <div class="sql-element">CREATE TABLE</div>
+                        <div class="sql-element">DROP TABLE</div>
+                        <div class="sql-element">ALTER TABLE</div>
+                        <div class="sql-element">INDEX</div>
+                        <div class="sql-element">GROUP BY</div>
+                        <div class="sql-element">ORDER BY</div>
+                        <div class="sql-element">HAVING</div>
+                        <div class="sql-element">DISTINCT</div>
+                        <div class="sql-element">COUNT</div>
+                        <div class="sql-element">AVG</div>
+                        <div class="sql-element">SUM</div>
+                        <div class="sql-element">MAX</div>
+                        <div class="sql-element">MIN</div>
+                        <div class="sql-element">AS</div>
+                        <div class="sql-element">INNER JOIN</div>
+                        <div class="sql-element">LEFT JOIN</div>
+                    </p>
+                </div>
+                <p>* SQL commands that perform specific operations</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>SQL Concept</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Query</td>
+                            <td>A request to retrieve data from a database.</td>
+                            <td>SELECT * FROM users;</td>
+                        </tr>
+                        <tr>
+                            <td>Insert</td>
+                            <td>Add new records to a table.</td>
+                            <td>INSERT INTO users (name, age) VALUES ('Alice', 30);</td>
+                        </tr>
+                        <tr>
+                            <td>Update</td>
+                            <td>Modify existing records in a table.</td>
+                            <td>UPDATE users SET age = 31 WHERE name = 'Alice';</td>
+                        </tr>
+                        <tr>
+                            <td>Delete</td>
+                            <td>Remove records from a table.</td>
+                            <td>DELETE FROM users WHERE age < 18;</td>
+                        </tr>
+                        <tr>
+                            <td>Join</td>
+                            <td>Combine rows from two or more tables based on a related column.</td>
+                            <td>SELECT * FROM users u JOIN orders o ON u.id = o.user_id;</td>
+                        </tr>
+                        <tr>
+                            <td>Aggregate Functions</td>
+                            <td>Perform a calculation on a set of values and return a single value.</td>
+                            <td>SELECT COUNT(*) FROM users;</td>
+                        </tr>
+                        <tr>
+                            <td>Subquery</td>
+                            <td>A query nested within another query.</td>
+                            <td>SELECT * FROM users WHERE id IN (SELECT user_id FROM orders);</td>
+                        </tr>
+                        <tr>
+                            <td>Transaction</td>
+                            <td>A sequence of SQL statements that are executed as a single unit.</td>
+                            <td>BEGIN TRANSACTION; UPDATE users SET age = 32 WHERE name = 'Alice'; COMMIT;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            
+        
+        
+            <section id="sql_introduction">
+                <h2>SQL Introduction</h2>
+                
+                <h3>History of SQL</h3>
+                <p>SQL, or Structured Query Language, was initially developed at IBM by Donald D. Chamberlin and Raymond F. Boyce in the early 1970s. It was designed for managing and manipulating data in relational database management systems (RDBMS). The first commercial implementation of SQL was released by Oracle in 1979.</p>
+            
+                <h3>Introduction to SQL</h3>
+                <p>SQL is a standard language used to interact with databases. It is designed to manage and manipulate relational databases by providing a way to query, update, insert, and delete data. SQL is widely used in data management, business intelligence, and web development, making it an essential tool for database administrators and developers.</p>
+                
+                <h3>How SQL Works</h3>
+                <p>SQL operates by sending commands to a database, which are then executed by the database management system (DBMS). SQL statements can be used to create and modify database structures, insert and update data, and retrieve data from one or more tables. SQL's declarative nature allows users to specify what data they want to retrieve or manipulate, without needing to know the underlying procedures to accomplish these tasks.</p>
+                
+                <h3>Versions of SQL</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>SQL Version</th>
+                            <th>Released Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SQL-86</td>
+                            <td>1986</td>
+                        </tr>
+                        <tr>
+                            <td>SQL-89</td>
+                            <td>1989</td>
+                        </tr>
+                        <tr>
+                            <td>SQL-92</td>
+                            <td>1992</td>
+                        </tr>
+                        <tr>
+                            <td>SQL:1999</td>
+                            <td>1999</td>
+                        </tr>
+                        <tr>
+                            <td>SQL:2003</td>
+                            <td>2003</td>
+                        </tr>
+                        <tr>
+                            <td>SQL:2008</td>
+                            <td>2008</td>
+                        </tr>
+                        <tr>
+                            <td>SQL:2011</td>
+                            <td>2011</td>
+                        </tr>
+                        <tr>
+                            <td>SQL:2016</td>
+                            <td>2016</td>
+                        </tr>
+                        <tr>
+                            <td>SQL:2019</td>
+                            <td>2019</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+        
+            <section id="sql_syntax">
+                <h2>SQL Syntax</h2>
+            
+                <h3>SQL Statements</h3>
+                <p>SQL statements are the commands used to communicate with a database. They typically begin with a keyword such as <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>, and are used to perform various operations on the database.</p>
+                <pre>
+                    <code>SELECT * FROM users WHERE age > 30;</code>
+                </pre>
+                <p>In this example, the SQL statement retrieves all records from the <code>users</code> table where the <code>age</code> column is greater than 30.</p>
+            
+                <h3>SQL Comments</h3>
+                <p>Comments in SQL are used to describe what the SQL statements do and are ignored by the SQL engine. Single-line comments are marked with <code>--</code>, while multi-line comments are enclosed between <code>/*</code> and <code>*/</code>.</p>
+                <pre>
+                    <code>-- This is a single-line comment
+            /* This is a multi-line comment
+               that spans multiple lines */
+            SELECT * FROM users WHERE age > 30;
+                    </code>
+                </pre>
+                <p>The <code>--</code> starts a single-line comment, and everything following it on the same line is ignored. Multi-line comments are placed between <code>/*</code> and <code>*/</code> to span across multiple lines.</p>
+            </section>
+            
+        
+            <section id="sql_select">
+                <h2>SQL SELECT Statement</h2>
+            
+                <h3>Basic SELECT Statement</h3>
+                <p>The <code>SELECT</code> statement in SQL is used to retrieve data from a database. The data returned is stored in a result table, often referred to as the result set.</p>
+                <pre>
+                    <code>SELECT column1, column2 FROM table_name;</code>
+                </pre>
+                <p>In this example, the <code>SELECT</code> statement retrieves the specified columns <code>column1</code> and <code>column2</code> from the table <code>table_name</code>.</p>
+            
+                <h3>SELECT * Statement</h3>
+                <p>The <code>SELECT *</code> statement is used to select all columns from a table.</p>
+                <pre>
+                    <code>SELECT * FROM users;</code>
+                </pre>
+                <p>This statement retrieves all columns from the <code>users</code> table.</p>
+            
+                <h3>WHERE Clause</h3>
+                <p>The <code>WHERE</code> clause is used to filter records that meet certain conditions.</p>
+                <pre>
+                    <code>SELECT * FROM users WHERE age > 30;</code>
+                </pre>
+                <p>In this example, the <code>SELECT</code> statement retrieves all records from the <code>users</code> table where the <code>age</code> column is greater than 30.</p>
+            </section>
+            
+            <section id="sql_select_distinct">
+                <h3>SQL SELECT DISTINCT Statement</h3>
+                <p>The <code>SELECT DISTINCT</code> statement in SQL is used to retrieve unique values from a column in a table. It eliminates duplicate records from the result set.</p>
+            
+                <pre>
+                    <code>
+            SELECT DISTINCT column_name FROM table_name;
+                    </code>
+                </pre>
+            
+                <p>For example, if you have a table named <code>employees</code> with a column <code>department</code>, the following query retrieves the unique departments:</p>
+            
+                <pre>
+                    <code>
+            SELECT DISTINCT department FROM employees;
+                    </code>
+                </pre>
+            
+                <p>This statement returns all unique department names from the <code>employees</code> table.</p>
+            </section>
+            
+        
+        
+        
+            <section id="sql_where">
+                <h3>SQL WHERE Clause</h3>
+                <p>The <code>WHERE</code> clause in SQL is used to filter records in a query based on specific conditions. It allows you to extract only those records that fulfill the given condition(s).</p>
+                
+                <pre>
+                    <code>SELECT * FROM employees
+            WHERE department = 'Sales';
+                    </code>
+                </pre>
+            
+                <p>In this example, the <code>WHERE</code> clause filters the records from the <code>employees</code> table to only include those where the <code>department</code> is 'Sales'.</p>
+            </section>
+            
+        
+
+            <section id="sql_order_by">
+                <h3>SQL ORDER BY Clause</h3>
+                <p>The <code>ORDER BY</code> clause in SQL is used to sort the result set in ascending or descending order based on one or more columns.</p>
+                <pre>
+                    <code>
+            -- Sort by a single column in ascending order
+            SELECT * FROM employees
+            ORDER BY salary;
+            
+            -- Sort by a single column in descending order
+            SELECT * FROM employees
+            ORDER BY salary DESC;
+            
+            -- Sort by multiple columns (e.g., department ascending, salary descending)
+            SELECT * FROM employees
+            ORDER BY department, salary DESC;
+                    </code>
+                </pre>
+                <p>In these examples, the <code>ORDER BY</code> clause sorts the records from the <code>employees</code> table by the <code>salary</code> column in ascending or descending order. You can also sort by multiple columns, as shown in the last example.</p>
+            </section>
+            
+      
+
+            <section id="sql_and_operator">
+                <h2>SQL AND Operator</h2>
+                <h3>Using the AND Operator in SQL</h3>
+                <p>The <code>AND</code> operator in SQL is used to combine multiple conditions in a <code>WHERE</code> clause. All conditions must be true for a record to be included in the result set.</p>
+                <pre>
+                    <code>
+            -- Retrieve employees who work in the 'Sales' department and have a salary greater than 50000
+            SELECT * FROM employees
+            WHERE department = 'Sales'
+            AND salary > 50000;
+                    </code>
+                </pre>
+                <p>In this example, the query returns records from the <code>employees</code> table where both conditions are met: the employee works in the 'Sales' department and has a salary greater than 50,000.</p>
+            
+                <section id="sql_and_operator_multiple_conditions">
+                    <h3>Combining Multiple Conditions with AND</h3>
+                    <p>You can use the <code>AND</code> operator to combine more than two conditions in a SQL query.</p>
+                    <pre>
+                        <code>
+            -- Retrieve employees who work in 'Sales', have a salary greater than 50000, and have more than 5 years of experience
+            SELECT * FROM employees
+            WHERE department = 'Sales'
+            AND salary > 50000
+            AND experience > 5;
+                        </code>
+                    </pre>
+                    <p>This query returns records from the <code>employees</code> table where all three conditions are true: the employee works in 'Sales', has a salary greater than 50,000, and has more than 5 years of experience.</p>
+                </section>
+            </section>
+            
+    
+            <section id="sql_or_operator">
+                <h2>SQL OR Operator</h2>
+                <p>The <code>OR</code> operator in SQL is used to combine multiple conditions in a <code>WHERE</code> clause. If any of the conditions are true, the record will be included in the result set.</p>
+                
+                <h3>Basic OR Operator Example</h3>
+                <pre>
+                    <code>
+            -- Retrieve employees who work in the 'Sales' department or have a salary greater than 50000
+            SELECT * FROM employees
+            WHERE department = 'Sales'
+            OR salary > 50000;
+                    </code>
+                </pre>
+                <p>Output: This query returns records from the <code>employees</code> table where either the employee works in the 'Sales' department or has a salary greater than 50,000.</p>
+            
+                <h3>OR Operator with Multiple Conditions</h3>
+                <pre>
+                    <code>
+            -- Retrieve employees who work in 'Sales' or 'Marketing' or have a salary greater than 50000
+            SELECT * FROM employees
+            WHERE department = 'Sales'
+            OR department = 'Marketing'
+            OR salary > 50000;
+                    </code>
+                </pre>
+                <p>Output: This query returns records from the <code>employees</code> table where the employee works in either 'Sales' or 'Marketing', or has a salary greater than 50,000.</p>
+            
+                <h3>Combining AND with OR</h3>
+                <pre>
+                    <code>
+            -- Retrieve employees who work in 'Sales' and have more than 5 years of experience, or have a salary greater than 50000
+            SELECT * FROM employees
+            WHERE (department = 'Sales' AND experience > 5)
+            OR salary > 50000;
+                    </code>
+                </pre>
+                <p>Output: This query returns records where the employee works in 'Sales' and has more than 5 years of experience, or where the employee has a salary greater than 50,000.</p>
+            </section>
+            
+  
+            <section id="sql_not_operator">
+                <h2>SQL NOT Operator</h2>
+                <p>The <code>NOT</code> operator in SQL is used to negate a condition in a <code>WHERE</code> clause. It returns records that do not satisfy the specified condition.</p>
+                
+                <h3>Basic NOT Operator Example</h3>
+                <pre>
+                    <code>
+            -- Retrieve employees who do not work in the 'Sales' department
+            SELECT * FROM employees
+            WHERE NOT department = 'Sales';
+                    </code>
+                </pre>
+                <p>Output: This query returns records from the <code>employees</code> table where the <code>department</code> is not 'Sales'.</p>
+                
+                <h3>NOT Operator with Comparison</h3>
+                <pre>
+                    <code>
+            -- Retrieve employees whose salary is not greater than 50000
+            SELECT * FROM employees
+            WHERE NOT salary > 50000;
+                    </code>
+                </pre>
+                <p>Output: This query returns records where the <code>salary</code> is 50,000 or less.</p>
+                
+                <h3>Combining NOT with Other Operators</h3>
+                <pre>
+                    <code>
+            -- Retrieve employees who do not work in 'Sales' or 'Marketing'
+            SELECT * FROM employees
+            WHERE NOT (department = 'Sales' OR department = 'Marketing');
+                    </code>
+                </pre>
+                <p>Output: This query returns records from the <code>employees</code> table where the <code>department</code> is neither 'Sales' nor 'Marketing'.</p>
+                
+                <h3>NOT Operator with Multiple Conditions</h3>
+                <pre>
+                    <code>
+            -- Retrieve employees who do not work in 'Sales' and do not have a salary greater than 50000
+            SELECT * FROM employees
+            WHERE NOT (department = 'Sales' AND salary > 50000);
+                    </code>
+                </pre>
+                <p>Output: This query returns records where either the <code>department</code> is not 'Sales' or the <code>salary</code> is 50,000 or less, or both.</p>
+            </section>
+            
+
+  
+            <section id="sql_insert_into">
+                <h2>SQL INSERT INTO Statement</h2>
+                <p>The <code>INSERT INTO</code> statement is used to add new rows to a table in SQL. You can insert data into one or more columns of a table.</p>
+                
+                <h3>Basic INSERT INTO Example</h3>
+                <pre>
+                    <code>
+            -- Insert a single row into the employees table
+            INSERT INTO employees (name, department, salary)
+            VALUES ('John Doe', 'Sales', 60000);
+                    </code>
+                </pre>
+                <p>Output: This statement inserts a new row into the <code>employees</code> table with the name 'John Doe', department 'Sales', and salary 60,000.</p>
+                
+                <h3>INSERT INTO with Multiple Rows</h3>
+                <pre>
+                    <code>
+            -- Insert multiple rows into the employees table
+            INSERT INTO employees (name, department, salary)
+            VALUES 
+                ('Jane Smith', 'Marketing', 70000),
+                ('Alice Johnson', 'HR', 55000),
+                ('Bob Brown', 'IT', 80000);
+                    </code>
+                </pre>
+                <p>Output: This statement inserts multiple rows into the <code>employees</code> table with the specified names, departments, and salaries.</p>
+                
+                <h3>INSERT INTO with Default Values</h3>
+                <pre>
+                    <code>
+            -- Insert a row into the employees table using default values
+            INSERT INTO employees (name, department)
+            VALUES ('Sam Green', 'Finance');
+                    </code>
+                </pre>
+                <p>Output: This statement inserts a new row into the <code>employees</code> table with the name 'Sam Green' and department 'Finance', using default values for any unspecified columns.</p>
+                
+                <h3>INSERT INTO with Subquery</h3>
+                <pre>
+                    <code>
+            -- Insert data from one table into another
+            INSERT INTO new_employees (name, department, salary)
+            SELECT name, department, salary
+            FROM employees
+            WHERE salary > 60000;
+                    </code>
+                </pre>
+                <p>Output: This statement inserts rows into the <code>new_employees</code> table by selecting rows from the <code>employees</code> table where the salary is greater than 60,000.</p>
+            </section>
+            
+  
+            <section id="sql_null_values">
+                <h2>SQL NULL Values</h2>
+                <p>In SQL, <code>NULL</code> represents the absence of a value or an unknown value. It is used to indicate that a particular field does not have a value or that the value is unknown.</p>
+                
+                <h3>Inserting NULL Values</h3>
+                <pre>
+                    <code>
+            -- Inserting a row with NULL values
+            INSERT INTO employees (name, department, salary)
+            VALUES ('John Doe', 'Sales', NULL);
+                    </code>
+                </pre>
+                <p>Output: This statement inserts a new row into the <code>employees</code> table with 'John Doe' in the name and department columns, and <code>NULL</code> in the salary column.</p>
+                
+                <h3>Querying NULL Values</h3>
+                <pre>
+                    <code>
+            -- Query to find rows where salary is NULL
+            SELECT * FROM employees
+            WHERE salary IS NULL;
+                    </code>
+                </pre>
+                <p>Output: This statement selects all rows from the <code>employees</code> table where the salary column contains <code>NULL</code>.</p>
+                
+                <h3>Updating NULL Values</h3>
+                <pre>
+                    <code>
+            -- Updating a row to set salary to NULL
+            UPDATE employees
+            SET salary = NULL
+            WHERE name = 'Jane Smith';
+                    </code>
+                </pre>
+                <p>Output: This statement updates the salary of 'Jane Smith' to <code>NULL</code> in the <code>employees</code> table.</p>
+                
+                <h3>NULL Values in Conditions</h3>
+                <pre>
+                    <code>
+            -- Checking if a column is NOT NULL
+            SELECT * FROM employees
+            WHERE salary IS NOT NULL;
+                    </code>
+                </pre>
+                <p>Output: This statement selects all rows from the <code>employees</code> table where the salary column does not contain <code>NULL</code>.</p>
+            </section>
+            
+
+        
+            <section id="sql_update">
+                <h2>SQL UPDATE Statement</h2>
+                <p>The <code>UPDATE</code> statement in SQL is used to modify the existing records in a table. You can specify which records to update and the new values using this statement.</p>
+                
+                <h3>Basic UPDATE Statement</h3>
+                <pre>
+                    <code>
+            -- Updating a single column in a table
+            UPDATE employees
+            SET salary = 50000
+            WHERE name = 'John Doe';
+                    </code>
+                </pre>
+                <p>Output: This statement updates the <code>salary</code> column to 50000 for the row where the <code>name</code> is 'John Doe'.</p>
+                
+                <h3>Updating Multiple Columns</h3>
+                <pre>
+                    <code>
+            -- Updating multiple columns in a table
+            UPDATE employees
+            SET department = 'Marketing', salary = 60000
+            WHERE name = 'Jane Smith';
+                    </code>
+                </pre>
+                <p>Output: This statement updates both the <code>department</code> and <code>salary</code> columns for the row where the <code>name</code> is 'Jane Smith'.</p>
+                
+                <h3>Updating All Rows</h3>
+                <pre>
+                    <code>
+            -- Updating all rows in a table
+            UPDATE employees
+            SET status = 'Active';
+                    </code>
+                </pre>
+                <p>Output: This statement sets the <code>status</code> column to 'Active' for all rows in the <code>employees</code> table.</p>
+                
+                <h3>Conditional Updates</h3>
+                <pre>
+                    <code>
+            -- Updating rows based on a condition
+            UPDATE employees
+            SET salary = salary * 1.10
+            WHERE department = 'Sales';
+                    </code>
+                </pre>
+                <p>Output: This statement increases the <code>salary</code> by 10% for all employees in the 'Sales' department.</p>
+                
+                <h3>Using Subqueries in UPDATE</h3>
+                <pre>
+                    <code>
+            -- Updating based on a subquery
+            UPDATE employees
+            SET salary = (
+                SELECT AVG(salary)
+                FROM employees
+                WHERE department = 'HR'
+            )
+            WHERE department = 'Marketing';
+                    </code>
+                </pre>
+                <p>Output: This statement sets the <code>salary</code> of all employees in the 'Marketing' department to the average salary of employees in the 'HR' department.</p>
+            </section>
+            
+
+
+    
+            <section id="sql_delete">
+                <h2>SQL DELETE Statement</h2>
+                <p>The <code>DELETE</code> statement in SQL is used to remove existing records from a table. You can specify which records to delete using a condition.</p>
+                
+                <h3>Basic DELETE Statement</h3>
+                <pre>
+                    <code>
+            -- Deleting a single record from a table
+            DELETE FROM employees
+            WHERE name = 'John Doe';
+                    </code>
+                </pre>
+                <p>Output: This statement deletes the row where the <code>name</code> is 'John Doe' from the <code>employees</code> table.</p>
+                
+                <h3>Deleting Multiple Records</h3>
+                <pre>
+                    <code>
+            -- Deleting multiple records from a table
+            DELETE FROM employees
+            WHERE department = 'Marketing';
+                    </code>
+                </pre>
+                <p>Output: This statement deletes all rows where the <code>department</code> is 'Marketing' from the <code>employees</code> table.</p>
+                
+                <h3>Deleting All Rows</h3>
+                <pre>
+                    <code>
+            -- Deleting all rows from a table
+            DELETE FROM employees;
+                    </code>
+                </pre>
+                <p>Output: This statement deletes all rows from the <code>employees</code> table. The table structure remains intact.</p>
+                
+                <h3>Conditional Deletion</h3>
+                <pre>
+                    <code>
+            -- Deleting rows based on a condition
+            DELETE FROM employees
+            WHERE salary < 30000;
+                    </code>
+                </pre>
+                <p>Output: This statement deletes all rows where the <code>salary</code> is less than 30000 from the <code>employees</code> table.</p>
+                
+                <h3>Using Subqueries in DELETE</h3>
+                <pre>
+                    <code>
+            -- Deleting rows based on a subquery
+            DELETE FROM employees
+            WHERE department IN (
+                SELECT department
+                FROM departments
+                WHERE budget < 10000
+            );
+                    </code>
+                </pre>
+                <p>Output: This statement deletes rows from the <code>employees</code> table where the <code>department</code> is in the list of departments with a budget less than 10000.</p>
+            </section>
+            
+  
+
+            <div class="content" id="sql_top">
+                <h2 id="sql-top-clause">SQL TOP Clause</h2>
+                <p>The <code>TOP</code> clause in SQL is used to specify the number or percentage of records to return in a query result. It is commonly used to limit the result set to a specified number of rows.</p>
+                
+                <h3>Basic TOP Clause</h3>
+                <pre><code>
+            -- Selecting the top 5 records from a table
+            SELECT TOP 5 * 
+            FROM employees;
+                </code></pre>
+                <p>Output: This query retrieves the first 5 rows from the <code>employees</code> table.</p>
+                
+                <h3>TOP with ORDER BY</h3>
+                <pre><code>
+            -- Selecting the top 3 highest salaries
+            SELECT TOP 3 *
+            FROM employees
+            ORDER BY salary DESC;
+                </code></pre>
+                <p>Output: This query retrieves the top 3 employees with the highest salaries from the <code>employees</code> table.</p>
+                
+                <h3>TOP with Percentage</h3>
+                <pre><code>
+            -- Selecting the top 10% of records
+            SELECT TOP 10 PERCENT *
+            FROM employees;
+                </code></pre>
+                <p>Output: This query retrieves the top 10% of rows from the <code>employees</code> table.</p>
+                
+                <h3>Using TOP with Subqueries</h3>
+                <pre><code>
+            -- Selecting the top 5 records from a subquery
+            SELECT *
+            FROM (
+                SELECT TOP 10 * 
+                FROM employees
+                ORDER BY salary DESC
+            ) AS top_10_salaries
+            ORDER BY name;
+                </code></pre>
+                <p>Output: This query first selects the top 10 highest salaries and then retrieves the top 5 records from that subset, ordered by <code>name</code>.</p>
+            </div>
+            
+        
+            <h2 id="sql-aggregate-functions">SQL Aggregate Functions</h2>
+            <p>SQL aggregate functions perform a calculation on a set of values and return a single value. They are often used with the <code>GROUP BY</code> clause to aggregate results based on certain criteria.</p>
+            
+            <ul>
+                <li><strong>SUM:</strong> Calculates the total sum of a numeric column.</li>
+                <li><strong>AVG:</strong> Calculates the average value of a numeric column.</li>
+                <li><strong>COUNT:</strong> Counts the number of rows in a result set or the number of non-NULL values in a column.</li>
+                <li><strong>MIN:</strong> Finds the smallest value in a column.</li>
+                <li><strong>MAX:</strong> Finds the largest value in a column.</li>
+            </ul>
+            
+            <p>The general syntax for SQL aggregate functions is:</p>
+            <pre><code>
+            SELECT AGGREGATE_FUNCTION(column_name)
+            FROM table_name
+            WHERE condition;
+            </code></pre>
+            
+            <h3>Example of SQL Aggregate Functions</h3>
+            <pre><code>
+            -- Example of SUM function
+            SELECT SUM(salary) AS total_salaries
+            FROM employees;
+            
+            -- Example of AVG function
+            SELECT AVG(salary) AS average_salary
+            FROM employees;
+            
+            -- Example of COUNT function
+            SELECT COUNT(*) AS number_of_employees
+            FROM employees;
+            
+            -- Example of MIN function
+            SELECT MIN(salary) AS lowest_salary
+            FROM employees;
+            
+            -- Example of MAX function
+            SELECT MAX(salary) AS highest_salary
+            FROM employees;
+            </code></pre>
+            <p>Output:
+            - The <code>SUM</code> function returns the total sum of the <code>salary</code> column.
+            - The <code>AVG</code> function returns the average salary.
+            - The <code>COUNT</code> function returns the total number of rows in the <code>employees</code> table.
+            - The <code>MIN</code> function returns the lowest salary.
+            - The <code>MAX</code> function returns the highest salary.</p>
+            
+  
+        
+            <h2 id="sql-min-max-functions">SQL MIN() and MAX() Functions</h2>
+            <p>The <code>MIN()</code> and <code>MAX()</code> functions in SQL are used to find the smallest and largest values in a numeric column, respectively. These functions are useful for performing statistical operations on your data.</p>
+            
+            <ul>
+                <li><strong>MIN():</strong> Returns the smallest value in a specified column.</li>
+                <li><strong>MAX():</strong> Returns the largest value in a specified column.</li>
+            </ul>
+            
+            <p>The general syntax for the <code>MIN()</code> and <code>MAX()</code> functions is:</p>
+            <pre><code>
+            SELECT MIN(column_name) AS min_value
+            FROM table_name
+            WHERE condition;
+            
+            SELECT MAX(column_name) AS max_value
+            FROM table_name
+            WHERE condition;
+            </code></pre>
+            
+            <h3>Example of SQL MIN() and MAX() Functions</h3>
+            <pre><code>
+            -- Example of MIN() function
+            SELECT MIN(salary) AS lowest_salary
+            FROM employees;
+            
+            -- Example of MAX() function
+            SELECT MAX(salary) AS highest_salary
+            FROM employees;
+            </code></pre>
+            
+            <p>Output:
+            - The <code>MIN()</code> function returns the smallest value in the <code>salary</code> column.
+            - The <code>MAX()</code> function returns the largest value in the <code>salary</code> column.</p>
+            
+            <h2 id="sql-count-function">SQL COUNT() Function</h2>
+            <p>The <code>COUNT()</code> function in SQL is used to count the number of rows in a database table or the number of rows that match a specified condition. It is commonly used for aggregation and data analysis.</p>
+            
+            <ul>
+                <li><strong>COUNT(*):</strong> Counts all rows in a table, including rows with <code>NULL</code> values.</li>
+                <li><strong>COUNT(column_name):</strong> Counts the number of non-<code>NULL</code> values in a specified column.</li>
+            </ul>
+            
+            <p>The general syntax for the <code>COUNT()</code> function is:</p>
+            <pre><code>
+            SELECT COUNT(*)
+            FROM table_name
+            WHERE condition;
+            
+            SELECT COUNT(column_name)
+            FROM table_name
+            WHERE condition;
+            </code></pre>
+            
+            <h3>Example: Counting All Rows</h3>
+            <pre><code>
+            -- Example of COUNT() function to count all rows
+            SELECT COUNT(*)
+            FROM employees;
+            </code></pre>
+            
+            <h3>Example: Counting Non-NULL Values</h3>
+            <pre><code>
+            -- Example of COUNT() function to count non-NULL values in a specific column
+            SELECT COUNT(salary)
+            FROM employees;
+            </code></pre>
+            
+            <p>Output:
+            - The first query returns the total number of rows in the <code>employees</code> table.
+            - The second query returns the number of non-<code>NULL</code> values in the <code>salary</code> column.</p>
+            
+  
+
+            <h2 id="sql-sum-function">SQL SUM() Function</h2>
+            <p>The <code>SUM()</code> function in SQL is used to calculate the total sum of a numeric column in a table. It is often used in aggregation queries to get the total of values in a column.</p>
+            
+            <ul>
+                <li><strong>SUM(column_name):</strong> Calculates the total sum of the values in the specified column. It ignores <code>NULL</code> values.</li>
+            </ul>
+            
+            <p>The general syntax for the <code>SUM()</code> function is:</p>
+            <pre><code>
+            SELECT SUM(column_name)
+            FROM table_name
+            WHERE condition;
+            </code></pre>
+            
+            <h3>Example: Calculating the Total Sales</h3>
+            <pre><code>
+            -- Example of SUM() function to calculate the total sales
+            SELECT SUM(sales_amount)
+            FROM sales;
+            </code></pre>
+            
+            <h3>Example: Calculating the Total Salary</h3>
+            <pre><code>
+            -- Example of SUM() function to calculate the total salary
+            SELECT SUM(salary)
+            FROM employees;
+            </code></pre>
+            
+            <p>Output:
+            - The first query returns the total of all values in the <code>sales_amount</code> column from the <code>sales</code> table.
+            - The second query returns the total of all values in the <code>salary</code> column from the <code>employees</code> table.</p>
+            
+      
+            <h2 id="sql-avg-function">SQL AVG() Function</h2>
+            <p>The <code>AVG()</code> function in SQL is used to calculate the average value of a numeric column. It is often used in queries to obtain the mean value of a dataset.</p>
+            
+            <ul>
+                <li><strong>AVG(column_name):</strong> Computes the average of the values in the specified column. It ignores <code>NULL</code> values.</li>
+            </ul>
+            
+            <p>The general syntax for the <code>AVG()</code> function is:</p>
+            <pre><code>
+            SELECT AVG(column_name)
+            FROM table_name
+            WHERE condition;
+            </code></pre>
+            
+            <h3>Example: Calculating the Average Sales</h3>
+            <pre><code>
+            -- Example of AVG() function to calculate the average sales
+            SELECT AVG(sales_amount)
+            FROM sales;
+            </code></pre>
+            
+            <h3>Example: Calculating the Average Salary</h3>
+            <pre><code>
+            -- Example of AVG() function to calculate the average salary
+            SELECT AVG(salary)
+            FROM employees;
+            </code></pre>
+            
+            <p>Output:
+            - The first query returns the average of all values in the <code>sales_amount</code> column from the <code>sales</code> table.
+            - The second query returns the average of all values in the <code>salary</code> column from the <code>employees</code> table.</p>
+            
+      
+    
+            <h2 id="sql-between-operator">SQL BETWEEN Operator</h2>
+            <p>The <code>BETWEEN</code> operator in SQL is used to filter the results within a specified range. It can be used with numeric, date, and text values to select records that fall between two values.</p>
+            
+            <ul>
+                <li><strong>Range:</strong> The <code>BETWEEN</code> operator includes the boundary values in the range.</li>
+                <li><strong>Usage:</strong> It is commonly used in the <code>WHERE</code> clause to specify a range of values.</li>
+            </ul>
+            
+            <p>The general syntax for the <code>BETWEEN</code> operator is:</p>
+            <pre><code>
+            SELECT column_name(s)
+            FROM table_name
+            WHERE column_name BETWEEN value1 AND value2;
+            </code></pre>
+            
+            <h3>Example: Selecting Records Between Two Dates</h3>
+            <pre><code>
+            -- Example of BETWEEN operator to filter records within a date range
+            SELECT *
+            FROM orders
+            WHERE order_date BETWEEN '2024-01-01' AND '2024-12-31';
+            </code></pre>
+            
+            <h3>Example: Selecting Records Within a Numeric Range</h3>
+            <pre><code>
+            -- Example of BETWEEN operator to filter records within a numeric range
+            SELECT *
+            FROM products
+            WHERE price BETWEEN 50 AND 100;
+            </code></pre>
+            
+            <p>Output:
+            - The first query retrieves all orders placed within the year 2024.
+            - The second query retrieves all products with a price between 50 and 100, inclusive.</p>
+
+
+            <h2 id="sql-joins">SQL Joins</h2>
+<p>SQL Joins are used to combine rows from two or more tables based on a related column between them. Joins are essential for querying data from multiple tables and are categorized into several types:</p>
+
+<ul>
+    <li><strong>INNER JOIN:</strong> Returns records that have matching values in both tables.</li>
+    <li><strong>LEFT JOIN (or LEFT OUTER JOIN):</strong> Returns all records from the left table and the matched records from the right table. The result is NULL on the right side when there is no match.</li>
+    <li><strong>RIGHT JOIN (or RIGHT OUTER JOIN):</strong> Returns all records from the right table and the matched records from the left table. The result is NULL on the left side when there is no match.</li>
+    <li><strong>FULL JOIN (or FULL OUTER JOIN):</strong> Returns all records when there is a match in either left or right table. It returns NULL for non-matching rows from both tables.</li>
+    <li><strong>CROSS JOIN:</strong> Returns the Cartesian product of the two tables, i.e., all possible combinations of rows from both tables.</li>
+</ul>
+
+<h3>Example: INNER JOIN</h3>
+<p>The following query retrieves records with matching values in both <code>employees</code> and <code>departments</code> tables:</p>
+<pre><code>
+SELECT employees.name, departments.department_name
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.department_id;
+</code></pre>
+
+<h3>Example: LEFT JOIN</h3>
+<p>This query retrieves all employees and their department names, including employees who do not belong to any department:</p>
+<pre><code>
+SELECT employees.name, departments.department_name
+FROM employees
+LEFT JOIN departments
+ON employees.department_id = departments.department_id;
+</code></pre>
+
+<h3>Example: RIGHT JOIN</h3>
+<p>This query retrieves all departments and their employees, including departments with no employees:</p>
+<pre><code>
+SELECT employees.name, departments.department_name
+FROM employees
+RIGHT JOIN departments
+ON employees.department_id = departments.department_id;
+</code></pre>
+
+<h3>Example: FULL JOIN</h3>
+<p>This query retrieves all employees and all departments, including records with no matches in either table:</p>
+<pre><code>
+SELECT employees.name, departments.department_name
+FROM employees
+FULL JOIN departments
+ON employees.department_id = departments.department_id;
+</code></pre>
+
+<h3>Example: CROSS JOIN</h3>
+<p>This query returns the Cartesian product of the <code>colors</code> and <code>sizes</code> tables:</p>
+<pre><code>
+SELECT colors.color_name, sizes.size_name
+FROM colors
+CROSS JOIN sizes;
+</code></pre>
+
+<p>Output:
+- The INNER JOIN example will show employees with their corresponding department names.
+- The LEFT JOIN example will include all employees, even those without a department.
+- The RIGHT JOIN example will include all departments, even those without employees.
+- The FULL JOIN example includes all employees and departments, showing NULLs where there are no matches.
+- The CROSS JOIN example shows every possible combination of color and size.</p>
+
+            
+      
+          
+ 
+  
+      
+    
+      </section>
+    </main>
+    
+      <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+      </footer>
+    
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function displaySum() {
+  const firstNum = Number(document.getElementById('firstNum').innerText);
+  const secondNum = Number(document.getElementById('secondNum').innerText);
+  const total = firstNum + secondNum;
+  document.getElementById('answer').innerText = total;
+}
+
+function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.querySelector('.main-content').style.marginLeft = "0";
+    }
+
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.querySelector('.main-content').style.marginLeft = "250px";
+    }
+  </script>
+</body>
+</html>

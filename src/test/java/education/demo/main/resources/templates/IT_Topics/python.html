@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Python by Enlightndrashta</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #b0d4de;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+}
+
+main {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+.python-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.python-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 1 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+ caption {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-container input[type="submit"],
+    .form-container input[type="reset"] {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .form-container input[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+    .text-styles {
+      margin: 20px 0;
+      text-align: center;
+    }  /* Style for the side navigation */
+    .sidenav {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: 0.3s;
+    }
+
+    .sidenav a {
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 16px;
+      transition: margin-left 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .sidenav a {
+        text-align: center;
+        float: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
+h2, h3{
+  margin-top: 20px;
+}
+
+
+  </style>
+</head>
+
+<body>
+ <!-- Header -->
+  <header class="bg-success text-white text-center py-3">
+    <h1>Learn Web Development Basics</h1>
+    <p>HTML, CSS, and JavaScript Explained for Beginners</p>
+</header>
+
+ <!-- Side Navigation -->
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#python">Python</a>
+  <a href="#python_introduction">Python Introduction</a>
+  <a href="#python_syntax">Python syntax</a>
+  <a href="#python_variables">Python variables</a>
+  <a href="#python_datatypes">Python datatypes</a>
+  <a href="#python_functions">Python functions</a>
+  <a href="#python_Numbers">Python Numbers</a>
+  <a href="#python_casting_complex">Python casting complex</a>
+  <a href="#python_strings">Python strings</a>
+  <a href="#python_booleans">Python booleans</a>
+  <a href="#python_operators">Python operators</a>
+  <a href="#python_lists">Python lists</a>
+  <a href="#python_if_else">Python if_else</a>
+  <a href="#python-tuples">Python tuples</a>
+  <a href="#python_sets">Python sets</a>
+  <a href="#python-dictionaries">Python-dictionaries</a>
+  <a href="#python-while-loops">Python-while-loops</a>
+  <a href="#python-for-loops">Python for loops</a>
+  <a href="#python-functions">Python functions</a>
+  <a href="#python-lambda">Python lambda</a>
+  <a href="#python_arrays">Python arrays</a>
+</div>>
+  <!-- Main Content -->
+  <div class="content">
+
+    <div id="main" class="main-content">
+     
+        <main class="container mt-4">
+            <section id="python">
+                <h2>What is Python?</h2>
+                <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, scientific computing, and more.</p>
+                <pre>
+                    <code>print("Hello, World!")
+        # This is a comment
+        x = 5
+        if x > 2:
+            print("x is greater than 2")</code>
+                </pre>
+                <div class="python-diagram">
+                    <p class="python-element">print
+                        <div class="python-element">input</div>
+                        <div class="python-element">len</div>
+                        <div class="python-element">type</div>
+                        <div class="python-element">str</div>
+                        <div class="python-element">int</div>
+                        <div class="python-element">float</div>
+                        <div class="python-element">list</div>
+                        <div class="python-element">tuple</div>
+                        <div class="python-element">dict</div>
+                        <div class="python-element">set</div>
+                        <div class="python-element">range</div>
+                        <div class="python-element">open</div>
+                        <div class="python-element">close</div>
+                        <div class="python-element">write</div>
+                        <div class="python-element">append</div>
+                        <div class="python-element">read</div>
+                        <div class="python-element">keys</div>
+                        <div class="python-element">values</div>
+                        <div class="python-element">items</div>
+                        <div class="python-element">import</div>
+                        <div class="python-element">from</div>
+                        <div class="python-element">as</div>
+                        <div class="python-element">def</div>
+                        <div class="python-element">return</div>
+                    </p>
+                </div>
+                <p>* Python functions that perform specific operations</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Python Concept</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Variable</td>
+                            <td>A container for storing data values.</td>
+                            <td>x = 5</td>
+                        </tr>
+                        <tr>
+                            <td>List</td>
+                            <td>An ordered collection of values.</td>
+                            <td>my_list = [1, 2, 3]</td>
+                        </tr>
+                        <tr>
+                            <td>Dictionary</td>
+                            <td>A collection of key-value pairs.</td>
+                            <td>my_dict = {"key": "value"}</td>
+                        </tr>
+                        <tr>
+                            <td>Loop</td>
+                            <td>A sequence of instructions that is continually repeated until a certain condition is met.</td>
+                            <td>for i in range(5): print(i)</td>
+                        </tr>
+                        <tr>
+                            <td>Function</td>
+                            <td>A block of code which only runs when it is called.</td>
+                            <td>def my_function(): pass</td>
+                        </tr>
+                        <tr>
+                            <td>Class</td>
+                            <td>A blueprint for creating objects.</td>
+                            <td>class MyClass: pass</td>
+                        </tr>
+                        <tr>
+                            <td>Module</td>
+                            <td>A file containing a set of functions you want to include in your application.</td>
+                            <td>import math</td>
+                        </tr>
+                        <tr>
+                            <td>Package</td>
+                            <td>A collection of modules.</td>
+                            <td>from package import module</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        
+        
+        <section id="python_introduction">
+            <h2>Python Introductions</h2>
+            
+            <h3>History of Python</h3>
+            <p>Python was created by Guido van Rossum and first released in 1991. It was developed as a successor to the ABC programming language, which was capable of exception handling and interfacing with the Amoeba operating system.</p>
+        
+            <h3>Introduction to Python</h3>
+            <p>Python is a high-level, interpreted programming language known for its ease of learning and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is often used for web development, automation, data analysis, artificial intelligence, and more.</p>
+        
+            <h3>How Python Works</h3>
+            <p>Python code is interpreted by the Python interpreter, which executes the code line by line. Python is cross-platform, meaning that the same Python code can run on different operating systems with little or no modification. Python's simple syntax and dynamic typing make it an ideal language for beginners and experts alike.</p>
+        
+            <h3>Versions of Python</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Released Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Python 1.0</td>
+                        <td>1991</td>
+                    </tr>
+                    <tr>
+                        <td>Python 2.0</td>
+                        <td>2000</td>
+                    </tr>
+                    <tr>
+                        <td>Python 3.0</td>
+                        <td>2008</td>
+                    </tr>
+                    <tr>
+                        <td>Python 3.5</td>
+                        <td>2015</td>
+                    </tr>
+                    <tr>
+                        <td>Python 3.6</td>
+                        <td>2016</td>
+                    </tr>
+                    <tr>
+                        <td>Python 3.9</td>
+                        <td>2020</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="python_syntax">
+            <h2>Python Syntax</h2>
+        
+            <h3>Indentation</h3>
+            <p>Indentation in Python is used to define the structure of the code. Unlike other programming languages that use curly braces or other markers, Python relies on indentation to determine the grouping of statements.</p>
+            <pre>
+                <code>if True:
+            print("This is indented")
+            print("This is also part of the if block")
+                </code>
+            </pre>
+            <p>In the above example, the code inside the <code>if</code> statement is indented to define a block of code that should be executed when the condition is true.</p>
+        
+            <h3>Python Comments</h3>
+            <p>Comments in Python are used to explain code and are not executed by the interpreter. They are marked with a <code>#</code> symbol for single-line comments, or triple quotes <code>"""</code> or <code>'''</code> for multi-line comments.</p>
+            <pre>
+                <code># This is a single-line comment
+        """
+        This is a multi-line comment
+        spanning multiple lines
+        """
+                </code>
+            </pre>
+            <p>The <code>#</code> symbol starts a single-line comment, and anything following it on the line is ignored by the interpreter. Multi-line comments are enclosed in triple quotes.</p>
+        </section>
+        
+        <section id="python_variables">
+            <h2>Python Variables</h2>
+        
+            <h3>Variable Assignment</h3>
+            <p>Variables in Python are used to store data values. You do not need to declare variables before using them, and you can assign a value to a variable using the <code>=</code> operator.</p>
+            <pre>
+                <code>x = 10
+        y = "Hello, World!"
+                </code>
+            </pre>
+            <p>In this example, <code>x</code> is assigned an integer value, and <code>y</code> is assigned a string value.</p>
+          </section>
+
+        <section id="python_datatypes">
+            <h3>Data Types</h3>
+            <p>Python supports various data types, including integers, floating-point numbers, strings, lists, tuples, dictionaries, and more. You can check the type of a variable using the <code>type()</code> function.</p>
+        
+            <pre>
+                <code>
+        x = 10
+        print(type(x))  # Outputs: &lt;class 'int'&gt;
+        
+        y = 3.14
+        print(type(y))  # Outputs: &lt;class 'float'&gt;
+        
+        z = "Hello"
+        print(type(z))  # Outputs: &lt;class 'str'&gt;
+        
+        a = [1, 2, 3]
+        print(type(a))  # Outputs: &lt;class 'list'&gt;
+        
+        b = (1, 2, 3)
+        print(type(b))  # Outputs: &lt;class 'tuple'&gt;
+        
+        c = {'key': 'value'}
+        print(type(c))  # Outputs: &lt;class 'dict'&gt;
+        
+        d = {1, 2, 3}
+        print(type(d))  # Outputs: &lt;class 'set'&gt;
+        
+        e = frozenset([1, 2, 3])
+        print(type(e))  # Outputs: &lt;class 'frozenset'&gt;
+        
+        f = True
+        print(type(f))  # Outputs: &lt;class 'bool'&gt;
+        
+        g = None
+        print(type(g))  # Outputs: &lt;class 'NoneType'&gt;
+                </code>
+            </pre>
+        </section>
+        
+        
+        
+        <section id="python_functions">
+            <h3>Python Functions</h3>
+            <p>Functions in Python are defined using the <code>def</code> keyword. A function is a block of code that runs when it is called, and you can pass data, known as parameters, into a function.</p>
+            <pre>
+                <code>def greet(name):
+            return "Hello, " + name
+        
+        print(greet("Alice"))  # Outputs: Hello, Alice
+                </code>
+            </pre>
+        </section>
+        
+
+        <section id="python_Numbers">
+          <h3>Numbers</h3>
+          <p>Numbers in Python can be of three types: integers, floating-point numbers, and complex numbers. You can perform various arithmetic operations on them.</p>
+          <pre>
+              <code>
+      # Integer
+      x = 10
+      print(x)  # Outputs: 10
+      print(type(x))  # Outputs: &lt;class 'int'&gt;
+      
+      # Floating-point
+      y = 3.14
+      print(y)  # Outputs: 3.14
+      print(type(y))  # Outputs: &lt;class 'float'&gt;
+      
+      # Complex
+      z = 1 + 2j
+      print(z)  # Outputs: (1+2j)
+      print(type(z))  # Outputs: &lt;class 'complex'&gt;
+              </code>
+          </pre>
+      </section>
+      
+
+      <section id="python_casting">
+        <h2>Python Casting</h2>
+        <h3>Casting in Python</h3>
+        <p>Casting is the process of converting a variable from one type to another. Python has built-in functions for casting types, including <code>int()</code>, <code>float()</code>, and <code>str()</code>.</p>
+        <pre>
+            <code>
+    # Convert a float to an integer
+    x = int(3.14)
+    print(x)  # Outputs: 3
+    print(type(x))  # Outputs: &lt;class 'int'&gt;
+    
+    # Convert an integer to a float
+    y = float(10)
+    print(y)  # Outputs: 10.0
+    print(type(y))  # Outputs: &lt;class 'float'&gt;
+    
+    # Convert a number to a string
+    z = str(100)
+    print(z)  # Outputs: '100'
+    print(type(z))  # Outputs: &lt;class 'str'&gt;
+            </code>
+        </pre>
+        <section id="python_casting_complex">
+            <h3>Casting to Complex Numbers</h3>
+            <p>You can cast numbers to complex using the <code>complex()</code> function.</p>
+            <pre>
+                <code>
+    # Convert an integer to a complex number
+    a = complex(5)
+    print(a)  # Outputs: (5+0j)
+    print(type(a))  # Outputs: &lt;class 'complex'&gt;
+    
+    # Convert a float to a complex number
+    b = complex(3.14)
+    print(b)  # Outputs: (3.14+0j)
+    print(type(b))  # Outputs: &lt;class 'complex'&gt;
+                </code>
+            </pre>
+        </section>
+    </section>
+    
+    <section id="python_strings">
+      <h2>Python Strings</h2>
+      <p>Strings in Python are sequences of characters enclosed in quotes. You can use either single quotes <code>'</code> or double quotes <code>"</code> to define a string.</p>
+      
+      <h3>Basic String Example</h3>
+      <pre>
+          <code>
+  # Basic string example
+  message = "Welcome to the world of Python"
+  print(message)  # Outputs: Welcome to the world of Python
+          </code>
+      </pre>
+      <p>Output: Welcome to the world of Python</p>
+      
+      <h3>String Concatenation</h3>
+      <pre>
+          <code>
+  # Concatenating two strings
+  greeting = "Hello"
+  name = "Alice"
+  full_message = greeting + " " + name
+  print(full_message)  # Outputs: Hello Alice
+          </code>
+      </pre>
+      <p>Output: Hello Alice</p>
+      
+      <h3>String Repetition</h3>
+      <pre>
+          <code>
+  # Repeating a string multiple times
+  echo = "Hello! " * 3
+  print(echo)  # Outputs: Hello! Hello! Hello! 
+          </code>
+      </pre>
+      <p>Output: Hello! Hello! Hello!</p>
+      
+      <h3>String Slicing</h3>
+      <pre>
+          <code>
+  # Slicing a string to get a substring
+  word = "EnlightenDrastha"
+  sliced_word = word[0:9]
+  print(sliced_word)  # Outputs: Enlighten
+          </code>
+      </pre>
+      <p>Output: Enlighten</p>
+      
+      <h3>String Length</h3>
+      <p>To find the length of a string, use the <code>len()</code> function.</p>
+      <pre>
+          <code>
+  # Finding the length of a string
+  length = len("EnlightenDrastha")
+  print(length)  # Outputs: 16
+          </code>
+      </pre>
+      <p>Output: 16</p>
+  </section>
+  
+  <section id="python_booleans">
+    <h2>Python Booleans</h2>
+    <p>Booleans in Python represent one of two values: <code>True</code> or <code>False</code>. They are commonly used in conditional statements and logical operations.</p>
+    
+    <h3>Basic Boolean Example</h3>
+    <pre>
+        <code>
+# Basic Boolean values
+is_active = True
+is_inactive = False
+print(is_active)  # Outputs: True
+print(is_inactive)  # Outputs: False
+        </code>
+    </pre>
+    <p>Output: True, False</p>
+    
+    <h3>Boolean with Comparison</h3>
+    <pre>
+        <code>
+# Boolean result from comparison
+x = 10
+y = 20
+result = x < y
+print(result)  # Outputs: True
+        </code>
+    </pre>
+    <p>Output: True</p>
+    
+    <h3>Boolean with Logical Operators</h3>
+    <pre>
+        <code>
+# Boolean with logical operators
+a = True
+b = False
+logical_and = a and b
+logical_or = a or b
+print(logical_and)  # Outputs: False
+print(logical_or)  # Outputs: True
+        </code>
+    </pre>
+    <p>Output: False, True</p>
+    
+    <h3>Boolean Casting</h3>
+    <p>You can cast values to a boolean using the <code>bool()</code> function.</p>
+    <pre>
+        <code>
+# Casting to boolean
+bool_value = bool(1)
+print(bool_value)  # Outputs: True
+
+bool_value = bool(0)
+print(bool_value)  # Outputs: False
+        </code>
+    </pre>
+    <p>Output: True, False</p>
+</section>
+
+  
+<section id="python_operators">
+  <h2>Python Operators</h2>
+  <p>Operators in Python are used to perform operations on variables and values. Python supports various types of operators, including arithmetic, comparison, logical, and assignment operators.</p>
+
+  <h3>The <code>+</code> Operator</h3>
+  <pre>
+      <code>
+# Addition of two numbers
+result = 10 + 5
+print(result)  # Outputs: 15
+      </code>
+  </pre>
+  <p>Output: 15</p>
+
+  <h3>The <code>-</code> Operator</h3>
+  <pre>
+      <code>
+# Subtraction of two numbers
+result = 10 - 5
+print(result)  # Outputs: 5
+      </code>
+  </pre>
+  <p>Output: 5</p>
+
+  <h3>The <code>*</code> Operator</h3>
+  <pre>
+      <code>
+# Multiplication of two numbers
+result = 10 * 5
+print(result)  # Outputs: 50
+      </code>
+  </pre>
+  <p>Output: 50</p>
+
+  <h3>The <code>/</code> Operator</h3>
+  <pre>
+      <code>
+# Division of two numbers
+result = 10 / 5
+print(result)  # Outputs: 2.0
+      </code>
+  </pre>
+  <p>Output: 2.0</p>
+
+  <h3>The <code>==</code> Operator</h3>
+  <pre>
+      <code>
+# Comparison of two numbers
+is_equal = (10 == 5)
+print(is_equal)  # Outputs: False
+      </code>
+  </pre>
+  <p>Output: False</p>
+
+  <h3>The <code>and</code> Operator</h3>
+  <pre>
+      <code>
+# Logical AND operation
+result = (True and False)
+print(result)  # Outputs: False
+      </code>
+  </pre>
+  <p>Output: False</p>
+
+  <h3>The <code>or</code> Operator</h3>
+  <pre>
+      <code>
+# Logical OR operation
+result = (True or False)
+print(result)  # Outputs: True
+      </code>
+  </pre>
+  <p>Output: True</p>
+</section>
+
+  
+<section id="python_lists">
+  <h2>Python Lists</h2>
+  <p>Python lists are used to store multiple items in a single variable. Lists are ordered, changeable, and allow duplicate values. They are defined by square brackets <code>[]</code>.</p>
+
+  <h3>Basic List</h3>
+  <pre>
+      <code>
+# Creating a basic list
+fruits = ["apple", "banana", "cherry"]
+print(fruits)  # Outputs: ['apple', 'banana', 'cherry']
+      </code>
+  </pre>
+  <p>Output: ['apple', 'banana', 'cherry']</p>
+
+  <h3>Accessing List Items</h3>
+  <pre>
+      <code>
+# Accessing items in a list by index
+first_fruit = fruits[0]
+print(first_fruit)  # Outputs: apple
+      </code>
+  </pre>
+  <p>Output: apple</p>
+
+  <h3>Modifying List Items</h3>
+  <pre>
+      <code>
+# Modifying an item in a list
+fruits[1] = "blueberry"
+print(fruits)  # Outputs: ['apple', 'blueberry', 'cherry']
+      </code>
+  </pre>
+  <p>Output: ['apple', 'blueberry', 'cherry']</p>
+
+  <h3>Adding Items to a List</h3>
+  <pre>
+      <code>
+# Adding an item to the end of a list
+fruits.append("orange")
+print(fruits)  # Outputs: ['apple', 'blueberry', 'cherry', 'orange']
+      </code>
+  </pre>
+  <p>Output: ['apple', 'blueberry', 'cherry', 'orange']</p>
+
+  <h3>Removing Items from a List</h3>
+  <pre>
+      <code>
+# Removing an item from a list
+fruits.remove("blueberry")
+print(fruits)  # Outputs: ['apple', 'cherry', 'orange']
+      </code>
+  </pre>
+  <p>Output: ['apple', 'cherry', 'orange']</p>
+
+  <h3>Nesting Lists</h3>
+  <pre>
+      <code>
+# Creating a nested list (a list within a list)
+nested_list = [["apple", "banana"], ["carrot", "potato"]]
+print(nested_list)  # Outputs: [['apple', 'banana'], ['carrot', 'potato']]
+      </code>
+  </pre>
+  <p>Output: [['apple', 'banana'], ['carrot', 'potato']]</p>
+
+  <h3>Merging Lists</h3>
+  <pre>
+      <code>
+# Merging two lists together
+vegetables = ["carrot", "potato"]
+combined_list = fruits + vegetables
+print(combined_list)  # Outputs: ['apple', 'cherry', 'orange', 'carrot', 'potato']
+      </code>
+  </pre>
+  <p>Output: ['apple', 'cherry', 'orange', 'carrot', 'potato']</p>
+</section>
+
+        
+<section id="python_if_else">
+  <h2>Python If ... Else</h2>
+  <p>The <code>if</code> statement in Python allows you to execute a block of code based on a condition. The <code>else</code> statement provides an alternative block of code to execute if the condition is false.</p>
+
+  <h3>Basic If Statement</h3>
+  <pre>
+      <code>
+# Example of a basic if statement
+x = 10
+if x > 5:
+  print("x is greater than 5")
+      </code>
+  </pre>
+  <p>Output: x is greater than 5</p>
+
+  <h3>If ... Else Statement</h3>
+  <pre>
+      <code>
+# Example of if ... else statement
+x = 3
+if x > 5:
+  print("x is greater than 5")
+else:
+  print("x is not greater than 5")
+      </code>
+  </pre>
+  <p>Output: x is not greater than 5</p>
+
+  <h3>If ... Elif ... Else Statement</h3>
+  <pre>
+      <code>
+# Example of if ... elif ... else statement
+x = 7
+if x > 10:
+  print("x is greater than 10")
+elif x == 7:
+  print("x is equal to 7")
+else:
+  print("x is less than 10 and not equal to 7")
+      </code>
+  </pre>
+  <p>Output: x is equal to 7</p>
+
+  <h3>Nested If Statements</h3>
+  <pre>
+      <code>
+# Example of nested if statements
+x = 15
+if x > 10:
+  if x < 20:
+      print("x is between 10 and 20")
+  else:
+      print("x is 20 or more")
+else:
+  print("x is 10 or less")
+      </code>
+  </pre>
+  <p>Output: x is between 10 and 20</p>
+
+  <h3>Short Hand If Statement</h3>
+  <pre>
+      <code>
+# Example of short hand if statement
+x = 10
+if x > 5: print("x is greater than 5")
+      </code>
+  </pre>
+  <p>Output: x is greater than 5</p>
+
+  <h3>Short Hand If ... Else</h3>
+  <pre>
+      <code>
+# Example of short hand if ... else statement
+x = 5
+print("Yes") if x == 5 else print("No")
+      </code>
+  </pre>
+  <p>Output: Yes</p>
+</section>
+
+
+    
+<section id="python-tuples">
+    <h2>Python Tuples</h2>
+    <p>A tuple in Python is an immutable, ordered collection of elements. Tuples are similar to lists, but unlike lists, the elements of a tuple cannot be changed once they are assigned.</p>
+  
+    <h3>Basic Python Tuple Example</h3>
+    <pre>
+        <code>
+  # Example of a basic Python tuple
+  my_tuple = (1, 2, 3, "Hello", 5.5)
+  print(my_tuple)
+        </code>
+    </pre>
+    <p>Output: (1, 2, 3, 'Hello', 5.5)</p>
+  </section>
+  
+
+  <div class="content" id="python_sets">
+    <h2 id="what-is-a-python-set">What is a Python Set?</h2>
+    <p>A Python set is an unordered collection of unique elements. Sets are used when you want to store multiple items in a single variable, but unlike lists or tuples, they do not allow duplicate values.</p>
+    <p>Sets are mutable, meaning you can add or remove items from them, but the elements themselves must be immutable (e.g., strings, numbers, or tuples).</p>
+  
+    <ul>
+        <li><strong>Unique Elements:</strong> Sets automatically remove duplicate entries.</li>
+        <li><strong>Unordered Collection:</strong> The elements in a set have no specific order.</li>
+        <li><strong>Efficient Membership Testing:</strong> Sets are optimized for fast membership testing, making them ideal for use cases where you need to check if an item is in the set.</li>
+        <li><strong>Set Operations:</strong> Python provides built-in operations for sets, such as union, intersection, difference, and symmetric difference.</li>
+    </ul>
+  
+    <h3>Python Set Example</h3>
+    <pre><code># Example of a basic Python set
+  my_set = {1, 2, 3, "Hello", 5.5, 2}  # Duplicate '2' will be removed
+  print(my_set)
+  
+  # Adding an element to the set
+  my_set.add("World")
+  print(my_set)
+  
+  # Output: {1, 2, 3, 'Hello', 5.5}
+  # Output after adding 'World': {1, 2, 3, 'Hello', 5.5, 'World'}
+  </code></pre>
+  </div>
+  
+        
+  <h2 id="python-dictionaries">Python Dictionaries</h2>
+  <p>A Python dictionary is an unordered, mutable, and indexed collection of key-value pairs. Each key in a dictionary must be unique, and it is used to access its associated value.</p>
+  
+  <ul>
+      <li><strong>Keys:</strong> Keys are unique identifiers for elements in the dictionary. They can be of any immutable type, such as strings, numbers, or tuples.</li>
+      <li><strong>Values:</strong> Values can be of any data type and can be repeated. They are the data associated with each key.</li>
+      <li><strong>Mutability:</strong> Dictionaries are mutable, meaning that their contents can be changed after creation. You can add, remove, or modify key-value pairs.</li>
+      <li><strong>Unordered:</strong> Dictionaries do not maintain order, although in Python 3.7 and later, dictionaries maintain the insertion order.</li>
+  </ul>
+  
+  <p>The general syntax for a Python dictionary is:</p>
+  <pre><code>my_dict = {'key1': 'value1', 'key2': 'value2'}</code></pre>
+  
+  <h3>Example of a Python Dictionary</h3>
+  <pre><code># Example of a basic Python dictionary
+  my_dict = {
+      "name": "ElightenDrashta",
+      "type": "Tutorial",
+      "topics": ["Python", "JavaScript", "CSS"]
+  }
+  
+  # Accessing a value by its key
+  print(my_dict["name"])  # Output: ElightenDrashta
+  
+  # Adding a new key-value pair
+  my_dict["difficulty"] = "Beginner"
+  print(my_dict)
+  
+  # Output:
+  # {'name': 'ElightenDrashta', 'type': 'Tutorial', 'topics': ['Python', 'JavaScript', 'CSS'], 'difficulty': 'Beginner'}
+  </code></pre>
+  
+        
+  <h2 id="python-while-loops">Python While Loops</h2>
+  <p>A <code>while</code> loop in Python repeatedly executes a block of code as long as a given condition is true. It's a fundamental looping construct in Python and is useful when the number of iterations is not known in advance.</p>
+  
+  <ul>
+      <li><strong>Condition:</strong> The loop continues to execute as long as the condition evaluates to <code>True</code>. Once the condition becomes <code>False</code>, the loop stops.</li>
+      <li><strong>Loop Body:</strong> The code block inside the loop that runs on each iteration as long as the condition is <code>True</code>.</li>
+      <li><strong>Infinite Loop:</strong> Be cautious of loops where the condition never becomes <code>False</code>, as this will create an infinite loop.</li>
+  </ul>
+  
+  <p>The general syntax for a <code>while</code> loop is:</p>
+  <pre><code>while condition:
+      # Code block to be executed
+  </code></pre>
+  
+  <h3>Example of a Python While Loop</h3>
+  <pre><code># Example of a basic Python while loop
+  counter = 0
+  
+  while counter < 5:
+      print("Counter is at:", counter)
+      counter += 1
+  
+  # Output:
+  # Counter is at: 0
+  # Counter is at: 1
+  # Counter is at: 2
+  # Counter is at: 3
+  # Counter is at: 4
+  </code></pre>
+  
+  <p>This example demonstrates a simple <code>while</code> loop that prints the value of the counter variable and increments it on each iteration. The loop runs until the counter reaches 5.</p>
+  
+
+  <h2 id="python-for-loops">Python For Loops</h2>
+  <p>Python's <code>for</code> loop is used to iterate over a sequence (like a list, tuple, dictionary, set, or string) or other iterable objects. With the <code>for</code> loop, we can execute a set of statements, once for each item in a sequence.</p>
+  
+  <h3>Basic Syntax</h3>
+  <p>Here’s the basic syntax of a <code>for</code> loop in Python:</p>
+  <pre><code>for item in sequence:
+      # Execute statements</code></pre>
+  
+  <h3>Example: Iterating Through a List</h3>
+  <p>Below is an example of a <code>for</code> loop that iterates through a list of numbers and prints each one:</p>
+  <pre><code>numbers = [1, 2, 3, 4, 5]
+  for num in numbers:
+      print(num)</code></pre>
+  
+  <h3>Example: Using <code>range()</code> in a For Loop</h3>
+  <p>You can use the <code>range()</code> function to generate a sequence of numbers, which can be useful in loops:</p>
+  <pre><code>for i in range(5):
+      print("Iteration", i)</code></pre>
+  
+
+      <h2 id="python-functions">Python Functions</h2>
+      <p>Functions in Python are blocks of reusable code that perform a specific task. Functions can accept inputs, called parameters, and return an output. They help in organizing code and making it more modular and maintainable.</p>
+      
+      <h3>Defining a Function</h3>
+      <p>You can define a function in Python using the <code>def</code> keyword, followed by the function name and parentheses:</p>
+      <pre><code>def function_name(parameters):
+          # Function body
+          return result</code></pre>
+      
+      <h3>Example: A Simple Function</h3>
+      <p>Here’s an example of a simple function that adds two numbers:</p>
+      <pre><code>def add_numbers(a, b):
+          return a + b
+      
+      result = add_numbers(3, 5)
+      print(result)  # Output will be 8</code></pre>
+      
+      <h3>Calling a Function</h3>
+      <p>Once a function is defined, you can call it by using its name followed by parentheses. If the function takes parameters, you pass the arguments inside the parentheses:</p>
+      <pre><code>result = function_name(arguments)</code></pre>
+      
+      
+      <h2 id="python-lambda">Python Lambda Functions</h2>
+      <p>A <code>lambda</code> function in Python is a small, anonymous function defined with the <code>lambda</code> keyword. These functions can have any number of arguments but only one expression. They are often used for short, simple functions that are not reused elsewhere.</p>
+      
+      <h3>Syntax of a Lambda Function</h3>
+      <p>The basic syntax of a lambda function is:</p>
+      <pre><code>lambda arguments: expression</code></pre>
+      
+      <h3>Example: Simple Lambda Function</h3>
+      <p>Here’s an example of a simple lambda function that adds 10 to a given number:</p>
+      <pre><code>add_10 = lambda x: x + 10
+      print(add_10(5))  # Output will be 15</code></pre>
+      
+      <h3>Example: Lambda with Multiple Arguments</h3>
+      <p>Lambdas can also take multiple arguments. Below is an example of a lambda function that adds two numbers:</p>
+      <pre><code>add_numbers = lambda a, b: a + b
+      print(add_numbers(3, 5))  # Output will be 8</code></pre>
+      
+      <h3>Use Case: Sorting with Lambda</h3>
+      <p>One common use of lambda functions is in functions like <code>sort()</code> or <code>sorted()</code> when you need to specify a custom sorting order:</p>
+      <pre><code>points = [(2, 3), (1, 5), (4, 1)]
+      points_sorted = sorted(points, key=lambda point: point[1])
+      print(points_sorted)  # Output will be [(4, 1), (2, 3), (1, 5)]</code></pre>
+      
+    
+      <h2 id="python_arrays">Python Arrays</h2>
+      <p>In Python, arrays are a collection of items stored at contiguous memory locations. They are used to store multiple values in a single variable. Arrays in Python can be implemented using the <code>array</code> module or using lists (though lists are more commonly used in Python).</p>
+      <p>Here is an example of how to create and manipulate arrays in Python:</p>
+      <div class="example">
+          <pre># Example of a Python array using the array module
+      import array
+      
+      # Creating an array of integers
+      arr = array.array('i', [1, 2, 3, 4, 5])
+      
+      # Accessing elements of the array
+      print("First element:", arr[0])
+      
+      # Appending a new element
+      arr.append(6)
+      print("Array after appending:", arr)
+      
+      # Removing an element
+      arr.remove(3)
+      print("Array after removing an element:", arr)
+      </pre>
+          <p><strong>Output:</strong></p>
+          <pre>First element: 1
+      Array after appending: array('i', [1, 2, 3, 4, 5, 6])
+      Array after removing an element: array('i', [1, 2, 4, 5, 6])</pre>
+      </div>
+      
+      
+          
+    
+    </main>
+    
+      <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+      </footer>
+    
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function displaySum() {
+  const firstNum = Number(document.getElementById('firstNum').innerText);
+  const secondNum = Number(document.getElementById('secondNum').innerText);
+  const total = firstNum + secondNum;
+  document.getElementById('answer').innerText = total;
+}
+
+function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.querySelector('.main-content').style.marginLeft = "0";
+    }
+
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.querySelector('.main-content').style.marginLeft = "250px";
+    }
+  </script>
+</body>
+</html>

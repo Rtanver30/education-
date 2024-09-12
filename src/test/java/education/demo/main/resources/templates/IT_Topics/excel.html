@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Basics</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #b0d4de;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+}
+
+main {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 40px;
+}
+
+.sql-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.sql-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 1 150px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+ caption {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-container input[type="submit"],
+    .form-container input[type="reset"] {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .form-container input[type="reset"] {
+      background-color: #f44336;
+      color: white;
+    }
+    .text-styles {
+      margin: 20px 0;
+      text-align: center;
+    }  /* Style for the side navigation */
+    .sidenav {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: 0.3s;
+    }
+
+    .sidenav a {
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 16px;
+      transition: margin-left 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .sidenav a {
+        text-align: center;
+        float: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
+h2, h3{
+  margin-top: 20px;
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-success text-white text-center py-3">
+    <h1>Learn Microsoft excel Basics</h1>
+    <p>Microsoft excel Explained for Beginners</p>
+</header>
+
+ <!-- Side Navigation -->
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#excel">Microsoft excel</a>
+  <a href="#excel_introduction">excel introduction</a>
+  <a href="#excel_syntax">excel_syntax</a>
+  <a href="#excel_ranges">excel_ranges</a>
+  <a href="#excel_fill">excel fill</a>
+  <a href="#excel_move_cells">excel move cells</a>
+  <a href="#excel_add_cells">excel add cells</a>
+  <a href="#excel_delete_cells">excel delete cells</a>
+  <a href="#excel_undo_redo">excel undo redo</a>
+  <a href="#excel_formulas">excel formulas</a>
+  <a href="#excel_relative_references">excel relative references</a>
+  <a href="#excel_absolute_references">excel absolute references</a>
+  <a href="#excel_addition_operator">excel addition operator</a>
+  <a href="#excel_parentheses">excel parentheses</a>
+  <a href="#excel_functions">excel functions</a>
+  
+  
+</div>>
+  <!-- Main Content -->
+  <div class="content">
+
+    <div id="main" class="main-content">
+     
+        <main class="container mt-4">
+            <section id="excel">
+                <h2>Microsoft Excel</h2>
+                <p>Microsoft Excel is a powerful spreadsheet application that provides a variety of tools for data analysis, visualization, and management. It is widely used for tasks ranging from simple calculations to complex data modeling and reporting.</p>
+                
+                <h3>Key Features of Excel</h3>
+                <ul>
+                    <li><strong>Formulas and Functions:</strong> Excel includes a vast library of built-in formulas and functions for performing mathematical, statistical, financial, and logical operations.</li>
+                    <li><strong>Charts and Graphs:</strong> Allows users to create a variety of charts and graphs to visualize data, including bar charts, line graphs, pie charts, and scatter plots.</li>
+                    <li><strong>PivotTables:</strong> Enables users to summarize, analyze, and present large data sets dynamically by dragging and dropping fields into different areas of the table.</li>
+                    <li><strong>Data Filtering and Sorting:</strong> Provides tools for sorting and filtering data to focus on specific information or trends.</li>
+                    <li><strong>Conditional Formatting:</strong> Allows users to apply formatting to cells based on specific conditions, making it easier to highlight important data.</li>
+                    <li><strong>Data Validation:</strong> Ensures data integrity by restricting the type of data that can be entered into cells.</li>
+                    <li><strong>Macros:</strong> Automates repetitive tasks by recording and running sequences of actions, which can save time and increase efficiency.</li>
+                </ul>
+                
+                <h3>Basic Excel Functions</h3>
+                <pre><code>
+            -- Example of SUM function
+            =SUM(A1:A10)  -- Calculates the total of values in cells A1 through A10
+            
+            -- Example of AVERAGE function
+            =AVERAGE(B1:B10)  -- Calculates the average of values in cells B1 through B10
+            
+            -- Example of VLOOKUP function
+            =VLOOKUP(C1, A1:B10, 2, FALSE)  -- Looks up the value in cell C1 within the range A1:B10 and returns the corresponding value from the second column
+            
+            -- Example of IF function
+            =IF(D1 > 100, "High", "Low")  -- Returns "High" if the value in D1 is greater than 100, otherwise returns "Low"
+                </code></pre>
+                
+                <h3>Creating Charts in Excel</h3>
+                <pre><code>
+            -- Example: Create a bar chart
+            1. Select the data range you want to chart.
+            2. Go to the "Insert" tab on the Ribbon.
+            3. Click on the "Bar Chart" icon and choose the type of bar chart you want to create.
+            4. Customize the chart using the Chart Tools that appear on the Ribbon.
+                </code></pre>
+                
+                <h3>Using PivotTables</h3>
+                <pre><code>
+            -- Example: Create a PivotTable
+            1. Select the data range you want to analyze.
+            2. Go to the "Insert" tab and click on "PivotTable."
+            3. Choose where you want the PivotTable to be placed (new worksheet or existing worksheet).
+            4. Drag and drop fields into the Rows, Columns, and Values areas to organize and summarize your data.
+                </code></pre>
+                
+                <p>* Excel is a versatile tool that is essential for data analysis, financial forecasting, and creating detailed reports. Its extensive features support both simple and advanced data manipulation tasks.</p>
+            </section>
+            
+            
+            
+            
+        
+        
+            <section id="excel_introduction">
+                <h2>Introduction to Microsoft Excel</h2>
+                
+                <h3>History of Excel</h3>
+                <p>Microsoft Excel, first released in 1985, is a spreadsheet application developed by Microsoft. Initially designed for the Apple Macintosh, Excel was later adapted for Windows and quickly became one of the most popular spreadsheet tools due to its powerful features and ease of use. Over the years, Excel has evolved to include a wide range of features for data analysis, visualization, and automation.</p>
+                
+                <h3>Introduction to Excel</h3>
+                <p>Microsoft Excel is a versatile spreadsheet program used for data organization, analysis, and visualization. It is widely utilized across various industries for tasks ranging from simple calculations to complex financial modeling and data reporting. Excel offers an extensive set of features including formulas, functions, charts, and PivotTables to support a broad spectrum of data management and analysis needs.</p>
+                
+                <h3>How Excel Works</h3>
+                <p>Excel operates on a grid of rows and columns, allowing users to enter and manipulate data in a tabular format. Users can perform calculations using built-in formulas and functions, create charts and graphs to visualize data, and automate repetitive tasks with macros. Excel supports a wide range of data types and formats, making it a flexible tool for both basic and advanced data analysis tasks.</p>
+                
+                <h3>Key Features of Excel</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Formulas and Functions</td>
+                            <td>Allows users to perform calculations and data analysis with a vast library of built-in functions.</td>
+                        </tr>
+                        <tr>
+                            <td>Charts and Graphs</td>
+                            <td>Provides tools to create visual representations of data, including bar charts, line graphs, and pie charts.</td>
+                        </tr>
+                        <tr>
+                            <td>PivotTables</td>
+                            <td>Enables users to summarize and analyze large data sets by creating interactive tables.</td>
+                        </tr>
+                        <tr>
+                            <td>Conditional Formatting</td>
+                            <td>Applies formatting to cells based on specified conditions to highlight important data.</td>
+                        </tr>
+                        <tr>
+                            <td>Macros</td>
+                            <td>Automates repetitive tasks by recording and running sequences of actions.</td>
+                        </tr>
+                        <tr>
+                            <td>Data Validation</td>
+                            <td>Ensures data integrity by restricting the type of data that can be entered into cells.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            
+            
+        
+            <section id="excel_syntax">
+                <h2>Excel Syntax</h2>
+            
+                <h3>Introduction to Excel Syntax</h3>
+                <p>Excel syntax refers to the rules and structure used to write formulas, functions, and other commands in Microsoft Excel. Understanding Excel syntax is essential for performing calculations, analyzing data, and automating tasks within spreadsheets.</p>
+            
+                <h3>Basic Excel Formula Syntax</h3>
+                <p>Excel formulas start with an equals sign (<code>=</code>) and can include a combination of operators, functions, and cell references. Here are some basic examples:</p>
+                <pre><code>
+                -- Adding two numbers
+                =A1 + B1
+            
+                -- Subtracting one number from another
+                =A1 - B1
+            
+                -- Multiplying two numbers
+                =A1 * B1
+            
+                -- Dividing one number by another
+                =A1 / B1
+                </code></pre>
+            
+                <h3>Using Excel Functions</h3>
+                <p>Functions in Excel perform specific calculations and return results. Functions are written with their name followed by arguments in parentheses. Examples of common functions include:</p>
+                <pre><code>
+                -- Summing a range of cells
+                =SUM(A1:A10)
+            
+                -- Calculating the average of a range of cells
+                =AVERAGE(B1:B10)
+            
+                -- Counting the number of cells with numeric values
+                =COUNT(C1:C10)
+            
+                -- Finding the minimum value in a range
+                =MIN(D1:D10)
+            
+                -- Finding the maximum value in a range
+                =MAX(E1:E10)
+                </code></pre>
+            
+                <h3>Cell References</h3>
+                <p>Cell references are used to include the values from other cells in formulas. There are different types of cell references:</p>
+                <ul>
+                    <li><strong>Relative Reference:</strong> Adjusts when the formula is copied to another cell (e.g., <code>A1</code>).</li>
+                    <li><strong>Absolute Reference:</strong> Remains constant when the formula is copied (e.g., <code>$A$1</code>).</li>
+                    <li><strong>Mixed Reference:</strong> Combines relative and absolute references (e.g., <code>$A1</code> or <code>A$1</code>).</li>
+                </ul>
+            
+                <h3>Excel Comments</h3>
+                <p>Comments in Excel are used to add notes or explanations to cells and formulas. Comments are not part of the formula and do not affect calculations. To add a comment, right-click a cell and select <strong>Insert Comment</strong>. In VBA (Visual Basic for Applications) code, comments are indicated with a single quotation mark (<code>'</code>).</p>
+                <pre><code>
+                ' This is a comment in VBA
+                Range("A1").Value = "Hello World"  ' This assigns a value to cell A1
+                </code></pre>
+                <p>Comments in VBA help explain the code, making it easier to understand and maintain.</p>
+            </section>
+            
+            
+            
+        
+            <section id="excel_ranges">
+                <h2>Excel Ranges</h2>
+            
+                <h3>Introduction to Excel Ranges</h3>
+                <p>In Excel, a range refers to a group of cells that are selected or referenced together. Ranges can be used in formulas and functions to perform calculations on multiple cells at once. Understanding how to define and work with ranges is fundamental for effective spreadsheet management.</p>
+            
+                <h3>Defining a Range</h3>
+                <p>Ranges are typically defined by specifying the starting and ending cell references. For example, <code>A1:B10</code> represents a range that includes all cells from <code>A1</code> to <code>B10</code>.</p>
+                <pre><code>
+                -- Selecting a range of cells
+                A1:B10
+                </code></pre>
+            
+                <h3>Using Ranges in Formulas</h3>
+                <p>Ranges are often used in formulas to perform calculations on multiple cells. Here are some examples:</p>
+                <pre><code>
+                -- Sum of a range of cells
+                =SUM(A1:A10)
+                
+                -- Average of a range of cells
+                =AVERAGE(B1:B10)
+                
+                -- Count of cells with numeric values in a range
+                =COUNT(C1:C10)
+                </code></pre>
+                <p>In these examples, the functions <code>SUM</code>, <code>AVERAGE</code>, and <code>COUNT</code> are applied to ranges of cells, providing results based on the specified cell groups.</p>
+            
+                <h3>Named Ranges</h3>
+                <p>Named ranges allow you to assign a name to a range of cells for easier reference in formulas. For example, you might name the range <code>A1:A10</code> as <code>SalesData</code> and use that name in your formulas.</p>
+                <pre><code>
+                -- Defining a named range
+                SalesData = A1:A10
+                
+                -- Using the named range in a formula
+                =SUM(SalesData)
+                </code></pre>
+                <p>Named ranges simplify formulas and make them more readable by using descriptive names instead of cell references.</p>
+            
+                <h3>Dynamic Ranges</h3>
+                <p>Dynamic ranges automatically adjust their size based on the number of entries. You can use dynamic ranges to handle changing data sizes in your calculations.</p>
+                <pre><code>
+                -- Creating a dynamic named range with OFFSET
+                =OFFSET(A1, 0, 0, COUNTA(A:A), 1)
+                </code></pre>
+                <p>This formula defines a dynamic range starting from <code>A1</code> and expanding based on the number of non-empty cells in column <code>A</code>.</p>
+            </section>
+            
+            
+            
+            <section id="excel_fill">
+                <h2>Excel Fill</h2>
+            
+                <h3>Introduction to Excel Fill</h3>
+                <p>The "Fill" feature in Excel allows you to automatically populate a range of cells with data or formulas based on a pattern or a single input. This tool helps streamline data entry and ensures consistency across your spreadsheet.</p>
+            
+                <h3>Fill Handle</h3>
+                <p>The Fill Handle is a small square located at the bottom-right corner of a selected cell or range. You can click and drag the Fill Handle to extend the data or formula to adjacent cells.</p>
+                <pre><code>
+                -- Example of using Fill Handle
+                1. Enter a value in cell A1.
+                2. Drag the Fill Handle from cell A1 down to fill a series (e.g., 1, 2, 3, ...).
+                </code></pre>
+                <p>In this example, dragging the Fill Handle will automatically increment the values in the selected cells, creating a sequence of numbers.</p>
+            
+                <h3>Fill Series</h3>
+                <p>The Fill Series option allows you to create a series of numbers, dates, or other patterns. To use Fill Series:</p>
+                <pre><code>
+                -- Example of filling a series of dates
+                1. Enter a start date in a cell.
+                2. Drag the Fill Handle while holding down the <code>Ctrl</code> key to fill a series of dates.
+                </code></pre>
+                <p>This feature helps in creating sequential data like dates or incremental numbers quickly.</p>
+            
+                <h3>Fill Down and Fill Right</h3>
+                <p>The Fill Down and Fill Right options are used to extend data or formulas vertically or horizontally:</p>
+                <pre><code>
+                -- Example of Fill Down
+                1. Enter a formula in cell A1.
+                2. Select cells A1 through A10.
+                3. Click <code>Home > Fill > Down</code> to apply the formula to all selected cells.
+            
+                -- Example of Fill Right
+                1. Enter a formula in cell A1.
+                2. Select cells A1 through E1.
+                3. Click <code>Home > Fill > Right</code> to apply the formula across the selected cells.
+                </code></pre>
+                <p>These options allow you to copy formulas or data across a range of cells efficiently, either vertically or horizontally.</p>
+            
+                <h3>Custom Fill Series</h3>
+                <p>You can create custom fill series by defining your own patterns:</p>
+                <pre><code>
+                -- Example of creating a custom fill series
+                1. Enter a custom pattern (e.g., "Monday, Wednesday, Friday") in consecutive cells.
+                2. Select the cells and drag the Fill Handle to extend the pattern.
+                </code></pre>
+                <p>This allows you to create more complex series based on specific patterns or intervals.</p>
+            </section>
+            
+            
+            
+        
+        
+        
+            <section id="excel_move_cells">
+                <h2>Excel Move Cells</h2>
+            
+                <h3>Introduction to Moving Cells</h3>
+                <p>The "Move Cells" feature in Excel allows you to reposition cells within a worksheet. This can be useful for reorganizing data, correcting layout issues, or adjusting your spreadsheet's structure.</p>
+            
+                <h3>Moving Cells Using Drag-and-Drop</h3>
+                <p>You can quickly move cells by using the drag-and-drop method:</p>
+                <pre><code>
+                -- Example of moving cells
+                1. Select the cell or range of cells you want to move.
+                2. Hover your cursor over the edge of the selected cells until it changes to a four-sided arrow cursor.
+                3. Click and drag the cells to the desired location.
+                </code></pre>
+                <p>This method allows you to visually reposition cells by dragging them to a new location.</p>
+            
+                <h3>Moving Cells Using Cut and Paste</h3>
+                <p>Another way to move cells is by using the cut and paste commands:</p>
+                <pre><code>
+                -- Example of moving cells using Cut and Paste
+                1. Select the cell or range of cells you want to move.
+                2. Right-click and select <code>Cut</code> or press <code>Ctrl+X</code>.
+                3. Select the new location where you want to move the cells.
+                4. Right-click and select <code>Paste</code> or press <code>Ctrl+V</code>.
+                </code></pre>
+                <p>Using cut and paste is effective for moving data while preserving the cell's content and format.</p>
+            
+                <h3>Using the "Insert Cut Cells" Feature</h3>
+                <p>Excel also provides an "Insert Cut Cells" option that allows you to move cells and insert them at a new location, shifting existing cells to make space:</p>
+                <pre><code>
+                -- Example of using Insert Cut Cells
+                1. Select the cell or range of cells you want to move.
+                2. Right-click and select <code>Cut</code> or press <code>Ctrl+X</code>.
+                3. Right-click the cell where you want to insert the cut cells.
+                4. Select <code>Insert Cut Cells</code> from the context menu.
+                </code></pre>
+                <p>This method allows you to insert cut cells into a new location, pushing existing cells down or to the right.</p>
+            
+                <h3>Considerations When Moving Cells</h3>
+                <ul>
+                    <li><strong>Formulas:</strong> Moving cells that contain formulas may affect references if they are relative. Ensure that your formulas update correctly after moving cells.</li>
+                    <li><strong>Data Validation:</strong> If cells contain data validation rules, moving them might require you to check and adjust the validation settings.</li>
+                    <li><strong>Formatting:</strong> Moving cells will retain their formatting, but be aware of how the new location may affect the layout and appearance of your spreadsheet.</li>
+                </ul>
+            </section>
+            
+            
+            
+        
+
+            <section id="excel_add_cells">
+                <h2>Excel Add Cells</h2>
+            
+                <h3>Introduction to Adding Cells</h3>
+                <p>In Excel, adding cells generally refers to inserting new cells into a worksheet, which can help in expanding data ranges, adjusting layouts, or accommodating additional information. This can be done either by inserting rows or columns, or by simply adding new cells to an existing range.</p>
+            
+                <h3>Inserting New Rows or Columns</h3>
+                <p>To add new rows or columns to your worksheet:</p>
+                <pre><code>
+                -- Example of inserting a new row
+                1. Select the row below where you want to insert a new row.
+                2. Right-click and choose <code>Insert</code> from the context menu.
+                3. Excel will insert a new row above the selected row.
+            
+                -- Example of inserting a new column
+                1. Select the column to the right of where you want to insert a new column.
+                2. Right-click and choose <code>Insert</code> from the context menu.
+                3. Excel will insert a new column to the left of the selected column.
+                </code></pre>
+                <p>Inserting rows or columns adjusts the existing cells accordingly and shifts the data to make room for the new cells.</p>
+            
+                <h3>Inserting Cells Within a Range</h3>
+                <p>To insert cells within an existing range and shift the current cells:</p>
+                <pre><code>
+                -- Example of inserting cells within a range
+                1. Select the cell or range of cells where you want to insert new cells.
+                2. Right-click and choose <code>Insert</code> from the context menu.
+                3. In the <code>Insert</code> dialog, choose whether to shift cells <code>Right</code> or <code>Down</code>.
+                </code></pre>
+                <p>This method allows you to insert individual cells and shift adjacent cells to accommodate the new cells, maintaining the structure of your data.</p>
+            
+                <h3>Using Excel Ribbon to Add Cells</h3>
+                <p>You can also use the Excel Ribbon to insert rows, columns, or cells:</p>
+                <pre><code>
+                -- Example of inserting using the Ribbon
+                1. Select the row or column where you want to insert.
+                2. Go to the <code>Home</code> tab on the Ribbon.
+                3. Click on the <code>Insert</code> button in the <code>Cells</code> group.
+                4. Choose <code>Insert Sheet Rows</code> or <code>Insert Sheet Columns</code> as needed.
+                </code></pre>
+                <p>Using the Ribbon provides a straightforward way to insert cells, rows, or columns with a single click.</p>
+            
+                <h3>Considerations When Adding Cells</h3>
+                <ul>
+                    <li><strong>Formulas:</strong> Inserting cells can affect formulas that reference the modified range. Ensure that formulas adjust correctly or update them as needed.</li>
+                    <li><strong>Formatting:</strong> New cells will inherit formatting from adjacent cells, but you may need to adjust formatting if it doesn't match your requirements.</li>
+                    <li><strong>Data Integrity:</strong> Ensure that adding cells doesn’t disrupt data consistency or layout, especially in complex worksheets.</li>
+                </ul>
+            </section>
+            
+            
+            
+      
+
+            <section id="excel_delete_cells">
+                <h2>Excel Delete Cells</h2>
+            
+                <h3>Introduction to Deleting Cells</h3>
+                <p>Deleting cells in Excel allows you to remove data and adjust the structure of your worksheet. You can delete cells, rows, or columns depending on your needs. This operation can help in cleaning up data or reorganizing your worksheet.</p>
+            
+                <h3>Deleting Rows or Columns</h3>
+                <p>To delete entire rows or columns from your worksheet:</p>
+                <pre><code>
+                -- Example of deleting a row
+                1. Select the row(s) you want to delete.
+                2. Right-click the selected row(s) and choose <code>Delete</code> from the context menu.
+                3. Excel will remove the selected row(s) and shift the remaining rows up.
+            
+                -- Example of deleting a column
+                1. Select the column(s) you want to delete.
+                2. Right-click the selected column(s) and choose <code>Delete</code> from the context menu.
+                3. Excel will remove the selected column(s) and shift the remaining columns left.
+                </code></pre>
+                <p>Deleting rows or columns will adjust the layout of your data, shifting adjacent cells accordingly.</p>
+            
+                <h3>Deleting Individual Cells</h3>
+                <p>To delete individual cells and shift the remaining cells:</p>
+                <pre><code>
+                -- Example of deleting cells within a range
+                1. Select the cell or range of cells you want to delete.
+                2. Right-click and choose <code>Delete</code> from the context menu.
+                3. In the <code>Delete</code> dialog, choose whether to shift cells <code>Left</code> or <code>Up</code>.
+                </code></pre>
+                <p>This method allows you to delete specific cells and move adjacent cells to fill the gap, maintaining the integrity of your data layout.</p>
+            
+                <h3>Using Excel Ribbon to Delete Cells</h3>
+                <p>You can also use the Excel Ribbon to delete rows, columns, or cells:</p>
+                <pre><code>
+                -- Example of deleting using the Ribbon
+                1. Select the row, column, or cells you want to delete.
+                2. Go to the <code>Home</code> tab on the Ribbon.
+                3. Click on the <code>Delete</code> button in the <code>Cells</code> group.
+                4. Choose <code>Delete Sheet Rows</code>, <code>Delete Sheet Columns</code>, or <code>Delete Cells</code> as needed.
+                </code></pre>
+                <p>The Ribbon provides a straightforward way to delete rows, columns, or cells with a single click.</p>
+            
+                <h3>Considerations When Deleting Cells</h3>
+                <ul>
+                    <li><strong>Data Integrity:</strong> Ensure that deleting cells does not affect formulas or data references. Adjust formulas if necessary to maintain accuracy.</li>
+                    <li><strong>Formatting:</strong> Deleting cells will also remove associated formatting. Verify that the remaining data retains the desired appearance.</li>
+                    <li><strong>Undo Deletions:</strong> Use the <code>Undo</code> function (Ctrl + Z) to revert accidental deletions if needed.</li>
+                </ul>
+            </section>
+            
+            
+            
+    
+            <section id="excel_undo_redo">
+                <h2>Excel Undo and Redo</h2>
+            
+                <h3>Introduction to Undo and Redo</h3>
+                <p>In Excel, the Undo and Redo functions allow you to reverse or reapply recent changes to your worksheet. These features are essential for correcting mistakes and experimenting with different data manipulations without permanently affecting your work.</p>
+            
+                <h3>Using Undo</h3>
+                <p>The Undo function allows you to revert the last action performed in Excel. You can undo multiple actions by repeatedly using the Undo command.</p>
+                <pre><code>
+                -- Example: Undoing an Action
+                1. Click the <code>Undo</code> button on the Quick Access Toolbar.
+                2. Alternatively, press <code>Ctrl + Z</code> on your keyboard.
+                3. Each click or key press undoes the most recent action.
+                </code></pre>
+                <p>Using Undo, you can revert actions such as deleting cells, changing cell contents, or formatting changes. The Undo history stores a limited number of actions, so older actions may not be recoverable.</p>
+            
+                <h3>Using Redo</h3>
+                <p>The Redo function re-applies actions that were undone using the Undo command. This is useful if you decide that you want to reapply a change that was previously undone.</p>
+                <pre><code>
+                -- Example: Redoing an Action
+                1. Click the <code>Redo</code> button on the Quick Access Toolbar.
+                2. Alternatively, press <code>Ctrl + Y</code> on your keyboard.
+                3. Each click or key press re-applies the most recent action that was undone.
+                </code></pre>
+                <p>Using Redo, you can reapply actions such as formatting changes or data entries that were previously undone. Similar to Undo, Redo history is also limited and might not recover older actions.</p>
+            
+                <h3>Quick Access Toolbar</h3>
+                <p>The Undo and Redo buttons are typically located on the Quick Access Toolbar at the top of the Excel window, allowing you to quickly revert or reapply actions. You can customize this toolbar to add or remove these buttons based on your preferences.</p>
+                
+                <h3>Considerations</h3>
+                <ul>
+                    <li><strong>Action History:</strong> The Undo and Redo history is limited to a set number of actions. If you close the workbook or Excel, the history may be lost.</li>
+                    <li><strong>Impact on Data:</strong> Be cautious when using Undo or Redo, as they can affect the integrity of your data and formulas.</li>
+                    <li><strong>Consistency:</strong> If you are working in a shared workbook, undoing or redoing actions can impact other users. Communicate changes if necessary.</li>
+                </ul>
+            </section>
+            
+            
+            
+  
+            <section id="excel_formulas">
+                <h2>Excel Formulas</h2>
+                
+                <h3>Introduction to Formulas</h3>
+                <p>Formulas in Excel are powerful tools for performing calculations and analyzing data. They start with an equals sign (<code>=</code>) and can include functions, operators, and references to cells or ranges of cells.</p>
+                
+                <h3>Basic Formulas</h3>
+                <ul>
+                    <li><strong>Addition:</strong> <code>=A1 + B1</code> - Adds the values in cells <code>A1</code> and <code>B1</code>.</li>
+                    <li><strong>Subtraction:</strong> <code>=A1 - B1</code> - Subtracts the value in cell <code>B1</code> from the value in cell <code>A1</code>.</li>
+                    <li><strong>Multiplication:</strong> <code>=A1 * B1</code> - Multiplies the values in cells <code>A1</code> and <code>B1</code>.</li>
+                    <li><strong>Division:</strong> <code>=A1 / B1</code> - Divides the value in cell <code>A1</code> by the value in cell <code>B1</code>.</li>
+                </ul>
+                
+                <h3>Common Functions</h3>
+                <ul>
+                    <li><strong>SUM:</strong> <code>=SUM(A1:A10)</code> - Adds all numbers in the range from <code>A1</code> to <code>A10</code>.</li>
+                    <li><strong>AVERAGE:</strong> <code>=AVERAGE(A1:A10)</code> - Calculates the average of numbers in the range from <code>A1</code> to <code>A10</code>.</li>
+                    <li><strong>IF:</strong> <code>=IF(A1 > 10, "High", "Low")</code> - Returns "High" if the value in <code>A1</code> is greater than 10; otherwise, returns "Low".</li>
+                    <li><strong>VLOOKUP:</strong> <code>=VLOOKUP(B1, A2:C10, 3, FALSE)</code> - Looks up the value in <code>B1</code> within the first column of the range <code>A2:C10</code> and returns the corresponding value from the third column.</li>
+                </ul>
+                
+                <h3>Using Cell References</h3>
+                <p>Formulas can reference other cells to perform calculations dynamically. For example:</p>
+                <pre><code>
+                -- Example: Calculate Total Sales
+                =A1 * B1
+                </code></pre>
+                <p>This formula multiplies the value in cell <code>A1</code> (e.g., quantity) by the value in cell <code>B1</code> (e.g., unit price) to calculate the total sales.</p>
+                
+                <h3>Formula Tips</h3>
+                <ul>
+                    <li><strong>Absolute References:</strong> Use <code>$</code> to lock rows or columns in formulas (e.g., <code>$A$1</code>).</li>
+                    <li><strong>Named Ranges:</strong> Assign names to ranges for easier reference (e.g., <code>=SUM(Sales)</code> where <code>Sales</code> is a named range).</li>
+                    <li><strong>Error Checking:</strong> Use <code>IFERROR</code> to handle potential errors in formulas (e.g., <code>=IFERROR(A1/B1, "Error")</code>).</li>
+                </ul>
+            </section>
+            
+            
+            
+
+  
+            <section id="excel_relative_references">
+                <h2>Excel Relative References</h2>
+                
+                <h3>Introduction to Relative References</h3>
+                <p>Relative references in Excel are cell references that change when you copy or move a formula to another cell. This feature is useful for performing the same calculation across multiple rows or columns without manually updating each formula.</p>
+                
+                <h3>How Relative References Work</h3>
+                <p>When you use a relative reference in a formula, Excel adjusts the reference based on the position where the formula is copied or moved. For example:</p>
+                <pre><code>
+                -- Original Formula in Cell C1
+                =A1 + B1
+                </code></pre>
+                <p>If you copy this formula from cell <code>C1</code> to <code>C2</code>, the formula will automatically adjust to:</p>
+                <pre><code>
+                =A2 + B2
+                </code></pre>
+                
+                <h3>Examples of Using Relative References</h3>
+                <ul>
+                    <li><strong>Summing a Range:</strong> If you want to sum values across multiple rows, you can use a formula with relative references. For example, if <code>B1</code> contains <code>=A1 + B1</code> and you copy it down, Excel will automatically adjust the references to <code>A2 + B2</code>, <code>A3 + B3</code>, and so on.</li>
+                    <li><strong>Copying Formulas:</strong> When copying formulas across columns, relative references adjust the column letters. For instance, copying <code>=A1 + B1</code> from <code>C1</code> to <code>D1</code> will change the formula to <code>=B1 + C1</code>.</li>
+                </ul>
+                
+                <h3>Tips for Using Relative References</h3>
+                <ul>
+                    <li><strong>Combine with Absolute References:</strong> Use relative references in combination with absolute references (using <code>$</code>) to lock certain parts of the formula while allowing others to adjust. For example, <code>=A1 + $B$1</code> keeps <code>B1</code> constant while <code>A1</code> changes when the formula is copied.</li>
+                    <li><strong>Drag Fill Handle:</strong> Use the fill handle (a small square at the bottom-right corner of a cell) to quickly copy formulas with relative references to adjacent cells.</li>
+                    <li><strong>Check Adjustments:</strong> Always review formula adjustments after copying to ensure that they align with your intended calculations.</li>
+                </ul>
+            </section>
+            
+            
+            
+  
+            <section id="excel_absolute_references">
+                <h2>Excel Absolute References</h2>
+                
+                <h3>Introduction to Absolute References</h3>
+                <p>Absolute references in Excel are cell references that remain constant, no matter where you copy or move the formula. This is useful when you want to keep a reference fixed while performing calculations across different cells.</p>
+                
+                <h3>How Absolute References Work</h3>
+                <p>Absolute references are indicated by using dollar signs ($) before the column letter and row number in a cell reference. For example, <code>$A$1</code> is an absolute reference. Unlike relative references, absolute references do not change when you copy or move a formula.</p>
+                <pre><code>
+                -- Original Formula in Cell C1
+                =$A$1 + B1
+                </code></pre>
+                <p>If you copy this formula from cell <code>C1</code> to <code>D1</code>, the formula remains:</p>
+                <pre><code>
+                =$A$1 + C1
+                </code></pre>
+                <p>Here, the reference to cell <code>A1</code> remains constant, while the reference to <code>B1</code> adjusts to <code>C1</code>.</p>
+                
+                <h3>Examples of Using Absolute References</h3>
+                <ul>
+                    <li><strong>Fixed Cell Reference:</strong> Use an absolute reference to keep a specific cell reference constant across multiple formulas. For example, <code>=A1 * $B$1</code> ensures that <code>B1</code> is used in the calculation regardless of where the formula is copied.</li>
+                    <li><strong>Mixed References:</strong> You can also use mixed references where either the row or column is absolute, and the other is relative. For example, <code>$A1</code> fixes the column but allows the row to change, while <code>A$1</code> fixes the row but allows the column to change.</li>
+                </ul>
+                
+                <h3>Tips for Using Absolute References</h3>
+                <ul>
+                    <li><strong>Use for Constants:</strong> Use absolute references to refer to cells that contain constants or settings that should not change, such as tax rates or conversion factors.</li>
+                    <li><strong>Combine with Relative References:</strong> Combine absolute references with relative references to lock certain parts of your formula while allowing other parts to adjust based on their location.</li>
+                    <li><strong>Review Formulas:</strong> After copying formulas with absolute references, review them to ensure that the fixed references are used correctly and as intended.</li>
+                </ul>
+            </section>
+            
+            
+            
+
+        
+            <section id="excel_addition_operator">
+                <h2>Excel Addition Operator</h2>
+                
+                <h3>Introduction to the Addition Operator</h3>
+                <p>The addition operator in Excel, represented by the plus sign (<code>+</code>), is used to perform arithmetic addition on numbers, cell references, or a combination of both. It is one of the most fundamental operators used in Excel formulas and calculations.</p>
+                
+                <h3>Using the Addition Operator</h3>
+                <p>The addition operator can be used in various contexts within Excel, such as:</p>
+                
+                <ul>
+                    <li><strong>Adding Numbers:</strong> You can directly add numbers together. For example, <code>=5 + 10</code> results in <code>15</code>.</li>
+                    <li><strong>Summing Cell Values:</strong> Add values from different cells. For example, <code>=A1 + B1</code> adds the values in cells <code>A1</code> and <code>B1</code>.</li>
+                    <li><strong>Combining Values:</strong> Combine constants with cell values. For example, <code>=100 + A1</code> adds the value in cell <code>A1</code> to <code>100</code>.</li>
+                </ul>
+                
+                <h3>Examples</h3>
+                <p>Here are some practical examples of using the addition operator:</p>
+                
+                <ul>
+                    <li><strong>Basic Addition:</strong> <code>=10 + 25</code> results in <code>35</code>.</li>
+                    <li><strong>Adding Cell References:</strong> If <code>A1</code> contains <code>50</code> and <code>B1</code> contains <code>30</code>, then <code>=A1 + B1</code> results in <code>80</code>.</li>
+                    <li><strong>Complex Formulas:</strong> <code>=A1 + B1 + C1</code> adds values from cells <code>A1</code>, <code>B1</code>, and <code>C1</code>.</li>
+                </ul>
+                
+                <h3>Tips for Using the Addition Operator</h3>
+                <ul>
+                    <li><strong>Use Parentheses for Clarity:</strong> To ensure proper order of operations, use parentheses. For example, <code>= (A1 + B1) + C1</code> ensures that <code>A1</code> and <code>B1</code> are added first before adding <code>C1</code>.</li>
+                    <li><strong>Combine with Other Operators:</strong> The addition operator can be combined with other operators such as subtraction (<code>-</code>), multiplication (<code>*</code>), and division (<code>/</code>) to create more complex formulas.</li>
+                    <li><strong>Use for Summing Ranges:</strong> For summing a range of cells, use the <code>SUM</code> function instead of the addition operator. For example, <code>=SUM(A1:A10)</code> adds all values in the range from <code>A1</code> to <code>A10</code>.</li>
+                </ul>
+            </section>
+            
+            
+            
+
+
+    
+            <section id="excel_parentheses">
+                <h2>Excel Parentheses</h2>
+                
+                <h3>Introduction to Parentheses</h3>
+                <p>In Excel, parentheses are used to control the order of operations in formulas. They help to ensure that calculations are performed in the intended sequence, allowing for more complex and precise mathematical expressions.</p>
+                
+                <h3>Using Parentheses in Formulas</h3>
+                <p>Parentheses are crucial for defining the order of operations. Excel follows the standard mathematical order of operations, often abbreviated as PEMDAS (Parentheses, Exponents, Multiplication and Division, Addition and Subtraction). Parentheses can override this order to perform operations in the desired sequence.</p>
+                
+                <ul>
+                    <li><strong>Basic Usage:</strong> Use parentheses to group numbers or operations together. For example, <code>= (5 + 3) * 2</code> adds <code>5</code> and <code>3</code> first, then multiplies the result by <code>2</code>, resulting in <code>16</code>.</li>
+                    <li><strong>Nested Parentheses:</strong> You can nest parentheses to handle more complex calculations. For example, <code>= (2 + (3 * 4)) / 2</code> calculates <code>3 * 4</code> first, then adds <code>2</code>, and finally divides the result by <code>2</code>, yielding <code>11</code>.</li>
+                    <li><strong>Logical Formulas:</strong> Parentheses are also used in logical formulas to ensure the correct evaluation order. For instance, <code>= IF((A1 > 10) AND (B1 < 5), "Yes", "No")</code> checks both conditions within the parentheses before applying the IF function.</li>
+                </ul>
+                
+                <h3>Examples</h3>
+                <p>Here are some practical examples of using parentheses in Excel formulas:</p>
+                
+                <ul>
+                    <li><strong>Simple Addition and Multiplication:</strong> <code>= (10 + 5) * 2</code> evaluates to <code>30</code>.</li>
+                    <li><strong>Complex Formula:</strong> <code>= ((A1 + B1) / (C1 - D1)) * E1</code> performs operations in the order specified by the parentheses.</li>
+                    <li><strong>Conditional Statements:</strong> <code>= IF((A1 > 10) OR (B1 < 5), "True", "False")</code> evaluates the conditions inside the parentheses to determine the result.</li>
+                </ul>
+                
+                <h3>Tips for Using Parentheses</h3>
+                <ul>
+                    <li><strong>Ensure Balanced Parentheses:</strong> Always check that parentheses are properly balanced and closed to avoid errors in your formulas.</li>
+                    <li><strong>Use Parentheses for Clarity:</strong> Even when not strictly necessary, use parentheses to make your formulas more readable and understandable.</li>
+                    <li><strong>Test Complex Formulas:</strong> When working with complex formulas, break them down into smaller parts with parentheses to verify each step of the calculation.</li>
+                </ul>
+            </section>
+            
+            
+            
+  
+
+            <section id="excel_functions">
+                <h2>Excel Functions</h2>
+                <p>Excel functions are predefined formulas that perform calculations or operations on data. They help streamline tasks and enhance the functionality of your spreadsheets. Functions can range from simple mathematical calculations to complex statistical analyses and data manipulations.</p>
+                
+                <h3>Common Excel Functions</h3>
+                <ul>
+                    <li><strong>SUM:</strong> Adds together a range of numbers. <code>=SUM(A1:A10)</code> sums all values from cells A1 to A10.</li>
+                    <li><strong>AVERAGE:</strong> Calculates the average of a range of numbers. <code>=AVERAGE(B1:B10)</code> finds the mean of the values from cells B1 to B10.</li>
+                    <li><strong>COUNT:</strong> Counts the number of cells that contain numbers. <code>=COUNT(C1:C10)</code> counts all numeric entries in cells C1 to C10.</li>
+                    <li><strong>IF:</strong> Performs a logical test and returns different values based on the result. <code>=IF(D1 > 100, "High", "Low")</code> returns "High" if D1 is greater than 100, otherwise "Low."</li>
+                    <li><strong>VLOOKUP:</strong> Searches for a value in the first column of a range and returns a value in the same row from another column. <code>=VLOOKUP(E1, F1:G10, 2, FALSE)</code> looks for E1 in the range F1:G10 and returns the value from the second column of the range.</li>
+                    <li><strong>CONCATENATE:</strong> Joins multiple text strings into one. <code>=CONCATENATE(H1, " ", I1)</code> combines the text in cells H1 and I1 with a space in between.</li>
+                </ul>
+                
+                <h3>Using Functions in Formulas</h3>
+                <p>Functions are typically used within formulas to perform calculations or manipulate data. Here are some examples:</p>
+                
+                <ul>
+                    <li><strong>Simple Addition:</strong> <code>=SUM(A1, B1)</code> adds the values in cells A1 and B1.</li>
+                    <li><strong>Conditional Logic:</strong> <code>=IF(J1 > 50, "Pass", "Fail")</code> evaluates the value in cell J1 and returns "Pass" if it is greater than 50, otherwise "Fail."</li>
+                    <li><strong>Combining Text:</strong> <code>=CONCATENATE(K1, "-", L1)</code> combines the text in cells K1 and L1 with a hyphen in between.</li>
+                </ul>
+                
+                <h3>Tips for Using Excel Functions</h3>
+                <ul>
+                    <li><strong>Check Function Syntax:</strong> Ensure that you use the correct syntax for each function, including the appropriate number of arguments and correct delimiters.</li>
+                    <li><strong>Use the Function Wizard:</strong> Excel provides a function wizard that helps you select and insert functions into your formulas. Access it by clicking the "fx" button next to the formula bar.</li>
+                    <li><strong>Reference Documentation:</strong> Familiarize yourself with Excel's function documentation to understand the parameters and options available for each function.</li>
+                </ul>
+            </section>
+            
+            
+            
+            
+    </main>
+    
+      <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+      </footer>
+    
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function displaySum() {
+  const firstNum = Number(document.getElementById('firstNum').innerText);
+  const secondNum = Number(document.getElementById('secondNum').innerText);
+  const total = firstNum + secondNum;
+  document.getElementById('answer').innerText = total;
+}
+
+function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.querySelector('.main-content').style.marginLeft = "0";
+    }
+
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.querySelector('.main-content').style.marginLeft = "250px";
+    }
+  </script>
+</body>
+</html>
