@@ -405,5 +405,15 @@ public class ResetPasswordApplication {
 	   		return "mock/reasoning/Reasioning_mock10";
 	   	}
 	   	
+	   	
+	   	@GetMapping("/html")
+	   	public String html() {
+	   		return "course_content";
+	   	}
+	   	@GetMapping("/download")
+	   	public String download() {
+	   		return "certi";
+	   	}
+	   	
 	}
 	
